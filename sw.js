@@ -1,4 +1,4 @@
-﻿const CACHE_NAME = 'fubosol-app-v6';
+﻿const CACHE_NAME = 'fubosol-app-v7';
 const ASSETS = [
   './',
   './index.html',
