@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="de">
-<head><script type='text/javascript' nonce='/UKAPYqTWIyAjmdHZG64zw==' src='https://contribution.usercontent.google.com/NoQdeGIKG5WBNakMBDI2KYF7NOcr7kntH23KvoTP8y32-TVCj_UPimhzRh8q4uuNv3ConH1oyRgJC711PloNcUilKhQJpC4idF5lw7Lad5fpuYW-2s8PITW5YqGMi6lqvrLGFHbgomb43wC1XJLg9HM2cRFv5zmI165YWjAIWInv_gjD5Z6Ag3pZOLA5FiT8piarA0xuTX02h-25IrpTIbraOMO-DQjnfTMminSypo45vPLIAKyU4UZkzA8Id90PUFDrnSVUFoa613Udiqn0ApQ77uWwCoRcHIg1VmWE-4kuEZBXFKF13mQtzvVArV_iBagldzBDOsBWXcZrGQ1vckldlbNEgfoie0ruBeXNuRhdgwZFSvftO8TrnnvXo8oOvQocNeHNTzMZYEgUv_GjM_RbsvinfAM3fOLt_Fvc6iWgwXBPQKe20D7jD6r7yXXmROTj8X4e8uy4KhVJqOkeR8zqXgHFheayOO-mHj_6Imcg8Y95ZgYvU-YRVKJ010qlATTNmkVpp1bHs_Rsugx3Zn4eK0StwrWvcp7MjMtnI0YtwMEr0D-S1kAJOqLdbYHGcTO1inDi-GJNtRz7b3WmsMjPEb_Q2-qlAC1Z_w5-Y_o3eyoMpldyu1SHIdOWk9JRt8sXlkym0Gx3U4YGq7i6ZOIxShmUIx90_1lcxd32dELuIhylU90lekiLgEnLmE7fgR9XNsyf1rZepYc8AnwnMvREFeFI6hwndt6UsvdcTRJNfhyiGNist_b5v1MhYEPFrWU'></script>
+<head><script type='text/javascript' nonce='kJoEioxpCDrIF1kZXFIUtQ==' src='https://contribution.usercontent.google.com/sv9UlT6SernLFjn-o1snWJbDd1N4-0VNmNz62_6wEOCvTc-AwinfY8SJPpLJItvFrhigUWAF_UWqX7b_XIeb1aaJdvvHigy_AyY_dQrD53uqGNm_F9WBI8bvYznIM1zzgFAosxqClDRhduJeT3Z_HgDYavvI3MiSCqncfcBsyRT8e8F0XV_Z2POmLO5du10HDQ-BXEhlCqZL02IqIWuQcW5UUFnMTqnq4n5u15tciLzoWSeoWJ6xlon1N3vGMVw1WkuU9uEbeAO90xmiGQmar4VjsEJsDRsh3b5Z4_Lo-aV4Tj0QF5XsWoXoclePzUycQ93Fstpr3aMYtqBu6M4s9-YM7dmVOtnkjcenQL6G28tm3rQebifeYAUizbXlMTHOfjkePilX1_gT_szL3WbiYBVkeov597Nbb8VpXoLBEA-tgkzEv_XT2U2CdGGQByZlb0QSmmJ1L5wV4RWcRzGM94nbLpaV-PNVTmX7sEjQqANpIoJn66DSo6Y5yGpbpOtSSTN3yCP07GYrATlD2_DNpOLC2OiLhhQAyBdTdtSZhkBXnj09KkirXqV1Q6rplot4I7ESPJl9GP5ulq7WYbxSdgbuI2usPT5vFAXmneBkIj0yECaBj4oTQ7o-m_6PDqQ-9pOgnRqyvCGlAKFK2UHYcJmd0Fi3bvrC3g6alGGwZ_30x9Ew6VFCwx35-1VgTgnZaLXa_6ZbYh3PzVMPKpjg7lvFqZJtFpUl1bTOH-V54Y904QX2WunS1GJM-EAjH9uN0oA'></script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="application-name" content="FUBOSOL">
@@ -18,11 +18,15 @@
 body{margin:0}
 header{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid #ddd;padding:6px 10px;box-shadow:0 2px 8px #0001}
 .header-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
-.brand{font-weight:700;font-size:14px}
-.sub{font-size:11px;color:#60656d}
 .toggle-menu-btn{background:#f1f3f5;color:#202124;border:1px solid #d0d5dd;border-radius:6px;padding:4px 8px;font-size:11px;font-weight:600;cursor:pointer;white-space:nowrap}
-.actions{display:flex;gap:5px;flex-wrap:wrap;margin-top:6px}
-header.collapsed .actions,header.collapsed .sub{display:none}
+.actions{display:flex;gap:6px;flex-wrap:nowrap;margin-top:6px;max-width:min(100%,794px)}
+header.collapsed .actions{display:none}
+.icon-btn{flex:1 1 0;height:36px;padding:0;display:inline-flex;align-items:center;justify-content:center;border:1px solid #d0d5dd;border-radius:8px;transition:transform .12s ease,border-color .15s ease,background .15s ease}
+.icon-btn svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.icon-btn:hover{border-color:#d91e79}
+.icon-btn:active{transform:scale(.96)}
+.icon-btn.wa-btn{background:#e7f8ee;color:#126b36;border-color:#bce3cb}
+.icon-btn.primary{background:#fdf2f8;color:#d91e79;border-color:#d91e79}
 button{font:inherit;border:0;border-radius:7px;padding:6px 10px;font-size:12px;cursor:pointer;touch-action:manipulation}
 .primary{background:#d91e79;color:white;font-weight:700}
 .secondary{background:#e9eaee;color:#202124;font-weight:500}
@@ -104,7 +108,8 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
 .dialog-actions{padding:10px 14px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
 .dialog-actions .right{display:flex;gap:8px}
 @media(max-width:560px){
-  .actions button{flex:1 1 30%;padding:6px 6px;font-size:11.5px}
+  .icon-btn{height:38px}
+  .icon-btn svg{width:21px;height:21px}
 }
 @page{size:A4 portrait;margin:0}
 @media print{
@@ -136,9 +141,11 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
 .fvp-ai:disabled{opacity:0.6;cursor:wait}
 .fvp-close{width:21px;height:21px;border-radius:50%;border:1px solid #e5e7eb;background:#f3f4f6;color:#4b5563;font-size:11px;font-weight:700;line-height:1;padding:0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}
 .fvp-close:hover{background:#fee2e2;color:#b91c1c;border-color:#fca5a5}
-.settings-fab{position:fixed;right:14px;bottom:14px;z-index:24;width:40px;height:40px;border-radius:50%;background:#fffffffa;border:1.5px solid #cbd0d7;color:#202124;display:inline-flex;align-items:center;justify-content:center;padding:0;box-shadow:0 4px 14px rgba(0,0,0,.16);cursor:pointer;transition:transform .18s ease,border-color .18s ease}
-.settings-fab:hover{border-color:#d91e79;color:#d91e79;transform:rotate(25deg)}
-.settings-fab svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.footer-row{max-width:min(100%,794px);margin:8px auto 0;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.footer-row .note{margin:0;flex:1}
+.settings-btn{width:34px;height:34px;border-radius:8px;background:#fff;border:1px solid #d0d5dd;color:#454b54;display:inline-flex;align-items:center;justify-content:center;padding:0;flex-shrink:0;cursor:pointer;transition:transform .18s ease,border-color .18s ease,color .18s ease}
+.settings-btn:hover{border-color:#d91e79;color:#d91e79;transform:rotate(25deg)}
+.settings-btn svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
 .settings-grid{display:flex;flex-direction:column;gap:10px;padding:14px 16px;overflow-y:auto;font-size:12.5px}
 .settings-card{background:#f9fafb;border:1px solid #e5e7eb;border-radius:10px;padding:10px 12px}
 .settings-card h3{margin:0 0 6px;font-size:13px;color:#d91e79}
@@ -156,36 +163,67 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
   text-overflow: ellipsis;
 }
 @media(max-width:560px){
-  .brand { flex-direction: column; align-items: flex-start !important; gap: 2px !important; }
-  #formSelector { font-size: 13px; max-width: 100%; }
+  #formSelector { font-size: 13.5px; max-width: 100%; }
 }
 </style>
 </head>
 <body>
 <header class="no-print" id="topHeader">
   <div class="header-top">
-    <div>
-      <div class="brand" style="display: flex; align-items: center; gap: 5px; flex-wrap: wrap;">
-        Fubosol · 
-        <select id="formSelector">
-          <option value="arbeitsbericht" selected="">Arbeits- und Regiebericht</option>
-          <option value="klima_inbetriebnahme">Klimaanlage Inbetriebnahmeprotokoll</option>
-          <option value="klima_wartung">Klimaanlage Wartungsprotokoll</option>
-          <option value="lueftung_inbetriebnahme">Lüftungsanlage Inbetriebnahmeprotokoll</option>
-          <option value="heizung_wartung">Heizungsanlage Wartungsprotokoll</option>
-        </select>
-      </div>
-      <div class="sub">Lokales Entwurfs-Backup aktiv</div>
+    <div style="min-width:0;flex:1">
+      <select id="formSelector" aria-label="Formular auswählen">
+        <option value="arbeitsbericht" selected="">Arbeits- und Regiebericht</option>
+        <option value="klima_inbetriebnahme">Klimaanlage Inbetriebnahmeprotokoll</option>
+        <option value="klima_wartung">Klimaanlage Wartungsprotokoll</option>
+        <option value="lueftung_inbetriebnahme">Lüftungsanlage Inbetriebnahmeprotokoll</option>
+        <option value="heizung_wartung">Heizungsanlage Wartungsprotokoll</option>
+      </select>
     </div>
     <button type="button" class="toggle-menu-btn" id="toggleMenuBtn">▲ Menü ausblenden</button>
   </div>
-  <div class="actions">
-    <button class="secondary" id="clearSignatureBtn">Unterschrift löschen</button>
-    <button class="secondary" id="clearBtn">Dokument leeren</button>
-    <button class="secondary" id="printBtn">Drucken</button>
-    <button class="secondary" id="savePdfBtn">PDF speichern</button>
-    <button class="secondary" id="whatsappBtn" style="background:#e7f8ee;color:#126b36;font-weight:600">WhatsApp</button>
-    <button class="primary" id="emailBtn">PDF per E-Mail</button>
+  <div class="actions icon-actions">
+    <button type="button" class="secondary icon-btn" id="clearSignatureBtn" title="Unterschrift löschen" aria-label="Unterschrift löschen">
+      <svg viewbox="0 0 24 24" aria-hidden="true">
+        <path d="M12 19l7-7 3 3-7 7-3-3z"/>
+        <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+        <path d="M2 2l7.586 7.586"/>
+        <path d="M16 18l4 4M20 18l-4 4"/>
+      </svg>
+    </button>
+    <button type="button" class="secondary icon-btn" id="clearBtn" title="Dokument leeren" aria-label="Dokument leeren">
+      <svg viewbox="0 0 24 24" aria-hidden="true">
+        <polyline points="3 6 5 6 21 6"/>
+        <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/>
+        <path d="M10 11v6M14 11v6"/>
+        <path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/>
+      </svg>
+    </button>
+    <button type="button" class="secondary icon-btn" id="printBtn" title="Drucken" aria-label="Drucken">
+      <svg viewbox="0 0 24 24" aria-hidden="true">
+        <polyline points="6 9 6 2 18 2 18 9"/>
+        <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+        <rect x="6" y="14" width="12" height="8"/>
+      </svg>
+    </button>
+    <button type="button" class="secondary icon-btn" id="savePdfBtn" title="PDF speichern" aria-label="PDF speichern">
+      <svg viewbox="0 0 24 24" aria-hidden="true">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+        <polyline points="14 2 14 8 20 8"/>
+        <text x="12" y="17.2" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="6.4" font-weight="700" fill="currentColor" stroke="none">PDF</text>
+      </svg>
+    </button>
+    <button type="button" class="secondary icon-btn wa-btn" id="whatsappBtn" title="Per WhatsApp senden" aria-label="WhatsApp">
+      <svg viewbox="0 0 24 24" aria-hidden="true">
+        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+        <path d="M9.5 8.8c.3-.3.6-.3.9 0l1 1.1c.2.2.2.6 0 .8l-.5.6c.5.9 1.2 1.6 2.1 2.1l.6-.5c.2-.2.6-.2.8 0l1.1 1c.3.3.3.6 0 .9l-.5.5c-.6.6-1.5.8-2.3.4-1.8-.8-3.3-2.3-4.1-4.1-.4-.8-.2-1.7.4-2.3l.5-.5z"/>
+      </svg>
+    </button>
+    <button type="button" class="primary icon-btn" id="emailBtn" title="PDF per E-Mail" aria-label="PDF per E-Mail">
+      <svg viewbox="0 0 24 24" aria-hidden="true">
+        <rect x="2" y="4" width="20" height="16" rx="2"/>
+        <polyline points="22 6 12 13 2 6"/>
+      </svg>
+    </button>
   </div>
 </header>
 <main>
@@ -283,7 +321,15 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
       </div>
     </details>
   </section>
-  <p class="note no-print">Büro: info@fubosol.de · Aktuelle Eingaben und PDF-Historie werden lokal auf dem Gerät gespeichert.</p>
+  <div class="footer-row no-print">
+    <p class="note">Büro: info@fubosol.de · Aktuelle Eingaben und PDF-Historie werden lokal auf dem Gerät gespeichert.</p>
+    <button type="button" class="settings-btn" id="openSettingsBtn" title="Einstellungen öffnen" aria-label="Einstellungen">
+      <svg viewbox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="3.2"/>
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9c.26.604.852.997 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+      </svg>
+    </button>
+  </div>
 </main>
 <div class="floating-voice-pill no-print" id="floatingVoicePill" role="toolbar" aria-label="Spracheingabe">
   <button type="button" class="fvp-mic" id="dictateBtn" title="Diktieren starten/stoppen" aria-label="Diktieren">
@@ -293,12 +339,7 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
   <button type="button" class="fvp-ai" id="aiTranslateBtn" title="PL → DE Fachtext">✨ PL→DE</button>
   <button type="button" class="fvp-close" id="closeVoicePillBtn" title="Diktierleiste schließen" aria-label="Schließen">✕</button>
 </div>
-<button type="button" class="settings-fab no-print" id="openSettingsBtn" title="Einstellungen öffnen" aria-label="Einstellungen">
-  <svg viewbox="0 0 24 24" aria-hidden="true">
-    <circle cx="12" cy="12" r="3.2"/>
-    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9c.26.604.852.997 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
-  </svg>
-</button>
+
 <div class="modal no-print" id="settingsModal" role="dialog" aria-modal="true" aria-labelledby="settingsModalTitle">
   <div class="dialog" style="max-width:520px">
     <div class="dialog-head" style="display:flex;align-items:center;justify-content:space-between;gap:8px">
