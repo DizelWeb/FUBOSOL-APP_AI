@@ -1,0 +1,1568 @@
+<!doctype html>
+<html lang="de">
+<head><script type='text/javascript' nonce='c28R4vCIAlVETm3Kudpccg==' src='https://contribution.usercontent.google.com/stMJnn0ApEpd5gQI5eVZ4t0dPcf60mCPf-ltmmiRoEmgdSV_qp7lECk6d1ClpLQagtlrPLd-vlmwVr_jU9HlaqPvRXC0XQzIcYVYTLMCmC3WmW3UUcppmDCat3HSNcyoVru5lw-yHfiadMoZMXWO5jvES4NZag5yl_7gcA8oAvjSpbX3cOTwovTggCjo1X_gLkv_iMytThtNL_eDQdIBd0nb3a83rAmq2qWrbZJnquMRvLEvfq-yc6TfS1Vxr1edqkkVsDYRTt859Dc7G3ilDHdFCu8WA-NEuQKD51VI4rxW5euX7eRsIPmnUfN_0DXCHmJCzWxN-XvxLJot2tiW9_XgvmLEAqOilvj_1THXspzqozleuTiLW2GRubB0Immtf7qTVyP4QNRNsmhWWpHDwzxmA5ikUNYmytufwC7tlO6274r2njCLce2N5QYpMHBr7YOsSXWqxXrHoFuJb3F41g9ysUfZOv6qEScL4MPF2ZM39GWNsrTue6Ra1J3CMMFzK1E8mrtd8yDe9LtYD4-ZCzWgoBU-vRAOBicf6PVvabi6nO7BkQscQeG6J6J2sg4Lwt3PcxfvcJBkRAwYOiWFqSIuoBE2Itpi1dDEjYLp-PqUqhuATv6rvNTkrfruepSsy9vwoVZeD8PXVAizDH8MtxYRYC2mdYfqUHI70NFf2Z3hOS91jHOnACkOdca4l1f2BObJLI__Ssm6uqk6Bwv5dw2MDJMUH6jWAlzSkU6tumQweI-lL9-qGtZN8dSerhdAxxk'></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="application-name" content="FUBOSOL">
+<meta name="apple-mobile-web-app-title" content="FUBOSOL">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#d91e79">
+<title>FUBOSOL</title>
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" sizes="192x192" href="icon-192.png">
+<link rel="manifest" href="manifest.json">
+<style>
+:root{color-scheme:light;font-family:Arial,Helvetica,sans-serif;color:#202124;background:#f3f4f6}
+*{box-sizing:border-box}
+body{margin:0}
+header{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid #ddd;padding:6px 10px;box-shadow:0 2px 8px #0001}
+.header-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.brand{font-weight:700;font-size:14px}
+.sub{font-size:11px;color:#60656d}
+.toggle-menu-btn{background:#f1f3f5;color:#202124;border:1px solid #d0d5dd;border-radius:6px;padding:4px 8px;font-size:11px;font-weight:600;cursor:pointer;white-space:nowrap}
+.actions{display:flex;gap:5px;flex-wrap:wrap;margin-top:6px}
+header.collapsed .actions,header.collapsed .sub{display:none}
+button{font:inherit;border:0;border-radius:7px;padding:6px 10px;font-size:12px;cursor:pointer;touch-action:manipulation}
+.primary{background:#d91e79;color:white;font-weight:700}
+.secondary{background:#e9eaee;color:#202124;font-weight:500}
+.danger{background:#fff0f3;color:#9b174c}
+main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
+.help-box{max-width:min(100%,794px);margin:0 auto 6px;background:#fff;border:1px solid #e0e3e8;border-radius:8px;padding:6px 10px;font-size:12px;color:#454b54}
+.help-box summary{cursor:pointer;font-weight:600;color:#202124;outline:none;user-select:none}
+.help-box ul{margin:6px 0 2px;padding-left:18px;line-height:1.45}
+.help-box li{margin-bottom:4px}
+.sheet-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:6px}
+.sheet{--scale:1;position:relative;width:min(100%,794px);margin:auto;aspect-ratio:2481/3508;background:white;box-shadow:0 4px 20px #0002;overflow:hidden}
+.sheet + .sheet{margin-top:16px}
+.sheet.hidden-page{display:none}
+.page-badge{position:absolute;right:4.6%;top:17.2%;z-index:3;font:700 calc(11.33px * var(--scale,1)) Arial,Helvetica,sans-serif;color:#6b7280;background:#fffc;padding:2px 6px;border-radius:4px;pointer-events:none}
+.sheet>.form-image{display:block;width:100%;height:100%;object-fit:fill}
+.field{position:absolute;z-index:2;border:1px solid transparent;background:transparent;color:#111;font:calc(12.80px * var(--scale,1)) Arial,Helvetica,sans-serif;padding:0 calc(3px * var(--scale,1));resize:none;overflow:hidden;border-radius:2px;min-width:0;line-height:1.15}
+.field:focus{outline:1px solid #d91e79;background:#ffffffdf;border-color:#d91e79}
+.field::placeholder{color:transparent}
+.field[data-date-field="true"]{appearance:none;-webkit-appearance:none;text-align:left}
+.field[data-date-field="true"]:focus::placeholder{color:#888}
+.field:focus::placeholder{color:#888}
+.topfield{height:1.85%}
+.worktable{position:absolute;left:9.71%;top:33.62%;width:85.65%;height:14.11%;display:grid;grid-template-columns:10.0% 27.2% 7.81% 7.76% 47.23%;grid-template-rows:repeat(6,1fr);z-index:2}
+.worktable input{width:100%;height:100%;min-width:0;border:1px solid transparent;background:transparent;color:#111;font:calc(12.80px * var(--scale,1)) Arial,Helvetica,sans-serif;padding:0 calc(4px * var(--scale,1))}
+.worktable input[data-date-field="true"]{padding-left:calc(2px * var(--scale,1))!important;padding-right:0!important;letter-spacing:-0.2px}
+.worktable input:focus{outline:1px solid #d91e79;background:#ffffffdf;border-color:#d91e79}
+.workdesc{position:absolute;left:9.71%;top:52.2%;width:85.65%;height:34.2%;color:#111;font:calc(12.80px * var(--scale,1))/1.15 Arial,Helvetica,sans-serif;padding:calc(2px * var(--scale,1));background:transparent;border:1px solid transparent;resize:none;overflow:hidden;z-index:2}
+.workdesc:focus{outline:1px solid #d91e79;background:#ffffffdf;border-color:#d91e79}
+.top-select{appearance:auto;-webkit-appearance:auto;padding:0 calc(2px * var(--scale,1));font-size:calc(12.80px * var(--scale,1));background:transparent;border:1px solid transparent;border-radius:2px;color:#111;cursor:pointer}
+.bottom-select{display:block;appearance:auto;-webkit-appearance:auto;padding:0 calc(2px * var(--scale,1));font-size:calc(12.80px * var(--scale,1));background:transparent;border:1px solid transparent;border-radius:2px;color:#111;cursor:pointer}
+.bottomfield{padding-top:0!important;padding-bottom:0!important;height:1.55%!important;font-size:calc(12.80px * var(--scale,1))!important}
+.sign-target{position:absolute;left:52.5%;top:91.2%;width:43%;height:5.1%;border:1.5px dashed #d91e79;background:#d91e790a;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#9c1557;font-size:calc(12.80px * var(--scale,1));cursor:pointer;text-align:center;z-index:3;padding:0}
+.sign-target.signed{border-color:transparent;background:transparent}
+.sign-target img{position:absolute;width:auto;height:auto;max-width:130%;max-height:130%;object-fit:contain;pointer-events:none;left:50%;top:50%;transform:translate(-50%,-50%) scale(var(--sig-scale,1));transform-origin:center}
+.sign-target .prompt{background:#fffD;padding:2px 6px;border-radius:4px}
+.sign-target.signed .prompt{display:none}
+.controls{max-width:min(100%,794px);margin:8px auto 0;display:flex;gap:10px;align-items:center;flex-wrap:wrap;background:#fff;padding:8px 10px;border-radius:8px;border:1px solid #e0e3e8}
+.controls label{font-size:12px;color:#454b54}
+.controls input[type=range]{vertical-align:middle;width:130px}
+.controls input[type=email]{font:inherit;font-size:12px;padding:6px 8px;border:1px solid #cbd0d7;border-radius:6px;width:min(100%,240px)}
+.history-box{max-width:min(100%,794px);margin:10px auto 0;background:#fff;border:1px solid #e0e3e8;border-radius:8px;padding:8px 12px}
+.history-details>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;user-select:none;outline:none}
+.history-details>summary::-webkit-details-marker{display:none}
+.history-summary-left{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:#202124}
+.history-caret{display:inline-block;transition:transform .18s ease;font-size:11px;color:#6b7280}
+.history-details[open] .history-caret{transform:rotate(90deg)}
+.history-head-right{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.history-body{margin-top:10px;padding-top:8px;border-top:1px solid #eef0f3}
+.history-meta{font-size:11px;color:#6b7280}
+.history-list{display:flex;flex-direction:column;gap:6px}
+.history-item{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 10px;border:1px solid #e5e7eb;border-radius:7px;background:#fafafa;flex-wrap:wrap}
+.history-info{min-width:180px;flex:1}
+.history-title{font-size:12px;font-weight:700;color:#111827;word-break:break-word}
+.history-sub{font-size:11px;color:#6b7280;margin-top:2px}
+.history-actions{display:flex;gap:5px;flex-wrap:wrap}
+.history-empty{font-size:12px;color:#6b7280;padding:8px 0}
+.note{max-width:min(100%,794px);margin:8px auto 0;font-size:11px;color:#6b7280;line-height:1.4}
+.toast{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);background:#172033;color:#fff;padding:10px 16px;border-radius:8px;font-size:13px;box-shadow:0 8px 24px #0004;z-index:30;display:none;text-align:center;max-width:92vw}
+.toast.show{display:block}
+.guide-body{padding:14px 16px;overflow-y:auto;font-size:12.5px;line-height:1.5;color:#202124}
+.guide-body h3{margin:12px 0 6px;font-size:13.5px;color:#d91e79;border-bottom:1px solid #f1f3f5;padding-bottom:3px}
+.guide-body h3:first-child{margin-top:0}
+.guide-body p{margin:4px 0 8px}
+.guide-table{width:100%;border-collapse:collapse;margin:6px 0 10px;font-size:12px}
+.guide-table th,.guide-table td{border:1px solid #e5e7eb;padding:5px 8px;text-align:left;vertical-align:top}
+.guide-table th{background:#f8f9fa;font-weight:700;color:#374151}
+.guide-table code{background:#f3f4f6;padding:1px 4px;border-radius:3px;font-size:11.5px;color:#b81466}
+.guide-example{background:#f9fafb;border-left:3px solid #d91e79;padding:8px 10px;border-radius:4px;margin:6px 0;font-size:12px}
+.guide-open-btn{background:#fdf2f8;color:#b81466;border:1px solid #f5b8d8;border-radius:5px;padding:2px 8px;font-size:11.5px;font-weight:600;cursor:pointer;margin-left:4px;vertical-align:baseline}
+.guide-open-btn:hover{background:#fce7f3}
+.modal{position:fixed;inset:0;background:#111a;display:none;align-items:center;justify-content:center;padding:10px;z-index:20}
+.modal.open{display:flex}
+.dialog{width:min(100%,680px);background:white;border-radius:16px;overflow:hidden;box-shadow:0 20px 70px #0005;display:flex;flex-direction:column;max-height:95dvh}
+.dialog-head{padding:12px 16px;border-bottom:1px solid #eee}
+.dialog-head h2{font-size:17px;margin:0 0 3px}
+.dialog-head p{font-size:12px;color:#5c6470;margin:0}
+.pad-wrap{padding:12px;background:#f7f7f8;flex:1;min-height:180px}
+.pad{display:block;width:100%;height:min(42dvh,300px);min-height:180px;background:white;border:1px solid #d4d6db;border-radius:10px;touch-action:none}
+.dialog-actions{padding:10px 14px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.dialog-actions .right{display:flex;gap:8px}
+@media(max-width:560px){
+  .actions button{flex:1 1 30%;padding:6px 6px;font-size:11.5px}
+}
+@page{size:A4 portrait;margin:0}
+@media print{
+  html,body{background:white!important;margin:0!important;padding:0!important;width:210mm!important}
+  header,.no-print,.help-box,.note,.modal,.controls,.history-box,.toast,.page-badge{display:none!important}
+  main{margin:0!important;padding:0!important;max-width:none!important;width:210mm!important}
+  .sheet-wrap{padding:0!important;overflow:visible!important}
+  .sheet{width:210mm!important;height:297mm!important;aspect-ratio:auto!important;margin:0!important;box-shadow:none!important;zoom:1!important;transform:none!important}
+  .sheet + .sheet{margin-top:0!important;page-break-before:always;break-before:page}
+  .sheet.hidden-page{display:none!important}
+  .sheet>.form-image{width:210mm!important;height:297mm!important}
+  .field,.worktable input,.workdesc{border:0!important;outline:0!important;background:transparent!important;color:#111!important;font-size:9.6pt!important}
+  .workdesc{line-height:1.15!important}
+  .top-select,.bottom-select{appearance:none!important;-webkit-appearance:none!important;border:0!important;background:transparent!important;color:#111!important;font-size:9.6pt!important}
+  .sign-target{left:52.5%;top:91.2%;width:43%;height:5.1%;border:0!important;background:transparent!important;border-radius:0}
+  .sign-target img{width:auto;height:auto;max-width:130%;max-height:130%;transform:translate(-50%,-50%) scale(var(--sig-scale,1))}
+  .sign-target .prompt{display:none!important}
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+}
+
+.floating-voice-pill{position:fixed;z-index:25;display:none;align-items:center;gap:4px;background:#fffffffa;border:1.5px solid #d91e79;border-radius:999px;padding:3px 6px;box-shadow:0 4px 14px rgba(0,0,0,.18);backdrop-filter:blur(4px)}
+.floating-voice-pill.visible{display:inline-flex}
+.fvp-mic{width:30px;height:30px;border-radius:50%;border:0;background:#d91e79;color:#fff;display:inline-flex;align-items:center;justify-content:center;padding:0;cursor:pointer;box-shadow:0 2px 6px rgba(217,30,121,.35)}
+.fvp-mic svg{width:16px;height:16px;fill:currentColor}
+.fvp-mic.recording{background:#dc2626;animation:pulseRec 1.2s infinite}
+.fvp-lang{height:26px;border-radius:999px;border:1px solid #d0d5dd;background:#f8f9fa;color:#202124;font-size:11px;font-weight:700;padding:0 7px;cursor:pointer;display:inline-flex;align-items:center;gap:2px}
+.fvp-lang:hover{background:#eef0f3}
+.fvp-ai{height:26px;border-radius:999px;border:1px solid #f5b8d8;background:#fdf2f8;color:#b81466;font-size:11px;font-weight:700;padding:0 8px;cursor:pointer;display:inline-flex;align-items:center;gap:3px}
+.fvp-ai:disabled{opacity:0.6;cursor:wait}
+@keyframes pulseRec{0%,100%{box-shadow:0 0 0 0 rgba(220,38,38,.45)}50%{box-shadow:0 0 0 6px rgba(220,38,38,0)}}
+
+#formSelector {
+  font-family: inherit; font-size: 14px; font-weight: 700; color: #202124; 
+  background: #f1f3f5; border: 1px solid #d0d5dd; border-radius: 4px; 
+  padding: 2px 4px; cursor: pointer; outline: none;
+  max-width: 100%;
+  text-overflow: ellipsis;
+}
+@media(max-width:560px){
+  .brand { flex-direction: column; align-items: flex-start !important; gap: 2px !important; }
+  #formSelector { font-size: 13px; max-width: 100%; }
+}
+</style>
+</head>
+<body>
+<header class="no-print" id="topHeader">
+  <div class="header-top">
+    <div>
+      <div class="brand" style="display: flex; align-items: center; gap: 5px; flex-wrap: wrap;">
+        Fubosol · 
+        <select id="formSelector">
+          <option value="arbeitsbericht" selected="">Arbeits- und Regiebericht</option>
+          <option value="klima_inbetriebnahme">Klimaanlage Inbetriebnahmeprotokoll</option>
+          <option value="klima_wartung">Klimaanlage Wartungsprotokoll</option>
+          <option value="lueftung_inbetriebnahme">Lüftungsanlage Inbetriebnahmeprotokoll</option>
+          <option value="heizung_wartung">Heizungsanlage Wartungsprotokoll</option>
+        </select>
+      </div>
+      <div class="sub">Lokales Entwurfs-Backup aktiv</div>
+    </div>
+    <button type="button" class="toggle-menu-btn" id="toggleMenuBtn">▲ Menü ausblenden</button>
+  </div>
+  <div class="actions">
+    <button class="secondary" id="clearSignatureBtn">Unterschrift löschen</button>
+    <button class="secondary" id="clearBtn">Dokument leeren</button>
+    <button class="secondary" id="printBtn">Drucken</button>
+    <button class="secondary" id="savePdfBtn">PDF speichern</button>
+    <button class="secondary" id="whatsappBtn" style="background:#e7f8ee;color:#126b36;font-weight:600">WhatsApp</button>
+    <button class="primary" id="emailBtn">PDF per E-Mail</button>
+  </div>
+</header>
+<main>
+  <details class="help-box no-print">
+    <summary>ℹ️ Anleitung &amp; Funktionen anzeigen (Hilfe)</summary>
+    <ul>
+            <li><strong>✨ KI-Fachübersetzung (PL → DE):</strong> Diktieren oder schreiben Sie stichpunktartig auf Polnisch und tippen Sie auf <em>„✨ PL→DE“</em>. Die KI strukturiert den Text und übersetzt ihn in präzises SHK-/Klima-/Elektro-Fachdeutsch (API-Schlüssel unten hinterlegen).</li>
+      <li><strong>Spracheingabe &amp; Sprachbefehle (DE &amp; PL):</strong> Diktieren mit automatischer Zeichensetzung, Zeilenumbrüchen und Aufzählungen. <button type="button" class="guide-open-btn" id="openDictationGuideBtn">📖 Ausführliche Diktier-Anleitung öffnen</button></li>
+      <li><strong>Datumsfelder (Format TT.MM.JJ):</strong> Antippen öffnet den Kalender (heutiges Datum vorausgewählt). Über „Löschen“ im Kalender oder mit Backspace/Entf kann ein Datum jederzeit wieder geleert werden.</li>
+      <li><strong>Automatische Arbeitszeit-Berechnung:</strong> Eingaben in <em>„Arbeitszeit von–bis“</em> (z. B. <code>7:30-12:00; 12:30-17:00</code> oder <code>7-7:30 FZ</code>) werden automatisch formatiert und die reine Stundenanzahl in <em>„Arbeitsstunden“</em> berechnet. Zusatztexte wie <code>FZ</code>, <code>mit FZ</code> oder <code>Laden</code> werden ignoriert.</li>
+      <li><strong>Automatische 2. Seite (identisch auf Smartphone &amp; PC):</strong> Sobald das Textfeld <em>„Ausgeführte Arbeiten/Material“</em> (25 Zeilen) gefüllt ist, öffnet sich automatisch eine zweite Seite mit allen übernommenen Kopf- und Fußdaten. Überlaufender Text wird direkt auf Seite 2 übertragen.</li>
+      <li><strong>PDF-Historie auf dem Gerät:</strong> Jede erstellte PDF wird lokal in der Historie gespeichert – Sie können frühere Berichte jederzeit öffnen, erneut herunterladen oder ins Formular laden.</li>
+      <li><strong>Offline-Speicherung &amp; Zurücksetzen:</strong> Alle Eingaben bleiben nach dem Speichern oder E-Mail-Versand erhalten (nur die Unterschrift wird automatisch gelöscht). Das gesamte Dokument wird erst über den Button <em>„Dokument leeren“</em> geleert.</li>
+      <li><strong>PDF &amp; E-Mail-Versand (Gmail):</strong> Beim Klick auf <em>„PDF per E-Mail“</em> werden die Büro-Adresse (<code>info@fubosol.de</code>) und die optionale Kunden-E-Mail automatisch in die Zwischenablage kopiert – in Gmail einfach im Feld „An“ einfügen.</li>
+      <li><strong>Als App auf dem Smartphone installieren:</strong><br>
+          <b>Android (Chrome):</b> Tippen Sie oben rechts auf die drei Punkte (Menü) und wählen Sie <em>„Zum Startbildschirm hinzufügen“</em>.<br>
+          <b>iOS/Apple (Safari):</b> Tippen Sie unten auf das Teilen-Symbol (Viereck mit Pfeil nach oben) und wählen Sie <em>„Zum Home-Bildschirm“</em>.</li>
+    </ul>
+  </details>
+  <div id="placeholderWrap" style="display: none; text-align: center; padding: 40px 20px; background: #fff; border-radius: 8px; border: 1px solid #e0e3e8; margin-top: 20px;">
+    <h3 style="margin-top: 0; color: #d91e79;">Formular in Vorbereitung</h3>
+    <p style="color: #454b54;">Dieses Formular wird in Kürze hinzugefügt.</p>
+  </div>
+  <div class="sheet-wrap" id="sheetWrap">
+    <!-- SEITE 1 -->
+    <section class="sheet" id="sheetPage1" data-page="1" aria-label="Fubosol Arbeits- und Regiebericht Seite 1">
+      <span class="page-badge no-print" id="page1Badge" hidden="">Seite 1 / 2</span>
+      <img class="form-image" alt="Oryginalny formularz Fubosol Arbeits- und Regiebericht" src="form-arbeitsbericht.png">
+      <input class="field topfield" style="left:15.1%;top:21.35%;width:22.6%" data-field="Baustelle-1" aria-label="Baustelle Zeile 1">
+      <input class="field topfield" style="left:9.8%;top:23.60%;width:27.9%" data-field="Baustelle-2" aria-label="Baustelle Zeile 2">
+      <input class="field topfield" style="left:9.8%;top:25.85%;width:27.9%" data-field="Baustelle-3" aria-label="Baustelle Zeile 3">
+      <input class="field topfield" style="left:47.7%;top:21.35%;width:20.2%" data-field="Auftraggeber-1" aria-label="Auftraggeber Zeile 1">
+      <input class="field topfield" style="left:40.3%;top:23.60%;width:27.6%" data-field="Auftraggeber-2" aria-label="Auftraggeber Zeile 2">
+      <input class="field topfield" style="left:40.3%;top:25.85%;width:27.6%" data-field="Auftraggeber-3" aria-label="Auftraggeber Zeile 3">
+      <input class="field topfield" style="left:82.0%;top:21.35%;width:13.2%" data-field="Rüstzeit" aria-label="Rüstzeit" inputmode="decimal">
+      <input class="field topfield" style="left:82.0%;top:23.60%;width:13.2%" data-field="Fahrtkilometer" aria-label="Fahrtkilometer" inputmode="decimal">
+      <select class="field topfield top-select" style="left:82.0%;top:25.80%;width:10.5%;height:1.85%" data-field="Fahrtpauschale Ja Nein" aria-label="Fahrtpauschale Ja oder Nein"><option value=""></option><option value="Ja">Ja</option><option value="Nein">Nein</option></select>
+      <div class="worktable" id="worktable"><input aria-label="Datum Zeile 1" data-field="Datum-1" data-date-field="true"><input aria-label="Arbeitszeit von-bis Zeile 1" data-field="Arbeitszeit von-bis-1"><input aria-label="Arbeitsstunden Zeile 1" data-field="Arbeitsstunden-1" inputmode="decimal"><input aria-label="Monteurzahl Zeile 1" data-field="Monteurzahl-1" inputmode="numeric"><input aria-label="Name des Monteurs Zeile 1" data-field="Name des Monteurs-1"><input aria-label="Datum Zeile 2" data-field="Datum-2" data-date-field="true"><input aria-label="Arbeitszeit von-bis Zeile 2" data-field="Arbeitszeit von-bis-2"><input aria-label="Arbeitsstunden Zeile 2" data-field="Arbeitsstunden-2" inputmode="decimal"><input aria-label="Monteurzahl Zeile 2" data-field="Monteurzahl-2" inputmode="numeric"><input aria-label="Name des Monteurs Zeile 2" data-field="Name des Monteurs-2"><input aria-label="Datum Zeile 3" data-field="Datum-3" data-date-field="true"><input aria-label="Arbeitszeit von-bis Zeile 3" data-field="Arbeitszeit von-bis-3"><input aria-label="Arbeitsstunden Zeile 3" data-field="Arbeitsstunden-3" inputmode="decimal"><input aria-label="Monteurzahl Zeile 3" data-field="Monteurzahl-3" inputmode="numeric"><input aria-label="Name des Monteurs Zeile 3" data-field="Name des Monteurs-3"><input aria-label="Datum Zeile 4" data-field="Datum-4" data-date-field="true"><input aria-label="Arbeitszeit von-bis Zeile 4" data-field="Arbeitszeit von-bis-4"><input aria-label="Arbeitsstunden Zeile 4" data-field="Arbeitsstunden-4" inputmode="decimal"><input aria-label="Monteurzahl Zeile 4" data-field="Monteurzahl-4" inputmode="numeric"><input aria-label="Name des Monteurs Zeile 4" data-field="Name des Monteurs-4"><input aria-label="Datum Zeile 5" data-field="Datum-5" data-date-field="true"><input aria-label="Arbeitszeit von-bis Zeile 5" data-field="Arbeitszeit von-bis-5"><input aria-label="Arbeitsstunden Zeile 5" data-field="Arbeitsstunden-5" inputmode="decimal"><input aria-label="Monteurzahl Zeile 5" data-field="Monteurzahl-5" inputmode="numeric"><input aria-label="Name des Monteurs Zeile 5" data-field="Name des Monteurs-5"><input aria-label="Datum Zeile 6" data-field="Datum-6" data-date-field="true"><input aria-label="Arbeitszeit von-bis Zeile 6" data-field="Arbeitszeit von-bis-6"><input aria-label="Arbeitsstunden Zeile 6" data-field="Arbeitsstunden-6" inputmode="decimal"><input aria-label="Monteurzahl Zeile 6" data-field="Monteurzahl-6" inputmode="numeric"><input aria-label="Name des Monteurs Zeile 6" data-field="Name des Monteurs-6"></div>
+      <textarea class="workdesc" id="workdescPage1" data-field="Ausgeführte Arbeiten/Material" aria-label="Ausgeführte Arbeiten und Material"></textarea>
+      <select class="field bottom-select top-select" style="left:37.8%;top:87.20%;width:13.8%;height:1.9%;background:#fff;" data-field="Arbeit erledigt" aria-label="Arbeit erledigt: Ja oder Nein"><option value=""></option><option value="Ja">Ja</option><option value="Nein">Nein</option></select>
+      <select class="field bottom-select top-select" style="left:82.8%;top:87.20%;width:11.8%;height:1.9%;background:#fff;" data-field="Neuer Termin erforderlich" aria-label="Neuer Termin erforderlich: Ja oder Nein"><option value=""></option><option value="Ja">Ja</option><option value="Nein">Nein</option></select>
+      <input class="field bottomfield" style="left:12.7%;top:94.65%;width:22.2%" data-field="Ort" aria-label="Ort">
+      <input class="field bottomfield" style="left:38.9%;top:94.65%;width:12.6%" data-field="Datum Unterschrift" data-date-field="true" aria-label="Datum">
+      <button class="sign-target" id="signTarget" aria-label="Unterschrift des Kunden erfassen"><span class="prompt">✍ Hier unterschreiben</span><img id="signatureImage" alt="Unterschrift des Kunden" hidden=""></button>
+    </section>
+
+    <!-- SEITE 2 (automatisch aktiv ab Zeile 26) -->
+    <section class="sheet hidden-page" id="sheetPage2" data-page="2" aria-label="Fubosol Arbeits- und Regiebericht Seite 2">
+      <span class="page-badge no-print">Seite 2 / 2</span>
+      <img class="form-image" alt="Oryginalny formularz Fubosol Arbeits- und Regiebericht Seite 2" src="form-arbeitsbericht.png">
+      <input class="field topfield" style="left:15.1%;top:21.35%;width:22.6%" data-sync-field="Baustelle-1" aria-label="Baustelle Zeile 1 (Seite 2)">
+      <input class="field topfield" style="left:9.8%;top:23.60%;width:27.9%" data-sync-field="Baustelle-2" aria-label="Baustelle Zeile 2 (Seite 2)">
+      <input class="field topfield" style="left:9.8%;top:25.85%;width:27.9%" data-sync-field="Baustelle-3" aria-label="Baustelle Zeile 3 (Seite 2)">
+      <input class="field topfield" style="left:47.7%;top:21.35%;width:20.2%" data-sync-field="Auftraggeber-1" aria-label="Auftraggeber Zeile 1 (Seite 2)">
+      <input class="field topfield" style="left:40.3%;top:23.60%;width:27.6%" data-sync-field="Auftraggeber-2" aria-label="Auftraggeber Zeile 2 (Seite 2)">
+      <input class="field topfield" style="left:40.3%;top:25.85%;width:27.6%" data-sync-field="Auftraggeber-3" aria-label="Auftraggeber Zeile 3 (Seite 2)">
+      <input class="field topfield" style="left:82.0%;top:21.35%;width:13.2%" data-sync-field="Rüstzeit" aria-label="Rüstzeit (Seite 2)" inputmode="decimal">
+      <input class="field topfield" style="left:82.0%;top:23.60%;width:13.2%" data-sync-field="Fahrtkilometer" aria-label="Fahrtkilometer (Seite 2)" inputmode="decimal">
+      <select class="field topfield top-select" style="left:82.0%;top:25.80%;width:10.5%;height:1.85%" data-sync-field="Fahrtpauschale Ja Nein" aria-label="Fahrtpauschale Ja oder Nein (Seite 2)"><option value=""></option><option value="Ja">Ja</option><option value="Nein">Nein</option></select>
+      <div class="worktable" id="worktable2"><input aria-label="Datum Zeile 1 (Seite 2)" data-sync-field="Datum-1" data-date-field="true"><input aria-label="Arbeitszeit von-bis Zeile 1 (Seite 2)" data-sync-field="Arbeitszeit von-bis-1"><input aria-label="Arbeitsstunden Zeile 1 (Seite 2)" data-sync-field="Arbeitsstunden-1" inputmode="decimal"><input aria-label="Monteurzahl Zeile 1 (Seite 2)" data-sync-field="Monteurzahl-1" inputmode="numeric"><input aria-label="Name des Monteurs Zeile 1 (Seite 2)" data-sync-field="Name des Monteurs-1"><input aria-label="Datum Zeile 2 (Seite 2)" data-sync-field="Datum-2" data-date-field="true"><input aria-label="Arbeitszeit von-bis Zeile 2 (Seite 2)" data-sync-field="Arbeitszeit von-bis-2"><input aria-label="Arbeitsstunden Zeile 2 (Seite 2)" data-sync-field="Arbeitsstunden-2" inputmode="decimal"><input aria-label="Monteurzahl Zeile 2 (Seite 2)" data-sync-field="Monteurzahl-2" inputmode="numeric"><input aria-label="Name des Monteurs Zeile 2 (Seite 2)" data-sync-field="Name des Monteurs-2"><input aria-label="Datum Zeile 3 (Seite 2)" data-sync-field="Datum-3" data-date-field="true"><input aria-label="Arbeitszeit von-bis Zeile 3 (Seite 2)" data-sync-field="Arbeitszeit von-bis-3"><input aria-label="Arbeitsstunden Zeile 3 (Seite 2)" data-sync-field="Arbeitsstunden-3" inputmode="decimal"><input aria-label="Monteurzahl Zeile 3 (Seite 2)" data-sync-field="Monteurzahl-3" inputmode="numeric"><input aria-label="Name des Monteurs Zeile 3 (Seite 2)" data-sync-field="Name des Monteurs-3"><input aria-label="Datum Zeile 4 (Seite 2)" data-sync-field="Datum-4" data-date-field="true"><input aria-label="Arbeitszeit von-bis Zeile 4 (Seite 2)" data-sync-field="Arbeitszeit von-bis-4"><input aria-label="Arbeitsstunden Zeile 4 (Seite 2)" data-sync-field="Arbeitsstunden-4" inputmode="decimal"><input aria-label="Monteurzahl Zeile 4 (Seite 2)" data-sync-field="Monteurzahl-4" inputmode="numeric"><input aria-label="Name des Monteurs Zeile 4 (Seite 2)" data-sync-field="Name des Monteurs-4"><input aria-label="Datum Zeile 5 (Seite 2)" data-sync-field="Datum-5" data-date-field="true"><input aria-label="Arbeitszeit von-bis Zeile 5 (Seite 2)" data-sync-field="Arbeitszeit von-bis-5"><input aria-label="Arbeitsstunden Zeile 5 (Seite 2)" data-sync-field="Arbeitsstunden-5" inputmode="decimal"><input aria-label="Monteurzahl Zeile 5 (Seite 2)" data-sync-field="Monteurzahl-5" inputmode="numeric"><input aria-label="Name des Monteurs Zeile 5 (Seite 2)" data-sync-field="Name des Monteurs-5"><input aria-label="Datum Zeile 6 (Seite 2)" data-sync-field="Datum-6" data-date-field="true"><input aria-label="Arbeitszeit von-bis Zeile 6 (Seite 2)" data-sync-field="Arbeitszeit von-bis-6"><input aria-label="Arbeitsstunden Zeile 6 (Seite 2)" data-sync-field="Arbeitsstunden-6" inputmode="decimal"><input aria-label="Monteurzahl Zeile 6 (Seite 2)" data-sync-field="Monteurzahl-6" inputmode="numeric"><input aria-label="Name des Monteurs Zeile 6 (Seite 2)" data-sync-field="Name des Monteurs-6"></div>
+      <textarea class="workdesc" id="workdescPage2" data-field="Ausgeführte Arbeiten/Material Seite 2" aria-label="Ausgeführte Arbeiten und Material (Seite 2)"></textarea>
+      <select class="field bottom-select top-select" style="left:37.8%;top:87.20%;width:13.8%;height:1.9%;background:#fff;" data-sync-field="Arbeit erledigt" aria-label="Arbeit erledigt: Ja oder Nein (Seite 2)"><option value=""></option><option value="Ja">Ja</option><option value="Nein">Nein</option></select>
+      <select class="field bottom-select top-select" style="left:82.8%;top:87.20%;width:11.8%;height:1.9%;background:#fff;" data-sync-field="Neuer Termin erforderlich" aria-label="Neuer Termin erforderlich: Ja oder Nein (Seite 2)"><option value=""></option><option value="Ja">Ja</option><option value="Nein">Nein</option></select>
+      <input class="field bottomfield" style="left:12.7%;top:94.65%;width:22.2%" data-sync-field="Ort" aria-label="Ort (Seite 2)">
+      <input class="field bottomfield" style="left:38.9%;top:94.65%;width:12.6%" data-sync-field="Datum Unterschrift" data-date-field="true" aria-label="Datum (Seite 2)">
+      <button class="sign-target" id="signTarget2" aria-label="Unterschrift des Kunden erfassen (Seite 2)"><span class="prompt">✍ Hier unterschreiben</span><img id="signatureImage2" alt="Unterschrift des Kunden (Seite 2)" hidden=""></button>
+    </section>
+  </div>
+  <div class="controls no-print">
+    <label for="zoomScale">Dokumentgröße: <strong id="zoomValue">100 %</strong></label>
+    <input id="zoomScale" type="range" min="60" max="160" value="100" step="5">
+    <label for="sigScale">Größe der Unterschrift: <strong id="scaleValue">100 %</strong></label>
+    <input id="sigScale" type="range" min="70" max="180" value="100" step="5">
+    <label for="clientEmail">E-Mail des Kunden (optional):</label>
+    <input type="email" id="clientEmail" placeholder="kunde@beispiel.de" autocomplete="email">
+    <input type="date" id="nativeDatePicker" aria-label="Datum auswählen" style="position:fixed;left:0;top:0;width:1px;height:1px;opacity:0.01;pointer-events:none;border:0;padding:0">
+  </div>
+  <details class="help-box no-print" id="aiSettingsBox" style="margin-top:8px">
+    <summary>🔑 KI-Einstellungen (Gemini API-Schlüssel für PL → DE Fachtext)</summary>
+    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:8px">
+      <label for="geminiApiKey" style="font-size:12px">Gemini API-Key:</label>
+      <input type="password" id="geminiApiKey" placeholder="AIzaSy..." autocomplete="off" style="font:inherit;font-size:12px;padding:6px 8px;border:1px solid #cbd0d7;border-radius:6px;width:min(100%,260px)">
+      <label for="geminiModel" style="font-size:12px">Modell:</label>
+      <select id="geminiModel" style="font:inherit;font-size:12px;padding:6px 8px;border:1px solid #cbd0d7;border-radius:6px;background:#fff">
+        <option value="gemini-2.5-flash" selected="">gemini-2.5-flash (schnell)</option>
+        <option value="gemini-2.5-pro">gemini-2.5-pro (präzise)</option>
+      </select>
+      <button type="button" class="secondary" id="saveAiKeyBtn">Key speichern</button>
+    </div>
+    <p style="margin:6px 0 0;font-size:11px;color:#6b7280">Der Schlüssel wird ausschließlich lokal im Browser (localStorage) dieses Geräts gespeichert und nicht hochgeladen.</p>
+  </details>
+  <section class="history-box no-print" id="historyBox" aria-label="Gespeicherte PDF-Berichte">
+    <details class="history-details" id="historyDetails">
+      <summary>
+        <span class="history-summary-left">
+          <span class="history-caret" aria-hidden="true">▶</span>
+          <span>🗂️ PDF-Historie (letzte Arbeiten)</span>
+        </span>
+        <span class="history-head-right">
+          <span class="history-meta" id="historyCount">0 Einträge</span>
+          <button type="button" class="danger" id="clearHistoryBtn">Historie löschen</button>
+        </span>
+      </summary>
+      <div class="history-body">
+        <div class="history-list" id="historyList">
+          <div class="history-empty">Noch keine gespeicherten PDF-Berichte vorhanden.</div>
+        </div>
+      </div>
+    </details>
+  </section>
+  <p class="note no-print">Büro: info@fubosol.de · Aktuelle Eingaben und PDF-Historie werden lokal auf dem Gerät gespeichert.</p>
+</main>
+<div class="floating-voice-pill no-print" id="floatingVoicePill" role="toolbar" aria-label="Spracheingabe">
+  <button type="button" class="fvp-mic" id="dictateBtn" title="Diktieren starten/stoppen" aria-label="Diktieren">
+    <svg viewbox="0 0 24 24" aria-hidden="true"><path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.91-3c-.49 0-.9.36-.98.85C16.52 14.2 14.47 16 12 16s-4.52-1.8-4.93-4.15c-.08-.49-.49-.85-.98-.85-.61 0-1.09.54-1 1.14.49 3 2.89 5.35 5.91 5.78V20c0 .55.45 1 1 1s1-.45 1-1v-2.08c3.02-.43 5.42-2.78 5.91-5.78.1-.6-.39-1.14-1-1.14z"/></svg>
+  </button>
+  <button type="button" class="fvp-lang" id="dictateLangBtn" title="Sprache wechseln (DE / PL)" aria-label="Sprache wechseln">🌐 DE</button>
+  <button type="button" class="fvp-ai" id="aiTranslateBtn" title="PL → DE Fachtext">✨ PL→DE</button>
+</div>
+<div class="toast no-print" id="toastMsg" role="status" aria-live="polite"></div>
+<div class="modal" id="signatureModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="dialog"><div class="dialog-head"><h2 id="modalTitle">Unterschrift des Kunden</h2><p>Bitte unterschreiben Sie mit dem Finger oder einem Stift im Feld.</p></div><div class="pad-wrap"><canvas class="pad" id="signaturePad"></canvas></div><div class="dialog-actions"><button class="secondary" id="cancelBtn">Abbrechen</button><div class="right"><button class="danger" id="eraseBtn">Löschen</button><button class="primary" id="saveBtn">Unterschrift übernehmen</button></div></div></div></div>
+<div class="modal no-print" id="dictationGuideModal" role="dialog" aria-modal="true" aria-labelledby="dictGuideTitle">
+  <div class="dialog">
+    <div class="dialog-head" style="display:flex;align-items:center;justify-content:space-between;gap:8px">
+      <div>
+        <h2 id="dictGuideTitle">🎙️ Anleitung: Spracheingabe &amp; Befehle</h2>
+        <p>So nutzen Sie das Diktieren auf Deutsch (DE) und Polnisch (PL) optimal.</p>
+      </div>
+      <button type="button" class="secondary" id="closeDictationGuideTopBtn" aria-label="Schließen">✕</button>
+    </div>
+    <div class="guide-body">
+      <h3>1. So starten Sie das Diktieren</h3>
+      <ul>
+        <li>Tippen Sie in ein beliebiges Textfeld – direkt am Feld erscheint automatisch das schwebende Mikrofon-Symbol (<strong>🎙️</strong>) zusammen mit dem Sprach-Umschalter (<strong>🌐 DE / PL</strong>).</li>
+        <li><strong>Android &amp; PC (Chrome/Edge):</strong> Tippen Sie auf das Mikrofon-Symbol (wird rot während der Aufnahme). Die Spracheingabe läuft kontinuierlich weiter, bis Sie erneut auf das Mikrofon tippen.</li>
+        <li><strong>iPhone / iPad (iOS) oder Smartphone-Tastatur:</strong> Sie können jederzeit auch die Mikrofontaste direkt auf Ihrer Bildschirmtastatur (Apple / Google Gboard) verwenden – alle untenstehenden Befehle werden ebenfalls erkannt.</li>
+      </ul>
+
+      <h3>2. Sprachbefehle für Satzzeichen (DE &amp; PL)</h3>
+      <p>Sprechen Sie den Befehl einfach mit im Satz aus – das Leerzeichen davor wird automatisch entfernt und das nächste Wort nach einem Satzende großgeschrieben:</p>
+      <table class="guide-table">
+        <thead>
+          <tr><th>Ergebnis</th><th>Befehl Deutsch (DE)</th><th>Befehl Polnisch (PL)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>.</code> (Punkt)</td><td><code>Punkt</code> / <code>Satzpunkt</code></td><td><code>kropka</code></td></tr>
+          <tr><td><code>,</code> (Komma)</td><td><code>Komma</code></td><td><code>przecinek</code></td></tr>
+          <tr><td><code>:</code> (Doppelpunkt)</td><td><code>Doppelpunkt</code></td><td><code>dwukropek</code></td></tr>
+          <tr><td><code>;</code> (Semikolon)</td><td><code>Semikolon</code></td><td><code>średnik</code></td></tr>
+          <tr><td><code>?</code> (Fragezeichen)</td><td><code>Fragezeichen</code></td><td><code>znak zapytania</code> / <code>pytajnik</code></td></tr>
+          <tr><td><code>!</code> (Ausrufezeichen)</td><td><code>Ausrufezeichen</code></td><td><code>wykrzyknik</code></td></tr>
+          <tr><td><code>/</code> (Schrägstrich)</td><td><code>Schrägstrich</code></td><td><code>ukośnik</code></td></tr>
+        </tbody>
+      </table>
+
+      <h3>3. Zeilenumbrüche &amp; Aufzählungen (- und 1., 2., 3.)</h3>
+      <table class="guide-table">
+        <thead>
+          <tr><th>Funktion</th><th>Befehl Deutsch (DE)</th><th>Befehl Polnisch (PL)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Neue Zeile</td><td><code>Neue Zeile</code> / <code>Absatz</code></td><td><code>nowa linia</code> / <code>nowy wiersz</code> / <code>enter</code></td></tr>
+          <tr><td>Aufzählung mit <code>- </code></td><td><code>Spiegelstrich</code> / <code>Bindestrich</code></td><td><code>myślnik</code> / <code>punkt od myślnika</code> / <code>podpunkt</code></td></tr>
+          <tr><td>Nummerierung <code>1. </code>, <code>2. </code>, <code>3. </code></td><td><code>Nummerierung</code> / <code>Aufzählung</code></td><td><code>numerowanie</code> / <code>punktowanie</code></td></tr>
+        </tbody>
+      </table>
+
+      <h3>4. Praxisbeispiel &amp; Hilfsfunktionen</h3>
+      <div class="guide-example">
+        <strong>Sie sprechen:</strong><br>
+        <em>„Wartung der Wärmepumpe durchgeführt Doppelpunkt Spiegelstrich Filter gereinigt Spiegelstrich Anlagendruck geprüft Komma 1,6 bar Punkt Nummerierung Probelauf ohne Störung“</em><br><br>
+        <strong>Ergebnis im Bericht:</strong><br>
+        Wartung der Wärmepumpe durchgeführt:<br>
+        - Filter gereinigt<br>
+        - Anlagendruck geprüft, 1,6 bar.<br>
+        1. Probelauf ohne Störung
+      </div>
+      <ul>
+        <li><strong>Automatische Seite 2:</strong> Ab Zeile 26 öffnet sich beim Diktieren automatisch Seite 2 und führt den Text dort nahtlos fort.</li>
+      </ul>
+
+      <h3>5. ✨ KI-Fachübersetzung &amp; Textglättung (PL → DE)</h3>
+      <p>Sie können stichpunktartig oder umgangssprachlich auf Polnisch diktieren und den gesamten Berichtstext anschließend mit <strong>„✨ PL→DE“</strong> in sauberes SHK-/Klima-/Elektro-Fachdeutsch umwandeln lassen.</p>
+      <div class="guide-example">
+        <strong>Beispiel-Ablauf:</strong><br>
+        1. Ins Textfeld tippen, Sprache über <code>🌐 PL</code> auf Polnisch stellen und auf das Mikrofon tippen.<br>
+        2. Sprechen: <em>„numerowanie wymiana zaworu trójdrogowego na zasilaniu pompy ciepła numerowanie odpowietrzenie układu i dobicie ciśnienia do półtora bara numerowanie próba szczelności i uruchomienie próbne bez błędów“</em><br>
+        3. Auf <strong>„✨ PL→DE“</strong> tippen → Die KI erstellt sofort einen fachgerechten deutschen Berichtstext.<br>
+        4. Das Ergebnis wird direkt ins Formular eingefügt.
+      </div>
+
+    </div>
+    <div class="dialog-actions" style="justify-content:flex-end;border-top:1px solid #eee">
+      <button type="button" class="primary" id="closeDictationGuideBtn">Schließen</button>
+    </div>
+  </div>
+</div>
+<script>
+(()=>{
+ const OFFICE_EMAIL='info@fubosol.de',STORAGE_KEY='fubosol_report_data',HISTORY_KEY='fubosol_pdf_history_v1',MAX_HISTORY=30;
+ // Czcionka 9.6 pt w PDF (lineHeight 1.15) -> 25 linii x 90 znaków mieści się czysto bez przewijania
+ const PDF_MAX_LINES=25,PDF_MAX_CHARS=90;
+ const modal=document.getElementById('signatureModal'),canvas=document.getElementById('signaturePad'),ctx=canvas.getContext('2d');
+ const target=document.getElementById('signTarget'),sigImg=document.getElementById('signatureImage');
+ const target2=document.getElementById('signTarget2'),sigImg2=document.getElementById('signatureImage2');
+ const toast=document.getElementById('toastMsg');
+ const sheetPage1=document.getElementById('sheetPage1'),sheetPage2=document.getElementById('sheetPage2'),page1Badge=document.getElementById('page1Badge');
+ const workdescPage1=document.getElementById('workdescPage1'),workdescPage2=document.getElementById('workdescPage2');
+ const historyList=document.getElementById('historyList'),historyCount=document.getElementById('historyCount');
+ let drawing=false,hasInk=false,previous=null,toastTimer=null;
+
+ const formSelector=document.getElementById('formSelector');
+ const placeholderWrap=document.getElementById('placeholderWrap');
+ const sheetWrapElement=document.getElementById('sheetWrap');
+ const controlsEl=document.querySelector('.controls');
+
+ function updateFormView(){
+   if(formSelector.value==='arbeitsbericht'){
+     sheetWrapElement.style.display='block';
+     controlsEl.style.display='flex';
+     placeholderWrap.style.display='none';
+   }else{
+     sheetWrapElement.style.display='none';
+     controlsEl.style.display='none';
+     placeholderWrap.style.display='block';
+   }
+   saveDraft();
+ }
+ formSelector.addEventListener('change',updateFormView);
+
+ const topHeader=document.getElementById('topHeader'),toggleMenuBtn=document.getElementById('toggleMenuBtn');
+ if(topHeader&&toggleMenuBtn){
+   toggleMenuBtn.addEventListener('click',()=>{
+     const collapsed=topHeader.classList.toggle('collapsed');
+     toggleMenuBtn.textContent=collapsed?'▼ Menü anzeigen':'▲ Menü ausblenden';
+   });
+ }
+
+ function showToast(msg){
+   if(!toast)return;
+   toast.textContent=msg;toast.classList.add('show');
+   if(toastTimer)clearTimeout(toastTimer);
+   toastTimer=setTimeout(()=>toast.classList.remove('show'),5000);
+ }
+
+ async function copyToClipboard(text){
+   try{
+     if(navigator.clipboard&&navigator.clipboard.writeText){
+       await navigator.clipboard.writeText(text);
+       return true;
+     }
+   }catch(e){}
+   try{
+     const ta=document.createElement('textarea');
+     ta.value=text;ta.style.position='fixed';ta.style.left='-9999px';ta.style.top='0';
+     document.body.appendChild(ta);ta.focus();ta.select();
+     const ok=document.execCommand('copy');ta.remove();
+     return ok;
+   }catch(e){return false}
+ }
+
+ function getFieldOnPage1(key){
+   const all=sheetPage1.querySelectorAll('[data-field]');
+   for(let i=0;i<all.length;i++){
+     if(all[i].dataset.field===key)return all[i];
+   }
+   return null;
+ }
+
+ function syncPage2Fields(){
+   document.querySelectorAll('[data-sync-field]').forEach(syncEl=>{
+     const key=syncEl.dataset.syncField;
+     const srcEl=getFieldOnPage1(key);
+     if(srcEl&&syncEl.value!==srcEl.value)syncEl.value=srcEl.value;
+   });
+   if(sigImg.src&&!sigImg.hidden){
+     sigImg2.src=sigImg.src;sigImg2.hidden=false;target2.classList.add('signed');
+   }else{
+     sigImg2.removeAttribute('src');sigImg2.hidden=true;target2.classList.remove('signed');
+   }
+ }
+
+ document.querySelectorAll('[data-sync-field]').forEach(syncEl=>{
+   const propagate=()=>{
+     const key=syncEl.dataset.syncField;
+     const srcEl=getFieldOnPage1(key);
+     if(srcEl){
+       srcEl.value=syncEl.value;
+       saveDraft();
+     }
+   };
+   syncEl.addEventListener('input',propagate);
+   syncEl.addEventListener('change',propagate);
+ });
+
+ function wrapLine(text,maxChars){
+   if(!text)return [''];
+   const words=text.split(/\s+/);const out=[];let line='';
+   for(const word of words){
+     if(word.length>maxChars){
+       if(line){out.push(line);line=''}
+       for(let i=0;i<word.length;i+=maxChars)out.push(word.slice(i,i+maxChars));
+     }else if(!line){line=word}
+     else if((line+' '+word).length<=maxChars){line+=' '+word}
+     else{out.push(line);line=word}
+   }
+   if(line)out.push(line);
+   return out.length?out:[''];
+ }
+
+ function getCanonicalLines(text){
+   const rawParts=(text||'').split(/\r?\n/);
+   const result=[];
+   for(let i=0;i<rawParts.length;i++){
+     result.push(...wrapLine(rawParts[i],PDF_MAX_CHARS));
+   }
+   return result;
+ }
+
+ function enforcePage1Overflow(autoFocus){
+   workdescPage1.scrollTop=0;
+   const lines=getCanonicalLines(workdescPage1.value);
+   if(lines.length>PDF_MAX_LINES){
+     const keepLines=lines.slice(0,PDF_MAX_LINES);
+     const overflowLines=lines.slice(PDF_MAX_LINES);
+     workdescPage1.value=keepLines.join('\n');
+     workdescPage1.scrollTop=0;
+     const existingP2=(workdescPage2.value||'').trim();
+     const overflowText=overflowLines.join('\n').trim();
+     if(overflowText){
+       workdescPage2.value=existingP2?(overflowText+'\n'+existingP2):overflowText;
+     }
+     syncPage2Fields();
+     sheetPage2.classList.remove('hidden-page');
+     if(page1Badge)page1Badge.hidden=false;
+     applyZoom();
+     if(autoFocus){
+       showToast('Seite 2 automatisch geöffnet – Text wird dort fortgesetzt.');
+       workdescPage2.focus();
+       workdescPage2.setSelectionRange(workdescPage2.value.length,workdescPage2.value.length);
+     }
+     return;
+   }
+
+   const hasP2Text=(workdescPage2.value||'').trim().length>0;
+   const isFullPage1=lines.length>=PDF_MAX_LINES;
+   if(isFullPage1||hasP2Text){
+     syncPage2Fields();
+     sheetPage2.classList.remove('hidden-page');
+     if(page1Badge)page1Badge.hidden=false;
+     applyZoom();
+   }else{
+     sheetPage2.classList.add('hidden-page');
+     if(page1Badge)page1Badge.hidden=true;
+   }
+ }
+
+ workdescPage1.addEventListener('input',()=>{
+   enforcePage1Overflow(true);
+   saveDraft();
+ });
+ workdescPage2.addEventListener('input',()=>{
+   enforcePage1Overflow(false);
+   saveDraft();
+ });
+
+ function sizeCanvas(restore){
+   const r=canvas.getBoundingClientRect(),dpr=Math.max(1,window.devicePixelRatio||1);
+   let temp=null;if(restore&&hasInk){temp=document.createElement('canvas');temp.width=canvas.width;temp.height=canvas.height;temp.getContext('2d').drawImage(canvas,0,0)}
+   canvas.width=Math.round(r.width*dpr);canvas.height=Math.round(r.height*dpr);
+   ctx.setTransform(dpr,0,0,dpr,0,0);ctx.lineWidth=2.4;ctx.lineCap='round';ctx.lineJoin='round';ctx.strokeStyle='#172033';ctx.fillStyle='#172033';
+   if(temp){ctx.drawImage(temp,0,0,r.width,r.height)}else{hasInk=false}
+   previous=null;
+ }
+
+ function openModal(){modal.classList.add('open');document.body.style.overflow='hidden';requestAnimationFrame(()=>sizeCanvas(false))}
+ function closeModal(){modal.classList.remove('open');document.body.style.overflow='';drawing=false}
+ window.addEventListener('resize',()=>{if(modal.classList.contains('open'))sizeCanvas(true)});
+
+ function point(e){const r=canvas.getBoundingClientRect();return{x:e.clientX-r.left,y:e.clientY-r.top}}
+ canvas.addEventListener('pointerdown',e=>{e.preventDefault();canvas.setPointerCapture(e.pointerId);drawing=true;previous=point(e);ctx.beginPath();ctx.arc(previous.x,previous.y,1.2,0,Math.PI*2);ctx.fill();hasInk=true});
+ canvas.addEventListener('pointermove',e=>{if(!drawing)return;e.preventDefault();const p=point(e);ctx.beginPath();ctx.moveTo(previous.x,previous.y);ctx.lineTo(p.x,p.y);ctx.stroke();previous=p;hasInk=true});
+ const stop=()=>{drawing=false;previous=null};canvas.addEventListener('pointerup',stop);canvas.addEventListener('pointercancel',stop);
+ document.getElementById('eraseBtn').addEventListener('click',()=>{ctx.clearRect(0,0,canvas.width,canvas.height);hasInk=false});
+ document.getElementById('cancelBtn').addEventListener('click',closeModal);
+
+ document.getElementById('saveBtn').addEventListener('click',()=>{
+   if(!hasInk){alert('Bitte unterschreiben Sie zuerst im Feld.');return}
+   const dataUrl=canvas.toDataURL('image/png');
+   sigImg.src=dataUrl;sigImg.hidden=false;target.classList.add('signed');
+   sigImg2.src=dataUrl;sigImg2.hidden=false;target2.classList.add('signed');
+   saveDraft();closeModal();
+ });
+ target.addEventListener('click',openModal);
+ target2.addEventListener('click',openModal);
+
+ function clearSignatureOnly(){
+   sigImg.removeAttribute('src');sigImg.hidden=true;target.classList.remove('signed');
+   sigImg2.removeAttribute('src');sigImg2.hidden=true;target2.classList.remove('signed');
+   saveDraft();
+ }
+ document.getElementById('clearSignatureBtn').addEventListener('click',clearSignatureOnly);
+
+ function clearEntireDocument(){
+   document.querySelectorAll('[data-field]').forEach(el=>{el.value=''});
+   document.querySelectorAll('[data-sync-field]').forEach(el=>{el.value=''});
+   document.getElementById('clientEmail').value='';
+   sigImg.removeAttribute('src');sigImg.hidden=true;target.classList.remove('signed');
+   sigImg2.removeAttribute('src');sigImg2.hidden=true;target2.classList.remove('signed');
+   sheetPage2.classList.add('hidden-page');
+   if(page1Badge)page1Badge.hidden=true;
+   localStorage.removeItem(STORAGE_KEY);
+ }
+
+ document.getElementById('clearBtn').addEventListener('click',()=>{
+   if(!confirm('Soll der gesamte Bericht einschließlich aller Eingaben, Auswahlfelder und der Unterschrift geleert werden?'))return;
+   clearEntireDocument();
+   showToast('Dokument geleert.');
+ });
+
+ const scale=document.getElementById('sigScale');
+ function updateScale(){
+   const val=Number(scale.value)/100;
+   target.style.setProperty('--sig-scale',val);
+   target2.style.setProperty('--sig-scale',val);
+   document.getElementById('scaleValue').textContent=Number(scale.value)+' %';
+   saveDraft();
+ }
+ scale.addEventListener('input',updateScale);
+
+ const datePicker=document.getElementById('nativeDatePicker');let activeDateField=null;
+ function getTodayISO(){const now=new Date();return String(now.getFullYear())+'-'+String(now.getMonth()+1).padStart(2,'0')+'-'+String(now.getDate()).padStart(2,'0')}
+ function toISODate(value){
+   const m=(value||'').trim().match(/^(\d{1,2})[/. -](\d{1,2})[/. -](\d{2,4})$/);if(!m)return '';
+   let year=Number(m[3]);if(m[3].length===2)year+=year>=70?1900:2000;
+   return String(year).padStart(4,'0')+'-'+m[2].padStart(2,'0')+'-'+m[1].padStart(2,'0');
+ }
+ function fromISODate(value){if(!value)return '';const [y,m,d]=value.split('-');return d+'.'+m+'.'+y.slice(-2)}
+
+ function clearSingleDateField(el){
+   if(!el)return;
+   el.value='';
+   if(el.dataset.syncField){
+     const src=getFieldOnPage1(el.dataset.syncField);
+     if(src)src.value='';
+   }
+   el.dispatchEvent(new Event('input',{bubbles:true}));
+   el.dispatchEvent(new Event('change',{bubbles:true}));
+   syncPage2Fields();
+   saveDraft();
+ }
+
+ let dateClearedByPicker=false;
+ document.querySelectorAll('[data-date-field="true"]').forEach(el=>{
+   el.addEventListener('click',()=>{
+     activeDateField=el;
+     dateClearedByPicker=false;
+     const existingISO=toISODate(el.value);
+     // Puste value pozwala odpalić input/change przy kliknięciu dzisiejszej daty lub przycisku "Dzisiaj"
+     datePicker.value=existingISO||'';
+     const rect=el.getBoundingClientRect();
+     datePicker.style.left=Math.max(0,rect.left)+'px';
+     datePicker.style.top=Math.max(0,rect.top)+'px';
+     try{if(datePicker.showPicker)datePicker.showPicker();else datePicker.click()}catch(err){datePicker.click()}
+   });
+   el.addEventListener('keydown',(e)=>{
+     if(e.key==='Backspace'||e.key==='Delete'){
+       e.preventDefault();
+       clearSingleDateField(el);
+       datePicker.value='';
+     }
+   });
+   el.addEventListener('blur',()=>{
+     const trimmed=(el.value||'').trim();
+     if(!trimmed){
+       clearSingleDateField(el);
+       return;
+     }
+     const iso=toISODate(trimmed);
+     if(iso)el.value=fromISODate(iso);
+     syncPage2Fields();
+     saveDraft();
+   });
+ });
+ function applyPickedDate(){
+   if(!activeDateField)return;
+   if(datePicker.value){
+     dateClearedByPicker=false;
+     activeDateField.value=fromISODate(datePicker.value);
+     activeDateField.dispatchEvent(new Event('input',{bubbles:true}));
+     activeDateField.dispatchEvent(new Event('change',{bubbles:true}));
+     syncPage2Fields();
+     saveDraft();
+   }else{
+     dateClearedByPicker=true;
+     clearSingleDateField(activeDateField);
+   }
+ }
+ datePicker.addEventListener('input',applyPickedDate);
+ datePicker.addEventListener('change',applyPickedDate);
+ datePicker.addEventListener('blur',()=>{
+   if(activeDateField&&!dateClearedByPicker&&datePicker.value){
+     applyPickedDate();
+   }
+ });
+
+ function parseTimeIntervals(val){
+   if(!val)return{formatted:val,hours:''};
+   const segments=val.trim().split(/\s*;\s*/);
+   const formattedSegs=[];let totalMin=0,found=false;
+   for(const seg of segments){
+     const m=seg.match(/^\s*([0-9]{1,2}[:.][0-9]{2}|[0-9]{3,4}|[0-9]{1,2})\s*[-–—]\s*([0-9]{1,2}[:.][0-9]{2}|[0-9]{3,4}|[0-9]{1,2})(?:\s+(.*)|\s*(.*))?$/);
+     if(m){
+       found=true;
+       const parseSingle=s=>{
+         s=s.replace('.',':');
+         if(s.includes(':')){const[h,mn]=s.split(':');return[parseInt(h,10),parseInt(mn,10)]}
+         if(s.length===4)return[parseInt(s.slice(0,2),10),parseInt(s.slice(2),10)];
+         if(s.length===3)return[parseInt(s.slice(0,1),10),parseInt(s.slice(1),10)];
+         return[parseInt(s,10),0];
+       };
+       const[h1,m1]=parseSingle(m[1]),[h2,m2]=parseSingle(m[2]);
+       const rest=(m[3]||m[4]||'').trim();
+       let diff=(h2*60+m2)-(h1*60+m1);if(diff<0)diff+=1440;
+       totalMin+=diff;
+       const s1=String(h1).padStart(2,'0')+':'+String(m1).padStart(2,'0');
+       const s2=String(h2).padStart(2,'0')+':'+String(m2).padStart(2,'0');
+       formattedSegs.push(s1+'-'+s2+(rest?' '+rest:''));
+     }else{
+       formattedSegs.push(seg);
+     }
+   }
+   const resHours=found?String(parseFloat((totalMin/60).toFixed(2))):'';
+   return{formatted:formattedSegs.join('; '),hours:resHours};
+ }
+
+ for(let i=1;i<=6;i++){
+   const timeInp=getFieldOnPage1('Arbeitszeit von-bis-'+i);
+   const hoursInp=getFieldOnPage1('Arbeitsstunden-'+i);
+   if(timeInp&&hoursInp){
+     timeInp.addEventListener('blur',()=>{
+       const parsed=parseTimeIntervals(timeInp.value);
+       timeInp.value=parsed.formatted;
+       if(parsed.hours&&(!hoursInp.value||!isNaN(hoursInp.value)))hoursInp.value=parsed.hours;
+       syncPage2Fields();
+       saveDraft();
+     });
+   }
+   const timeInp2=sheetPage2.querySelector('[data-sync-field="Arbeitszeit von-bis-'+i+'"]');
+   if(timeInp2&&timeInp&&hoursInp){
+     timeInp2.addEventListener('blur',()=>{
+       const parsed=parseTimeIntervals(timeInp2.value);
+       timeInp.value=parsed.formatted;
+       if(parsed.hours&&(!hoursInp.value||!isNaN(hoursInp.value)))hoursInp.value=parsed.hours;
+       syncPage2Fields();
+       saveDraft();
+     });
+   }
+ }
+
+ /* --- Historia zapisanych PDF-ów --- */
+ function getPdfHistory(){
+   try{
+     const raw=localStorage.getItem(HISTORY_KEY);
+     const parsed=raw?JSON.parse(raw):[];
+     return Array.isArray(parsed)?parsed:[];
+   }catch(e){return []}
+ }
+
+ function savePdfHistory(items){
+   try{
+     localStorage.setItem(HISTORY_KEY,JSON.stringify(items.slice(0,MAX_HISTORY)));
+   }catch(e){}
+ }
+
+ function base64ToBlob(base64,mime){
+   const bin=atob(base64);
+   const len=bin.length;
+   const arr=new Uint8Array(len);
+   for(let i=0;i<len;i++)arr[i]=bin.charCodeAt(i);
+   return new Blob([arr],{type:mime||'application/pdf'});
+ }
+
+ function blobToBase64(blob){
+   return new Promise((resolve,reject)=>{
+     const reader=new FileReader();
+     reader.onload=()=>{
+       const res=String(reader.result||'');
+       const idx=res.indexOf(',');
+       resolve(idx>=0?res.slice(idx+1):res);
+     };
+     reader.onerror=reject;
+     reader.readAsDataURL(blob);
+   });
+ }
+
+ function collectSnapshot(){
+   const fields={};
+   document.querySelectorAll('[data-field]').forEach(el=>{fields[el.dataset.field]=el.value});
+   return {
+     fields,
+     email:document.getElementById('clientEmail').value,
+     sigScale:scale.value,
+     sigImg:sigImg.src||'',
+     selectedForm:formSelector.value
+   };
+ }
+
+ async function recordPdfInHistory(blob,fileName,pagesCount){
+   try{
+     const baustelle=[1,2,3].map(n=>(getFieldOnPage1('Baustelle-'+n)?.value||'').trim()).filter(Boolean).join(' ');
+     const auftraggeber=[1,2,3].map(n=>(getFieldOnPage1('Auftraggeber-'+n)?.value||'').trim()).filter(Boolean).join(' ');
+     const dateVal=(getFieldOnPage1('Datum-1')?.value||getFieldOnPage1('Datum Unterschrift')?.value||'').trim();
+     const hoursSum=[1,2,3,4,5,6].reduce((acc,n)=>{
+       const v=parseFloat((getFieldOnPage1('Arbeitsstunden-'+n)?.value||'').replace(',','.'));
+       return acc+(isNaN(v)?0:v);
+     },0);
+     const pdfBase64=await blobToBase64(blob);
+     const entry={
+       id:Date.now()+'_'+Math.random().toString(36).slice(2,7),
+       createdAt:new Date().toLocaleString('de-DE'),
+       fileName,
+       pagesCount:pagesCount||1,
+       baustelle:baustelle||'Ohne Baustelle',
+       auftraggeber:auftraggeber||'Ohne Auftraggeber',
+       dateVal,
+       hoursSum:hoursSum?String(parseFloat(hoursSum.toFixed(2))):'0',
+       pdfBase64,
+       snapshot:collectSnapshot()
+     };
+     const items=getPdfHistory();
+     items.unshift(entry);
+     savePdfHistory(items);
+     renderPdfHistory();
+   }catch(e){}
+ }
+
+ function openHistoryPdf(entryId){
+   const item=getPdfHistory().find(x=>x.id===entryId);
+   if(!item||!item.pdfBase64)return;
+   const blob=base64ToBlob(item.pdfBase64,'application/pdf');
+   const url=URL.createObjectURL(blob);
+   window.open(url,'_blank','noopener');
+   setTimeout(()=>URL.revokeObjectURL(url),60000);
+ }
+
+ function downloadHistoryPdf(entryId){
+   const item=getPdfHistory().find(x=>x.id===entryId);
+   if(!item||!item.pdfBase64)return;
+   const blob=base64ToBlob(item.pdfBase64,'application/pdf');
+   downloadBlob(blob,item.fileName||'Bericht.pdf');
+ }
+
+ function loadHistoryIntoForm(entryId){
+   const item=getPdfHistory().find(x=>x.id===entryId);
+   if(!item||!item.snapshot)return;
+   const s=item.snapshot;
+   document.querySelectorAll('[data-field]').forEach(el=>{
+     el.value=s.fields&&s.fields[el.dataset.field]!==undefined?s.fields[el.dataset.field]:'';
+   });
+   document.getElementById('clientEmail').value=s.email||'';
+   if(s.sigScale){scale.value=s.sigScale;updateScale()}
+   if(s.sigImg){
+     sigImg.src=s.sigImg;sigImg.hidden=false;target.classList.add('signed');
+     sigImg2.src=s.sigImg;sigImg2.hidden=false;target2.classList.add('signed');
+   }else{
+     clearSignatureOnly();
+   }
+   if(s.selectedForm)formSelector.value=s.selectedForm;
+   updateFormView();
+   syncPage2Fields();
+   enforcePage1Overflow(false);
+   saveDraft();
+   window.scrollTo({top:0,behavior:'smooth'});
+   showToast('Bericht aus Historie ins Formular geladen.');
+ }
+
+ function deleteHistoryItem(entryId){
+   const filtered=getPdfHistory().filter(x=>x.id!==entryId);
+   savePdfHistory(filtered);
+   renderPdfHistory();
+ }
+
+ function renderPdfHistory(){
+   const items=getPdfHistory();
+   if(historyCount)historyCount.textContent=items.length+(items.length===1?' Eintrag':' Einträge');
+   if(!historyList)return;
+   if(!items.length){
+     historyList.innerHTML='<div class="history-empty">Noch keine gespeicherten PDF-Berichte vorhanden.</div>';
+     return;
+   }
+   historyList.innerHTML=items.map(item=>{
+     const metaParts=[item.createdAt];
+     if(item.dateVal)metaParts.push('Datum: '+item.dateVal);
+     if(item.hoursSum&&item.hoursSum!=='0')metaParts.push(item.hoursSum+' Std.');
+     metaParts.push(item.pagesCount+' S.');
+     return `<div class="history-item">
+       <div class="history-info">
+         <div class="history-title">${escapeHtml(item.auftraggeber)} · ${escapeHtml(item.baustelle)}</div>
+         <div class="history-sub">${escapeHtml(metaParts.join(' · '))} · ${escapeHtml(item.fileName)}</div>
+       </div>
+       <div class="history-actions">
+         <button type="button" class="secondary" data-hist-open="${item.id}">Öffnen</button>
+         <button type="button" class="secondary" data-hist-dl="${item.id}">PDF</button>
+         <button type="button" class="secondary" data-hist-load="${item.id}">In Formular</button>
+         <button type="button" class="danger" data-hist-del="${item.id}">✕</button>
+       </div>
+     </div>`;
+   }).join('');
+ }
+
+ function escapeHtml(str){
+   return String(str||'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+ }
+
+ if(historyList){
+   historyList.addEventListener('click',e=>{
+     const btn=e.target.closest('button');
+     if(!btn)return;
+     if(btn.dataset.histOpen)openHistoryPdf(btn.dataset.histOpen);
+     else if(btn.dataset.histDl)downloadHistoryPdf(btn.dataset.histDl);
+     else if(btn.dataset.histLoad)loadHistoryIntoForm(btn.dataset.histLoad);
+     else if(btn.dataset.histDel)deleteHistoryItem(btn.dataset.histDel);
+   });
+ }
+
+ document.getElementById('clearHistoryBtn').addEventListener('click',(e)=>{
+   e.preventDefault();
+   e.stopPropagation();
+   if(!getPdfHistory().length)return;
+   if(!confirm('Soll die gesamte PDF-Historie auf diesem Gerät gelöscht werden?'))return;
+   localStorage.removeItem(HISTORY_KEY);
+   renderPdfHistory();
+   showToast('PDF-Historie gelöscht.');
+ });
+
+ function saveDraft(){
+   const data=collectSnapshot();
+   try{localStorage.setItem(STORAGE_KEY,JSON.stringify(data))}catch(e){}
+ }
+ function loadDraft(){
+   try{
+     const raw=localStorage.getItem(STORAGE_KEY);if(!raw)return;
+     const data=JSON.parse(raw);
+     if(data.fields){document.querySelectorAll('[data-field]').forEach(el=>{if(data.fields[el.dataset.field]!==undefined)el.value=data.fields[el.dataset.field]})}
+     if(data.email)document.getElementById('clientEmail').value=data.email;
+     if(data.sigScale){scale.value=data.sigScale;updateScale()}
+     if(data.sigImg){
+       sigImg.src=data.sigImg;sigImg.hidden=false;target.classList.add('signed');
+       sigImg2.src=data.sigImg;sigImg2.hidden=false;target2.classList.add('signed');
+     }
+     if(data.selectedForm)formSelector.value=data.selectedForm;
+     if(formSelector.value==='arbeitsbericht'){
+       sheetWrapElement.style.display='block';
+       controlsEl.style.display='flex';
+       placeholderWrap.style.display='none';
+     }else{
+       sheetWrapElement.style.display='none';
+       controlsEl.style.display='none';
+       placeholderWrap.style.display='block';
+     }
+     syncPage2Fields();
+     enforcePage1Overflow(false);
+   }catch(e){}
+ }
+ document.querySelectorAll('[data-field],#clientEmail').forEach(el=>{
+   el.addEventListener('input',()=>{syncPage2Fields();saveDraft()});
+   el.addEventListener('change',()=>{syncPage2Fields();saveDraft()});
+ });
+
+ document.getElementById('printBtn').addEventListener('click',()=>{
+   syncPage2Fields();
+   window.print();
+ });
+
+ function filename(){
+   const customer=[...sheetPage1.querySelectorAll('[data-field^="Auftraggeber-"]')].map(e=>e.value.trim()).filter(Boolean).join(' ');
+   const safe=(customer||'Ohne Auftraggeber').replace(/[\\/:*?"<>|]/g,'-').replace(/\s+/g,' ').trim();
+   return 'Arbeits - Regiebericht - '+safe+'.pdf';
+ }
+
+ async function makePdfBlob(){
+   syncPage2Fields();
+   const activeSheets=[sheetPage1];
+   if(!sheetPage2.classList.contains('hidden-page'))activeSheets.push(sheetPage2);
+
+   const base=sheetPage1.querySelector('.form-image');
+   if(!base.complete||!base.naturalWidth)await new Promise((resolve,reject)=>{base.onload=resolve;base.onerror=reject});
+
+   const map={
+     '€':0x80,'‚':0x82,'ƒ':0x83,'„':0x84,'…':0x85,'†':0x86,'‡':0x87,'ˆ':0x88,'‰':0x89,'Š':0x8A,'‹':0x8B,'Œ':0x8C,'Ž':0x8E,
+     '‘':0x91,'’':0x92,'“':0x93,'”':0x94,'•':0x95,'–':0x96,'—':0x97,'˜':0x98,'™':0x99,'š':0x9A,'›':0x9B,'œ':0x9C,'ž':0x9E,'Ÿ':0x9F,
+     'Ą':0x82,'ą':0x83,'Ć':0x84,'ć':0x85,'Ę':0x86,'ę':0x87,'Ł':0x88,'ł':0x89,'Ń':0x8A,'ń':0x8B,'Ś':0x8C,'ś':0x8D,'Ź':0x8E,'ź':0x8F,'Ż':0x90,'ż':0x91
+   };
+   function winAnsiHex(str){
+     let out='';
+     for(let i=0;i<str.length;i++){
+       const ch=str[i];let n=map[ch];
+       if(n===undefined){const cp=ch.codePointAt(0);n=cp<=255?cp:63}
+       out+=n.toString(16).padStart(2,'0');
+     }
+     return out.toUpperCase();
+   }
+
+   const W=1654,H=Math.round(W*3508/2481);
+   const pageW=595.28,pageH=841.89;
+   const pageDataList=[];
+
+   for(let pIdx=0;pIdx<activeSheets.length;pIdx++){
+     const sheet=activeSheets[pIdx];
+     const sheetImg=sheet.querySelector('.form-image');
+     if(!sheetImg.complete||!sheetImg.naturalWidth)await new Promise((resolve,reject)=>{sheetImg.onload=resolve;sheetImg.onerror=reject});
+
+     const prevZoom=sheet.style.zoom;sheet.style.zoom='1';
+     const sr=sheet.getBoundingClientRect();
+     const cv=document.createElement('canvas');cv.width=W;cv.height=H;
+     const c=cv.getContext('2d');c.fillStyle='#fff';c.fillRect(0,0,W,H);c.drawImage(sheetImg,0,0,W,H);
+
+     const sign=sheet.querySelector('.sign-target img'),signTgt=sheet.querySelector('.sign-target');
+     if(sign&&!sign.hidden&&sign.complete&&sign.naturalWidth){
+       const r=signTgt.getBoundingClientRect(),sx=W/sr.width,sy=H/sr.height;
+       const cx=(r.left-sr.left+r.width/2)*sx,cy=(r.top-sr.top+r.height/2)*sy;
+       const bw=r.width*sx,bh=r.height*sy,extra=Number(scale.value)/100;
+       const fit=Math.min(bw*1.3*extra/sign.naturalWidth,bh*1.3*extra/sign.naturalHeight);
+       const dw=sign.naturalWidth*fit,dh=sign.naturalHeight*fit;
+       c.drawImage(sign,cx-dw/2,cy-dh/2,dw,dh);
+     }
+     const jpg=atob(cv.toDataURL('image/jpeg',.94).split(',')[1]);
+
+     const sx=pageW/sr.width,sy=pageH/sr.height;
+     const imName='Im'+pIdx;
+     let content='q '+pageW+' 0 0 '+pageH+' 0 0 cm /'+imName+' Do Q\n';
+     const pdfText=(text,x,y,size)=>{if(!text)return;content+='BT /F1 '+size.toFixed(2)+' Tf 1 0 0 1 '+x.toFixed(2)+' '+y.toFixed(2)+' Tm <'+winAnsiHex(text)+'> Tj ET\n'};
+
+     if(activeSheets.length>1){
+       pdfText('Seite '+(pIdx+1)+' / '+activeSheets.length,pageW-82,pageH-138,9.5);
+     }
+
+     const controls=[...sheet.querySelectorAll('.field,.worktable input,.workdesc')];
+     for(const el of controls){
+       let value=(el.value||'').trim();if(!value)continue;
+       if(el.dataset.dateField==='true'){
+         const m=value.match(/^(\d{1,2})[/. -](\d{1,2})[/. -](\d{2,4})$/);
+         if(m)value=m[1].padStart(2,'0')+'.'+m[2].padStart(2,'0')+'.'+m[3].slice(-2);
+       }
+       const r=el.getBoundingClientRect(),x=(r.left-sr.left)*sx,y=(r.top-sr.top)*sy,w=r.width*sx,h=r.height*sy;
+       const fs=9.6;
+       const pad=el.classList.contains('workdesc')?2.0:(el.dataset.dateField==='true'&&el.closest('.worktable')?1.8:2.8);
+       const maxChars=el.tagName==='TEXTAREA'?PDF_MAX_CHARS:Math.max(1,Math.floor((w-pad*2)/(fs*.51)));
+       let lines=[];
+       if(el.tagName==='TEXTAREA'){
+         const rawParts=value.split(/\r?\n/);
+         for(let j=0;j<rawParts.length;j++){lines.push(...wrapLine(rawParts[j],maxChars))}
+       }else{lines=[value]}
+       const lineH=el.tagName==='TEXTAREA'?(fs*1.15):(fs*1.28);
+       let baseline=el.tagName==='TEXTAREA'?(pageH-y-fs*0.98):(pageH-(y+(h+fs*.68)/2));
+       for(let i=0;i<lines.length;i++){
+         if(el.tagName==='TEXTAREA'&&i>=PDF_MAX_LINES)break;
+         pdfText(lines[i],x+pad,baseline-i*lineH,fs);
+       }
+     }
+     sheet.style.zoom=prevZoom;
+     pageDataList.push({jpg,content,imName});
+   }
+
+   const objects=[];
+   const fontObjId=3;
+   const kidsRefs=[];
+   let nextObjId=4;
+
+   for(let i=0;i<pageDataList.length;i++){
+     const p=pageDataList[i];
+     const pageObjId=nextObjId++;
+     const imgObjId=nextObjId++;
+     const contentObjId=nextObjId++;
+     kidsRefs.push(pageObjId+' 0 R');
+
+     objects[pageObjId]='<< /Type /Page /Parent 2 0 R /MediaBox [0 0 '+pageW+' '+pageH+'] /Resources << /XObject << /'+p.imName+' '+imgObjId+' 0 R >> /Font << /F1 '+fontObjId+' 0 R >> >> /Contents '+contentObjId+' 0 R >>';
+     objects[imgObjId]='<< /Type /XObject /Subtype /Image /Width '+W+' /Height '+H+' /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length '+p.jpg.length+' >>\nstream\n'+p.jpg+'\nendstream';
+     objects[contentObjId]='<< /Length '+p.content.length+' >>\nstream\n'+p.content+'endstream';
+   }
+
+   objects[1]='<< /Type /Catalog /Pages 2 0 R >>';
+   objects[2]='<< /Type /Pages /Kids ['+kidsRefs.join(' ')+'] /Count '+pageDataList.length+' >>';
+   objects[fontObjId]='<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding << /Type /Encoding /BaseEncoding /WinAnsiEncoding /Differences [ 130 /Aogonek /aogonek /Cacute /cacute /Eogonek /eogonek /Lslash /lslash /Nacute /nacute /Sacute /sacute /Zacute /zacute /Zdotaccent /zdotaccent ] >> >>';
+
+   const totalObjs=nextObjId-1;
+   let pdf='%PDF-1.4\n%\xE2\xE3\xCF\xD3\n',offsets=[0];
+   for(let i=1;i<=totalObjs;i++){offsets[i]=pdf.length;pdf+=i+' 0 obj\n'+objects[i]+'\nendobj\n'}
+   const xref=pdf.length;
+   pdf+='xref\n0 '+(totalObjs+1)+'\n0000000000 65535 f \n';
+   for(let i=1;i<=totalObjs;i++)pdf+=String(offsets[i]).padStart(10,'0')+' 00000 n \n';
+   pdf+='trailer\n<< /Size '+(totalObjs+1)+' /Root 1 0 R >>\nstartxref\n'+xref+'\n%%EOF';
+   const bytes=new Uint8Array(pdf.length);
+   for(let i=0;i<pdf.length;i++)bytes[i]=pdf.charCodeAt(i)&255;
+   return {blob:new Blob([bytes],{type:'application/pdf'}),pagesCount:pageDataList.length};
+ }
+
+ function downloadBlob(blob,name){
+   const url=URL.createObjectURL(blob),a=document.createElement('a');
+   a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();
+   setTimeout(()=>URL.revokeObjectURL(url),30000);
+ }
+
+ document.getElementById('savePdfBtn').addEventListener('click',async()=>{
+   try{
+     const name=filename();
+     const {blob,pagesCount}=await makePdfBlob();
+     await recordPdfInHistory(blob,name,pagesCount);
+     downloadBlob(blob,name);
+     clearSignatureOnly();
+     showToast('PDF gespeichert & in Historie abgelegt. Unterschrift gelöscht.');
+   }
+   catch(e){alert('PDF konnte nicht erstellt werden. Bitte versuchen Sie es erneut oder nutzen Sie „Drucken“.')}
+ });
+
+ function buildMailSubject(pdfName){
+   const base=pdfName.replace(/\.pdf$/i,'').replace(/[^A-Za-z0-9äöüÄÖÜß._ -]/g,' ').replace(/\s+/g,' ').trim();
+   return (base||'Arbeits- und Regiebericht').slice(0,120);
+ }
+
+ async function sendReportViaEmail(){
+   const client=document.getElementById('clientEmail').value.trim();
+   const recipients=[OFFICE_EMAIL,client].filter(Boolean);
+   const clipboardRecipients=recipients.join(', ');
+   const name=filename();
+   const mailSubject=buildMailSubject(name);
+   const mailBody='Guten Tag,\n\nanbei erhalten Sie den ausgefüllten Arbeits- und Regiebericht.';
+
+   await copyToClipboard(clipboardRecipients);
+   showToast('📋 Kopiert: '+clipboardRecipients+' (Im Feld „An“ einfügen)');
+
+   try{
+     const {blob,pagesCount}=await makePdfBlob();
+     await recordPdfInHistory(blob,name,pagesCount);
+     const file=new File([blob],name,{type:'application/pdf'});
+
+     if(navigator.canShare&&navigator.canShare({files:[file]})){
+       await navigator.share({
+         files:[file],
+         title:mailSubject,
+         text:mailBody+'\n\nEmpfänger: '+clipboardRecipients
+       });
+       clearSignatureOnly();
+       showToast('E-Mail vorbereitet & in Historie abgelegt. Unterschrift gelöscht.');
+       return;
+     }
+
+     downloadBlob(blob,name);
+     const subjectParam=encodeURIComponent(mailSubject);
+     const bodyParam=encodeURIComponent(mailBody+'\n(Bitte die PDF-Datei als Anhang hinzufügen.)');
+     const mailtoUrl='mailto:'+recipients.map(r=>encodeURIComponent(r)).join(',')+'?subject='+subjectParam+'&body='+bodyParam;
+     window.location.href=mailtoUrl;
+     clearSignatureOnly();
+   }catch(e){
+     if(e&&e.name==='AbortError')return;
+     alert('Die E-Mail-Freigabe war nicht möglich. Empfänger in Zwischenablage: '+clipboardRecipients);
+   }
+ }
+
+ async function sendReportViaWhatsApp(){
+   const name=filename();
+   const title=buildMailSubject(name);
+   const msgText='Arbeits- und Regiebericht: '+title+' ('+OFFICE_EMAIL+')';
+
+   try{
+     const {blob,pagesCount}=await makePdfBlob();
+     await recordPdfInHistory(blob,name,pagesCount);
+     const file=new File([blob],name,{type:'application/pdf'});
+
+     if(navigator.canShare&&navigator.canShare({files:[file]})){
+       await navigator.share({
+         files:[file],
+         title:title,
+         text:msgText
+       });
+       clearSignatureOnly();
+       showToast('WhatsApp-Freigabe geöffnet & in Historie abgelegt. Unterschrift gelöscht.');
+       return;
+     }
+
+     downloadBlob(blob,name);
+     const waUrl='https://wa.me/?text='+encodeURIComponent(msgText+' — Bitte heruntergeladene PDF anhängen.');
+     window.open(waUrl,'_blank','noopener');
+     clearSignatureOnly();
+     showToast('PDF heruntergeladen & WhatsApp geöffnet. Unterschrift gelöscht.');
+   }catch(e){
+     if(e&&e.name==='AbortError')return;
+     const waUrl='https://wa.me/?text='+encodeURIComponent(msgText);
+     window.open(waUrl,'_blank','noopener');
+   }
+ }
+
+ document.getElementById('emailBtn').addEventListener('click',sendReportViaEmail);
+ document.getElementById('whatsappBtn').addEventListener('click',sendReportViaWhatsApp);
+
+ const zoom=document.getElementById('zoomScale'),zoomValue=document.getElementById('zoomValue'),sheetWrap=document.getElementById('sheetWrap');
+ function applyZoom(){
+   const z=Number(zoom.value)/100;
+   zoomValue.textContent=zoom.value+' %';
+   const wrapW=sheetWrap.clientWidth||Math.min(window.innerWidth-12,1000);
+   const base=Math.min(wrapW,794);
+   document.querySelectorAll('.sheet').forEach(s=>{
+     s.style.width=base+'px';
+     s.style.setProperty('--scale',String(base/794));
+     s.style.zoom=String(z);
+   });
+ }
+ zoom.addEventListener('input',applyZoom);
+ window.addEventListener('resize',()=>{requestAnimationFrame(applyZoom)});
+ if(window.screen&&window.screen.orientation){
+   window.screen.orientation.addEventListener('change',()=>{setTimeout(applyZoom,120)});
+ }
+
+ modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('open'))closeModal()});
+
+
+ /* --- Schwebende Spracheingabe & Sprachbefehle (DE / PL) --- */
+ const floatingVoicePill=document.getElementById('floatingVoicePill');
+ const dictateBtn=document.getElementById('dictateBtn');
+ const dictateLangBtn=document.getElementById('dictateLangBtn');
+ const MIC_SVG='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.91-3c-.49 0-.9.36-.98.85C16.52 14.2 14.47 16 12 16s-4.52-1.8-4.93-4.15c-.08-.49-.49-.85-.98-.85-.61 0-1.09.54-1 1.14.49 3 2.89 5.35 5.91 5.78V20c0 .55.45 1 1 1s1-.45 1-1v-2.08c3.02-.43 5.42-2.78 5.91-5.78.1-.6-.39-1.14-1-1.14z"/></svg>';
+ const STOP_SVG='<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2"/></svg>';
+
+ let currentDictateLang='pl-PL';
+ if(dictateLangBtn)dictateLangBtn.textContent='🌐 PL';
+
+ let lastActiveTextTarget=null;
+ let listCounter=1;
+ let isApplyingVoiceTransform=false;
+ let hidePillTimer=null;
+
+ function positionFloatingVoicePill(el){
+   if(!floatingVoicePill||!el)return;
+   const rect=el.getBoundingClientRect();
+   if(!rect.width&&!rect.height)return;
+   floatingVoicePill.classList.add('visible');
+   const pillW=floatingVoicePill.offsetWidth||110;
+   const pillH=floatingVoicePill.offsetHeight||36;
+   let left=rect.right-pillW-4;
+   let top=rect.top-pillH-4;
+   if(top<6)top=Math.min(window.innerHeight-pillH-6,rect.bottom+4);
+   left=Math.max(6,Math.min(window.innerWidth-pillW-6,left));
+   floatingVoicePill.style.left=Math.round(left)+'px';
+   floatingVoicePill.style.top=Math.round(top)+'px';
+ }
+
+ function hideFloatingVoicePill(){
+   if(isRecording)return;
+   if(floatingVoicePill)floatingVoicePill.classList.remove('visible');
+ }
+
+ if(floatingVoicePill){
+   floatingVoicePill.addEventListener('pointerdown',(e)=>{
+     e.preventDefault();
+   });
+ }
+
+ document.querySelectorAll('textarea, input[type="text"], input:not([type])').forEach(el=>{
+   if(el.dataset.dateField==='true'||el.readOnly)return;
+   el.addEventListener('focus',()=>{
+     if(hidePillTimer){clearTimeout(hidePillTimer);hidePillTimer=null}
+     lastActiveTextTarget=el;
+     if(el===workdescPage1&&!el.value.trim())listCounter=1;
+     positionFloatingVoicePill(el);
+   });
+   el.addEventListener('click',()=>{
+     if(hidePillTimer){clearTimeout(hidePillTimer);hidePillTimer=null}
+     lastActiveTextTarget=el;
+     positionFloatingVoicePill(el);
+   });
+   el.addEventListener('blur',()=>{
+     hidePillTimer=setTimeout(()=>{
+       const active=document.activeElement;
+       if(!active||(active.tagName!=='TEXTAREA'&&active.tagName!=='INPUT')){
+         hideFloatingVoicePill();
+       }
+     },180);
+   });
+ });
+
+ window.addEventListener('scroll',()=>{
+   if(floatingVoicePill&&floatingVoicePill.classList.contains('visible')&&lastActiveTextTarget){
+     positionFloatingVoicePill(lastActiveTextTarget);
+   }
+ },true);
+ window.addEventListener('resize',()=>{
+   if(floatingVoicePill&&floatingVoicePill.classList.contains('visible')&&lastActiveTextTarget){
+     positionFloatingVoicePill(lastActiveTextTarget);
+   }
+ });
+
+ function applyVoiceCommands(rawText,isLiveKeyboard){
+   if(!rawText)return rawText;
+   let t=rawText;
+
+   const numRegex=/(?:^|\s)(?:nummerierung|aufzählung|punktowanie|numerowanie)(?=$|\s|[.,!?;:])/gi;
+   t=t.replace(numRegex,(match,offset,fullStr)=>{
+     const prefix=fullStr.slice(0,offset);
+     const needsNewline=prefix.length>0&&!prefix.endsWith('\n');
+     const item=(needsNewline?'\n':'')+listCounter+'. ';
+     listCounter++;
+     return item;
+   });
+
+   t=t.replace(/(?:^|\s)(?:spiegelstrich|bindestrich|punkt od myślnika|podpunkt|myślnik)(?=$|\s|[.,!?;:])/gi,(match,offset,fullStr)=>{
+     const prefix=fullStr.slice(0,offset);
+     const needsNewline=prefix.length>0&&!prefix.endsWith('\n');
+     return (needsNewline?'\n':'')+'- ';
+   });
+
+   t=t.replace(/(?:^|\s)(?:neue zeile|neuer absatz|absatz|nowa linia|nowy wiersz|enter)(?=$|\s|[.,!?;:])/gi,'\n');
+
+   if(!isLiveKeyboard){
+     t=t.replace(/\s+(?:satzpunkt|punkt|kropka)(?=$|\s|[.,!?;:])/gi,'.');
+     t=t.replace(/^(?:satzpunkt|punkt|kropka)(?=$|\s)/gi,'.');
+   }else{
+     t=t.replace(/\s+(?:satzpunkt|kropka)(?=$|\s|[.,!?;:])/gi,'.');
+   }
+   t=t.replace(/\s+(?:komma|przecinek)(?=$|\s|[.,!?;:])/gi,',');
+   t=t.replace(/\s+(?:doppelpunkt|dwukropek)(?=$|\s|[.,!?;:])/gi,':');
+   t=t.replace(/\s+(?:semikolon|średnik)(?=$|\s|[.,!?;:])/gi,';');
+   t=t.replace(/\s+(?:fragezeichen|znak zapytania|pytajnik)(?=$|\s|[.,!?;:])/gi,'?');
+   t=t.replace(/\s+(?:ausrufezeichen|wykrzyknik)(?=$|\s|[.,!?;:])/gi,'!');
+   t=t.replace(/\s+(?:schrägstrich|ukośnik)(?=$|\s|[.,!?;:])/gi,'/');
+
+   t=t.replace(/ +([.,:;?!])/g,'$1');
+   t=t.replace(/([.,:;?!])([A-Za-zÄÖÜäöüßĄĆĘŁŃÓŚŹŻąćęłńóśźż])/g,'$1 $2');
+   t=t.replace(/\n +/g,'\n');
+   t=t.replace(/(^|[.!?]\s+|\n(?:- |\d+\. )?)([a-zäöüßąćęłńóśźż])/g,(m,p1,p2)=>p1+p2.toUpperCase());
+   return t;
+ }
+
+ [workdescPage1,workdescPage2].forEach(ta=>{
+   ta.addEventListener('input',()=>{
+     if(isApplyingVoiceTransform)return;
+     const val=ta.value;
+     if(/(?:nummerierung|aufzählung|punktowanie|numerowanie|spiegelstrich|bindestrich|punkt od myślnika|podpunkt|myślnik|neue zeile|neuer absatz|nowa linia|nowy wiersz|satzpunkt|kropka|przecinek|dwukropek|średnik|znak zapytania|wykrzyknik|ukośnik)(?:\s|[.,!?;:])$/i.test(val)){
+       isApplyingVoiceTransform=true;
+       ta.value=applyVoiceCommands(val,true);
+       isApplyingVoiceTransform=false;
+       enforcePage1Overflow(ta===workdescPage1);
+       saveDraft();
+     }
+   });
+ });
+
+ function insertDictatedSegment(rawTranscript){
+   const targetEl=(lastActiveTextTarget&&document.body.contains(lastActiveTextTarget))?lastActiveTextTarget:workdescPage1;
+   const current=targetEl.value||'';
+   let combined=current;
+   if(combined&&!combined.endsWith('\n')&&!combined.endsWith(' ')&&!/^(?:punkt|kropka|komma|przecinek|doppelpunkt|dwukropek|semikolon|średnik|fragezeichen|znak zapytania|ausrufezeichen|wykrzyknik|neue zeile|nowa linia|spiegelstrich|myślnik|nummerierung|punktowanie|numerowanie)/i.test(rawTranscript.trim())){
+     combined+=' ';
+   }
+   combined+=rawTranscript.trim();
+   isApplyingVoiceTransform=true;
+   targetEl.value=applyVoiceCommands(combined,false);
+   isApplyingVoiceTransform=false;
+
+   if(targetEl===workdescPage1||targetEl===workdescPage2){
+     enforcePage1Overflow(targetEl===workdescPage1);
+     if(lastActiveTextTarget)positionFloatingVoicePill(lastActiveTextTarget);
+   }else if(targetEl.dataset.syncField){
+     const src=getFieldOnPage1(targetEl.dataset.syncField);
+     if(src)src.value=targetEl.value;
+     syncPage2Fields();
+   }else{
+     syncPage2Fields();
+   }
+   saveDraft();
+ }
+
+ const SpeechRecognitionAPI=window.SpeechRecognition||window.webkitSpeechRecognition;
+ let recognition=null,isRecording=false,manualStop=false;
+
+ if(dictateLangBtn){
+   dictateLangBtn.addEventListener('click',()=>{
+     currentDictateLang=(currentDictateLang==='de-DE')?'pl-PL':'de-DE';
+     dictateLangBtn.textContent=(currentDictateLang==='de-DE')?'🌐 DE':'🌐 PL';
+     showToast('Diktier-Sprache: '+(currentDictateLang==='de-DE'?'Deutsch (DE)':'Polski (PL)'));
+     if(isRecording&&recognition){
+       manualStop=true;
+       try{recognition.stop()}catch(e){}
+       setTimeout(()=>{
+         manualStop=false;
+         recognition.lang=currentDictateLang;
+         try{recognition.start()}catch(e){}
+       },250);
+     }
+   });
+ }
+
+ if(SpeechRecognitionAPI&&dictateBtn){
+   recognition=new SpeechRecognitionAPI();
+   recognition.continuous=true;
+   recognition.interimResults=false;
+
+   recognition.onstart=()=>{
+     isRecording=true;
+     dictateBtn.classList.add('recording');
+     dictateBtn.innerHTML=STOP_SVG;
+     if(lastActiveTextTarget)positionFloatingVoicePill(lastActiveTextTarget);
+   };
+
+   recognition.onresult=(event)=>{
+     for(let i=event.resultIndex;i<event.results.length;i++){
+       if(event.results[i].isFinal){
+         const transcript=event.results[i][0].transcript;
+         if(transcript&&transcript.trim()){
+           insertDictatedSegment(transcript);
+         }
+       }
+     }
+   };
+
+   recognition.onerror=(event)=>{
+     if(event.error==='not-allowed'||event.error==='service-not-allowed'){
+       manualStop=true;
+       showToast('Mikrofonzugriff blockiert – nutzen Sie alternativ das Mikrofon der Tastatur.');
+     }
+   };
+
+   recognition.onend=()=>{
+     if(isRecording&&!manualStop){
+       try{recognition.start();return}catch(e){}
+     }
+     isRecording=false;
+     dictateBtn.classList.remove('recording');
+     dictateBtn.innerHTML=MIC_SVG;
+   };
+
+   dictateBtn.addEventListener('click',()=>{
+     if(isRecording){
+       manualStop=true;
+       try{recognition.stop()}catch(e){}
+     }else{
+       manualStop=false;
+       recognition.lang=currentDictateLang;
+       try{recognition.start()}catch(e){
+         showToast('Spracherkennung konnte nicht gestartet werden. Bitte Tastatur-Mikrofon verwenden.');
+       }
+     }
+   });
+ }else if(dictateBtn){
+   dictateBtn.addEventListener('click',()=>{
+     showToast('Direktes Browser-Diktat auf diesem Gerät nicht verfügbar – nutzen Sie das Mikrofon auf der Tastatur.');
+     if(lastActiveTextTarget)lastActiveTextTarget.focus();
+   });
+ }
+
+ /* --- KI-Übersetzung & Fachredaktion PL -> DE (Gemini API BYOK) --- */
+ const AI_KEY_STORAGE='fubosol_gemini_api_key_v1';
+ const AI_MODEL_STORAGE='fubosol_gemini_model_v1';
+ const aiTranslateBtn=document.getElementById('aiTranslateBtn');
+ const geminiApiKeyInput=document.getElementById('geminiApiKey');
+ const geminiModelSelect=document.getElementById('geminiModel');
+ const saveAiKeyBtn=document.getElementById('saveAiKeyBtn');
+ const aiSettingsBox=document.getElementById('aiSettingsBox');
+
+ if(geminiApiKeyInput){
+   geminiApiKeyInput.value=localStorage.getItem(AI_KEY_STORAGE)||'';
+ }
+ if(geminiModelSelect){
+   const savedModel=localStorage.getItem(AI_MODEL_STORAGE);
+   if(savedModel)geminiModelSelect.value=savedModel;
+   geminiModelSelect.addEventListener('change',()=>{
+     localStorage.setItem(AI_MODEL_STORAGE,geminiModelSelect.value);
+   });
+ }
+ if(saveAiKeyBtn&&geminiApiKeyInput){
+   saveAiKeyBtn.addEventListener('click',()=>{
+     const key=geminiApiKeyInput.value.trim();
+     if(key){
+       localStorage.setItem(AI_KEY_STORAGE,key);
+       showToast('🔑 Gemini API-Schlüssel lokal gespeichert.');
+     }else{
+       localStorage.removeItem(AI_KEY_STORAGE);
+       showToast('Gemini API-Schlüssel entfernt.');
+     }
+   });
+ }
+
+ async function polishAndTranslateWorkDescWithAI(){
+   const apiKey=(localStorage.getItem(AI_KEY_STORAGE)||(geminiApiKeyInput?geminiApiKeyInput.value:'')).trim();
+   if(!apiKey){
+     if(aiSettingsBox)aiSettingsBox.open=true;
+     if(geminiApiKeyInput)geminiApiKeyInput.focus();
+     showToast('Bitte zuerst deinen Gemini API-Schlüssel in den KI-Einstellungen eintragen.');
+     return;
+   }
+
+   const p1=(workdescPage1.value||'').trim();
+   const p2=(workdescPage2.value||'').trim();
+   const fullRaw=[p1,p2].filter(Boolean).join('\n');
+   if(!fullRaw){
+     showToast('Bitte zuerst Text diktieren oder eingeben.');
+     return;
+   }
+
+   const model=(geminiModelSelect?geminiModelSelect.value:'gemini-2.5-flash')||'gemini-2.5-flash';
+   const origBtnText=aiTranslateBtn.textContent;
+   aiTranslateBtn.disabled=true;
+   aiTranslateBtn.textContent='⏳ KI übersetzt...';
+
+   const systemPrompt=[
+     'Du bist ein erfahrener deutscher Kundendiensttechniker und Meister für Sanitär-, Heizungs-, Klima-, Lüftungs- und Elektrotechnik (SHK / Kältetechnik / Elektro) bei der Firma Fubosol Heiztechnik GmbH.',
+     'Deine Aufgabe: Wandle den diktierten Rohtext (oft auf Polnisch, umgangssprachlich oder stichpunktartig, manchmal mit deutschen Fachbegriffen gemischt) in einen klaren, fachlich präzisen, professionellen deutschen Berichtstext für das Feld "Ausgeführte Arbeiten/Material" eines offiziellen Arbeits- und Regieberichts um.',
+     'Regeln:',
+     '1. Übersetze alles ins korrekte, natürliche Handwerker-/Techniker-Deutsch mit passender SHK-, Kälte- und Elektro-Fachterminologie (z. B. Kältemittelleitungen evakuiert, Druckprobe mit Stickstoff durchgeführt, Kondensatpumpe erneuert, Anlage entlüftet und auf Dichtheit geprüft, Probelauf durchgeführt).',
+     '2. Strukturiere unordentliche oder verschachtelte Sätze logisch, streiche Füllwörter und Wiederholungen, aber erfinde KEINE Arbeiten, Messwerte oder Materialien hinzu, die nicht im Rohtext stehen.',
+     '3. Behalte Aufzählungen (- oder 1., 2., 3.) und Zeilenumbrüche sinnvoll bei, damit der Text auf einem DIN-A4-Arbeitsbericht gut lesbar ist.',
+     '4. Gib ausschließlich den fertigen deutschen Berichtstext zurück – ohne Einleitung, ohne Anführungszeichen, ohne Markdown-Fettschrift (**), ohne Kommentare.'
+   ].join('\n');
+
+   try{
+     const url='https://generativelanguage.googleapis.com/v1beta/models/'+encodeURIComponent(model)+':generateContent?key='+encodeURIComponent(apiKey);
+     const resp=await fetch(url,{
+       method:'POST',
+       headers:{'Content-Type':'application/json'},
+       body:JSON.stringify({
+         systemInstruction:{parts:[{text:systemPrompt}]},
+         contents:[{role:'user',parts:[{text:fullRaw}]}],
+         generationConfig:{temperature:0.2}
+       })
+     });
+     if(!resp.ok){
+       const errData=await resp.json().catch(()=>({}));
+       const errMsg=(errData&&errData.error&&errData.error.message)?errData.error.message:('HTTP '+resp.status);
+       throw new Error(errMsg);
+     }
+     const data=await resp.json();
+     const translated=(data&&data.candidates&&data.candidates[0]&&data.candidates[0].content&&data.candidates[0].content.parts)
+       ?data.candidates[0].content.parts.map(p=>p.text||'').join('').trim()
+       :'';
+     if(!translated)throw new Error('Leere Antwort von der KI erhalten.');
+
+     workdescPage1.value=translated;
+     workdescPage2.value='';
+     enforcePage1Overflow(false);
+     saveDraft();
+     showToast('✨ Text in SHK-/Klima-Fachdeutsch übertragen.');
+   }catch(err){
+     alert('KI-Übersetzung fehlgeschlagen: '+(err&&err.message?err.message:'Netzwerkfehler'));
+   }finally{
+     aiTranslateBtn.disabled=false;
+     aiTranslateBtn.textContent=origBtnText;
+   }
+ }
+
+ if(aiTranslateBtn){
+   aiTranslateBtn.addEventListener('click',polishAndTranslateWorkDescWithAI);
+ }
+
+
+ const dictationGuideModal=document.getElementById('dictationGuideModal');
+ const openDictationGuideBtn=document.getElementById('openDictationGuideBtn');
+ const closeDictationGuideBtn=document.getElementById('closeDictationGuideBtn');
+ const closeDictationGuideTopBtn=document.getElementById('closeDictationGuideTopBtn');
+ function openDictationGuide(){
+   if(!dictationGuideModal)return;
+   dictationGuideModal.classList.add('open');
+   document.body.style.overflow='hidden';
+ }
+ function closeDictationGuide(){
+   if(!dictationGuideModal)return;
+   dictationGuideModal.classList.remove('open');
+   document.body.style.overflow='';
+ }
+ if(openDictationGuideBtn)openDictationGuideBtn.addEventListener('click',openDictationGuide);
+ if(closeDictationGuideBtn)closeDictationGuideBtn.addEventListener('click',closeDictationGuide);
+ if(closeDictationGuideTopBtn)closeDictationGuideTopBtn.addEventListener('click',closeDictationGuide);
+ if(dictationGuideModal)dictationGuideModal.addEventListener('click',e=>{if(e.target===dictationGuideModal)closeDictationGuide()});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&dictationGuideModal&&dictationGuideModal.classList.contains('open'))closeDictationGuide()});
+
+ loadDraft();
+ renderPdfHistory();
+ updateScale();
+ applyZoom();
+})();
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('sw.js')
+        .then(reg => console.log('Service Worker zarejestrowany!', reg.scope))
+        .catch(err => console.log('Błąd rejestracji SW:', err));
+    });
+  }
+</script>
+</body>
+</html>
