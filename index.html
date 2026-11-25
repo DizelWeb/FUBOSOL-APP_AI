@@ -370,19 +370,25 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
       </div>
 
       <div class="settings-card">
-        <h3>✨ KI-Einstellungen (Gemini API für PL → DE)</h3>
+        <h3>✨ KI-Einstellungen (Gemini / OpenRouter / DeepSeek)</h3>
         <div class="settings-row">
-          <label for="geminiApiKey">Gemini API-Key:</label>
-          <input type="password" id="geminiApiKey" placeholder="AIzaSy..." autocomplete="off" style="width:min(100%,240px)">
+          <label for="geminiApiKey">API-Key:</label>
+          <input type="password" id="geminiApiKey" placeholder="AIzaSy... / sk-or-... / sk-..." autocomplete="off" style="width:min(100%,240px)">
         </div>
         <div class="settings-row">
           <label for="geminiModel">Modell:</label>
           <select id="geminiModel" style="width:min(100%,240px)">
-            <option value="gemini-3.8-flash" selected="">gemini-3.8-flash (schnell)</option>
-            <option value="gemini-3.1-pro-preview">gemini-3.1-pro-preview (präzise)</option>
+            <option value="gemini-3.8-flash" selected="">1. Gemini 3.8 Flash (schnell)</option>
+            <option value="gemini-3.1-flash-lite-preview">2. Gemini 3.1 Flash-Lite (sparsam)</option>
+            <option value="openrouter">3. OpenRouter (beliebiges Modell)</option>
+            <option value="deepseek">4. DeepSeek (deepseek-chat)</option>
           </select>
         </div>
-        <p class="settings-note">Wird ausschließlich lokal im Browser (localStorage) dieses Geräts gespeichert.</p>
+        <div class="settings-row" id="openrouterModelRow" style="display:none">
+          <label for="openrouterModelId">OpenRouter Modell-ID:</label>
+          <input type="text" id="openrouterModelId" placeholder="google/gemini-3.8-flash" value="google/gemini-3.8-flash" style="width:min(100%,240px)">
+        </div>
+        <p class="settings-note">Unterstützt Google Gemini (<code>AIzaSy...</code>), OpenRouter (<code>sk-or-...</code> + Modell-ID) sowie direktes DeepSeek API (<code>sk-...</code>). Alles wird nur lokal im Browser gespeichert.</p>
       </div>
 
       <div class="settings-card">
@@ -1656,6 +1662,16 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
  const defaultTechnicianInput=document.getElementById('defaultTechnician');
  const geminiApiKeyInput=document.getElementById('geminiApiKey');
  const geminiModelSelect=document.getElementById('geminiModel');
+ const openrouterModelRow=document.getElementById('openrouterModelRow');
+ const openrouterModelIdInput=document.getElementById('openrouterModelId');
+
+ function updateOpenrouterRowVisibility(){
+   if(!openrouterModelRow||!geminiModelSelect)return;
+   openrouterModelRow.style.display=(geminiModelSelect.value==='openrouter')?'flex':'none';
+ }
+ if(geminiModelSelect){
+   geminiModelSelect.addEventListener('change',updateOpenrouterRowVisibility);
+ }
  const exportSettingsBtn=document.getElementById('exportSettingsBtn');
  const toggleImportBoxBtn=document.getElementById('toggleImportBoxBtn');
  const importSettingsWrap=document.getElementById('importSettingsWrap');
@@ -1719,11 +1735,14 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
    defaultTechnicianName=(cfg.defaultTechnician||'').trim();
    const savedKey=(cfg.apiKey!==undefined?cfg.apiKey:(localStorage.getItem(AI_KEY_STORAGE)||'')).trim();
    const savedModel=cfg.model||localStorage.getItem(AI_MODEL_STORAGE)||'gemini-3.8-flash';
+   const savedOrModel=(cfg.openrouterModel||'google/gemini-3.8-flash').trim();
 
    if(docFontSizePtInput)docFontSizePtInput.value=clampFontPt(savedPt).toFixed(1);
    if(defaultTechnicianInput)defaultTechnicianInput.value=defaultTechnicianName;
    if(geminiApiKeyInput)geminiApiKeyInput.value=savedKey;
    if(geminiModelSelect)geminiModelSelect.value=savedModel;
+   if(openrouterModelIdInput)openrouterModelIdInput.value=savedOrModel;
+   updateOpenrouterRowVisibility();
    applyDocumentFontSize(savedPt);
  }
 
@@ -1732,7 +1751,8 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
    const cleanTech=(cfg.defaultTechnician||'').trim();
    const cleanKey=(cfg.apiKey||'').trim();
    const cleanModel=cfg.model||'gemini-3.8-flash';
-   const payload={fontPt:cleanPt,defaultTechnician:cleanTech,apiKey:cleanKey,model:cleanModel};
+   const cleanOrModel=(cfg.openrouterModel||'google/gemini-3.8-flash').trim()||'google/gemini-3.8-flash';
+   const payload={fontPt:cleanPt,defaultTechnician:cleanTech,apiKey:cleanKey,model:cleanModel,openrouterModel:cleanOrModel};
    localStorage.setItem(SETTINGS_STORAGE_KEY,JSON.stringify(payload));
    if(cleanKey)localStorage.setItem(AI_KEY_STORAGE,cleanKey);
    else localStorage.removeItem(AI_KEY_STORAGE);
@@ -1780,7 +1800,8 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
        fontPt:rawPt,
        defaultTechnician:defaultTechnicianInput?defaultTechnicianInput.value:'',
        apiKey:geminiApiKeyInput?geminiApiKeyInput.value:'',
-       model:geminiModelSelect?geminiModelSelect.value:'gemini-3.8-flash'
+       model:geminiModelSelect?geminiModelSelect.value:'gemini-3.8-flash',
+       openrouterModel:openrouterModelIdInput?openrouterModelIdInput.value:'google/gemini-3.8-flash'
      });
      closeSettingsModal();
      showToast('⚙️ Einstellungen gespeichert ('+docFontPt.toFixed(1).replace('.',',')+' pt, max. '+PDF_MAX_LINES+' Zeilen).');
@@ -1795,7 +1816,8 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
        fontPt:clampFontPt(docFontSizePtInput?docFontSizePtInput.value:docFontPt),
        defaultTechnician:(defaultTechnicianInput?defaultTechnicianInput.value:defaultTechnicianName).trim(),
        apiKey:(geminiApiKeyInput?geminiApiKeyInput.value:'').trim(),
-       model:geminiModelSelect?geminiModelSelect.value:'gemini-3.8-flash'
+       model:geminiModelSelect?geminiModelSelect.value:'gemini-3.8-flash',
+       openrouterModel:(openrouterModelIdInput?openrouterModelIdInput.value:'google/gemini-3.8-flash').trim()
      };
      const ok=await copyToClipboard(JSON.stringify(backupObj));
      showToast(ok?'📋 Backup-Code in die Zwischenablage kopiert!':'Kopieren fehlgeschlagen.');
@@ -1824,6 +1846,8 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
        if(defaultTechnicianInput&&parsed.defaultTechnician!==undefined)defaultTechnicianInput.value=parsed.defaultTechnician;
        if(geminiApiKeyInput&&parsed.apiKey!==undefined)geminiApiKeyInput.value=parsed.apiKey;
        if(geminiModelSelect&&parsed.model)geminiModelSelect.value=parsed.model;
+       if(openrouterModelIdInput&&parsed.openrouterModel)openrouterModelIdInput.value=parsed.openrouterModel;
+       updateOpenrouterRowVisibility();
        updateFontPreviewLabel(docFontSizePtInput.value);
        importSettingsInput.value='';
        importSettingsWrap.style.display='none';
@@ -1890,40 +1914,99 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
      return '';
    }
 
-   try{
-     const interactionsUrl='https://generativelanguage.googleapis.com/v1beta/interactions?key='+encodeURIComponent(apiKey);
-     let resp=await fetch(interactionsUrl,{
-       method:'POST',
-       headers:{'Content-Type':'application/json'},
-       body:JSON.stringify({
-         model:model,
-         system_instruction:systemPrompt,
-         input:fullRaw,
-         store:false,
-         generation_config:{temperature:0.2}
-       })
-     });
+   const useOpenRouter=(model==='openrouter'||apiKey.startsWith('sk-or-'));
+   const useDeepSeek=(model==='deepseek'||(!useOpenRouter&&apiKey.startsWith('sk-')));
+   const orModelId=((openrouterModelIdInput?openrouterModelIdInput.value:'')||'google/gemini-3.8-flash').trim();
 
-     if(!resp.ok&&resp.status===404){
-       const genUrl='https://generativelanguage.googleapis.com/v1beta/models/'+encodeURIComponent(model)+':generateContent?key='+encodeURIComponent(apiKey);
-       resp=await fetch(genUrl,{
+   try{
+     let translated='';
+     if(useOpenRouter){
+       const orResp=await fetch('https://openrouter.ai/api/v1/chat/completions',{
+         method:'POST',
+         headers:{
+           'Content-Type':'application/json',
+           'Authorization':'Bearer '+apiKey,
+           'HTTP-Referer':window.location.origin||'https://fubosol.de',
+           'X-Title':'FUBOSOL Arbeitsbericht'
+         },
+         body:JSON.stringify({
+           model:orModelId,
+           temperature:0.2,
+           messages:[
+             {role:'system',content:systemPrompt},
+             {role:'user',content:fullRaw}
+           ]
+         })
+       });
+       if(!orResp.ok){
+         const errData=await orResp.json().catch(()=>({}));
+         const errMsg=(errData&&errData.error&&errData.error.message)?errData.error.message:('OpenRouter HTTP '+orResp.status);
+         throw new Error(errMsg);
+       }
+       const orData=await orResp.json();
+       translated=(orData&&orData.choices&&orData.choices[0]&&orData.choices[0].message&&orData.choices[0].message.content)
+         ?String(orData.choices[0].message.content).trim()
+         :'';
+     }else if(useDeepSeek){
+       const dsResp=await fetch('https://api.deepseek.com/chat/completions',{
+         method:'POST',
+         headers:{
+           'Content-Type':'application/json',
+           'Authorization':'Bearer '+apiKey
+         },
+         body:JSON.stringify({
+           model:'deepseek-chat',
+           temperature:0.2,
+           messages:[
+             {role:'system',content:systemPrompt},
+             {role:'user',content:fullRaw}
+           ]
+         })
+       });
+       if(!dsResp.ok){
+         const errData=await dsResp.json().catch(()=>({}));
+         const errMsg=(errData&&errData.error&&errData.error.message)?errData.error.message:('DeepSeek HTTP '+dsResp.status);
+         throw new Error(errMsg);
+       }
+       const dsData=await dsResp.json();
+       translated=(dsData&&dsData.choices&&dsData.choices[0]&&dsData.choices[0].message&&dsData.choices[0].message.content)
+         ?String(dsData.choices[0].message.content).trim()
+         :'';
+     }else{
+       const interactionsUrl='https://generativelanguage.googleapis.com/v1beta/interactions?key='+encodeURIComponent(apiKey);
+       let resp=await fetch(interactionsUrl,{
          method:'POST',
          headers:{'Content-Type':'application/json'},
          body:JSON.stringify({
-           systemInstruction:{parts:[{text:systemPrompt}]},
-           contents:[{role:'user',parts:[{text:fullRaw}]}],
-           generationConfig:{temperature:0.2}
+           model:model,
+           system_instruction:systemPrompt,
+           input:fullRaw,
+           store:false,
+           generation_config:{temperature:0.2}
          })
        });
-     }
 
-     if(!resp.ok){
-       const errData=await resp.json().catch(()=>({}));
-       const errMsg=(errData&&errData.error&&errData.error.message)?errData.error.message:('HTTP '+resp.status);
-       throw new Error(errMsg);
+       if(!resp.ok&&resp.status===404){
+         const genUrl='https://generativelanguage.googleapis.com/v1beta/models/'+encodeURIComponent(model)+':generateContent?key='+encodeURIComponent(apiKey);
+         resp=await fetch(genUrl,{
+           method:'POST',
+           headers:{'Content-Type':'application/json'},
+           body:JSON.stringify({
+             systemInstruction:{parts:[{text:systemPrompt}]},
+             contents:[{role:'user',parts:[{text:fullRaw}]}],
+             generationConfig:{temperature:0.2}
+           })
+         });
+       }
+
+       if(!resp.ok){
+         const errData=await resp.json().catch(()=>({}));
+         const errMsg=(errData&&errData.error&&errData.error.message)?errData.error.message:('HTTP '+resp.status);
+         throw new Error(errMsg);
+       }
+       const data=await resp.json();
+       translated=extractInteractionText(data);
      }
-     const data=await resp.json();
-     const translated=extractInteractionText(data);
      if(!translated)throw new Error('Leere Antwort von der KI erhalten.');
 
      workdescPage1.value=translated;
