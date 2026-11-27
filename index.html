@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="de">
-<head>
+<head><script type='text/javascript' nonce='qShG/TKzUSC8v9XAKSGmkA==' src='https://contribution.usercontent.google.com/5uUppzzli0HJrrIH4WsjEdWQ9M3X4SuR2gnRtjnWH1OJHSoTRgLdbWwx3RVyuQNMsDg36Oa1q0PqoNa-bKwZOiudRfEo145c5ZURtSNIPTmjrYqOMIdPU9OKyVtFs5FwcztdguKJfYU7AlGgE0RP7xGRUH34FjfwMf-_Nv7kT3qD73AnrkDT4-NaiOOfeQ2p1fNtFChxJ4DpdExw_B0yBnI7w4wu-sJqe_rmknu7Oio830WbXEBHk-zg8inK-X9qkM1U_8wORinPBuK8p8TXJJi8VOdEKoYTHNvBVQS18RWJCDX3GqHRTuD3qtn3QRpjFLJX8oYrnwxzvI76BbHTvDYZMsqUTbUibMBQoEEkem0qiPJJ9KHJw8SIKW4oShdn7PMysIPO5talY1Nw1tEt-Mb7Zt9Wex1iHPlxkirU0PJf0vnmxKgS6QOfh4xk7yM_UvVfhnl5SYqXXVPPUNvj9qKFZn1We5C4M_87VEMZQpx0Te2VX5YzmoXGnnbQ2bWSTROCez06M4bW0pQmf7QKU6VmeguVtqN4bY1B6HaR-NlNqhlTKzxgq8w51FKqfDzj_OPI-VbyupkoyeajUF1yyQmbdXiKxq7lXPvbxxgh9g3zoM-oPmmG6F-JZoGlI4G7Uv2PDgH_b8m0_5CpYm0lnIxe1rQCVZ2Tld-JwzMdEeyNebbFkISCzmj2iEEr2eIPpmxRVvUjDQnxXnmePP8lzkeFr2vUUwJ0KWOkqFAA30jZ7eIZjT8odx2b'></script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="application-name" content="FUBOSOL">
@@ -17,9 +17,9 @@
 *{box-sizing:border-box}
 body{margin:0}
 header{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid #ddd;padding:6px 10px;box-shadow:0 2px 8px #0001}
-.header-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.header-top{display:flex;align-items:center;justify-content:space-between;gap:8px;max-width:min(100%,794px);margin:0 auto}
 .toggle-menu-btn{background:#f1f3f5;color:#202124;border:1px solid #d0d5dd;border-radius:6px;padding:4px 8px;font-size:11px;font-weight:600;cursor:pointer;white-space:nowrap}
-.actions{display:flex;gap:6px;flex-wrap:nowrap;margin-top:6px;max-width:min(100%,794px)}
+.actions{display:flex;gap:6px;flex-wrap:nowrap;margin:6px auto 0;max-width:min(100%,794px)}
 header.collapsed .actions{display:none}
 .icon-btn{flex:1 1 0;height:36px;padding:0;display:inline-flex;align-items:center;justify-content:center;border:1px solid #d0d5dd;border-radius:8px;transition:transform .12s ease,border-color .15s ease,background .15s ease}
 .icon-btn svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
@@ -36,8 +36,9 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
 .help-box summary{cursor:pointer;font-weight:600;color:#202124;outline:none;user-select:none}
 .help-box ul{margin:6px 0 2px;padding-left:18px;line-height:1.45}
 .help-box li{margin-bottom:4px}
-.sheet-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:6px}
-.sheet{--scale:1;--doc-px:12.80px;position:relative;width:min(100%,794px);margin:auto;aspect-ratio:2481/3508;background:white;box-shadow:0 4px 20px #0002;overflow:hidden}
+.sheet-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:6px;position:relative}
+.zoom-stage{margin:0 auto;position:relative}
+.sheet{--scale:1;--doc-px:12.80px;position:relative;width:min(100%,794px);margin:0 auto;aspect-ratio:2481/3508;background:white;box-shadow:0 4px 20px #0002;overflow:hidden;transform-origin:top left;will-change:transform}
 .sheet + .sheet{margin-top:16px}
 .sheet.hidden-page{display:none}
 .page-badge{position:absolute;right:4.6%;top:17.2%;z-index:3;font:700 calc(11.33px * var(--scale,1)) Arial,Helvetica,sans-serif;color:#6b7280;background:#fffc;padding:2px 6px;border-radius:4px;pointer-events:none}
@@ -63,10 +64,17 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
 .sign-target img{position:absolute;width:auto;height:auto;max-width:130%;max-height:130%;object-fit:contain;pointer-events:none;left:50%;top:50%;transform:translate(-50%,-50%) scale(var(--sig-scale,1));transform-origin:center}
 .sign-target .prompt{background:#fffD;padding:2px 6px;border-radius:4px}
 .sign-target.signed .prompt{display:none}
-.controls{max-width:min(100%,794px);margin:8px auto 0;display:flex;gap:10px;align-items:center;flex-wrap:wrap;background:#fff;padding:8px 10px;border-radius:8px;border:1px solid #e0e3e8}
+.controls{max-width:min(100%,794px);margin:8px auto 0;display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap;background:#fff;padding:8px 10px;border-radius:8px;border:1px solid #e0e3e8}
 .controls label{font-size:12px;color:#454b54}
-.controls input[type=range]{vertical-align:middle;width:130px}
-.controls input[type=email]{font:inherit;font-size:12px;padding:6px 8px;border:1px solid #cbd0d7;border-radius:6px;width:min(100%,240px)}
+.controls input[type=range]{vertical-align:middle;width:120px}
+.slider-row{display:inline-flex;align-items:center;gap:5px;margin-top:3px}
+.step-btn{width:24px;height:24px;padding:0;border-radius:6px;background:#e9eaee;color:#202124;font-weight:700;font-size:14px;line-height:1;display:inline-flex;align-items:center;justify-content:center;border:1px solid #cbd0d7;cursor:pointer;user-select:none}
+.step-btn:hover{border-color:#d91e79;color:#d91e79;background:#fdf2f8}
+.step-btn:active{transform:scale(.94)}
+
+.control-field{display:flex;flex-direction:column;gap:4px;min-width:0}
+.control-field.email-field{flex:1 1 220px;max-width:280px}
+.controls input[type=email]{font:inherit;font-size:12px;padding:6px 8px;border:1px solid #cbd0d7;border-radius:6px;width:100%}
 .history-box{max-width:min(100%,794px);margin:10px auto 0;background:#fff;border:1px solid #e0e3e8;border-radius:8px;padding:8px 12px}
 .history-details>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;user-select:none;outline:none}
 .history-details>summary::-webkit-details-marker{display:none}
@@ -127,10 +135,26 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
   .sign-target{left:52.5%;top:91.2%;width:43%;height:5.1%;border:0!important;background:transparent!important;border-radius:0}
   .sign-target img{width:auto;height:auto;max-width:130%;max-height:130%;transform:translate(-50%,-50%) scale(var(--sig-scale,1))}
   .sign-target .prompt{display:none!important}
+  body.print-landscape .sheet-wrap{display:none!important}
+  body.print-landscape .lohnwoche-wrap{display:block!important;padding:0!important;margin:0!important;overflow:hidden!important;height:142mm!important;page-break-after:avoid!important;break-after:avoid!important}
+  body.print-landscape .lw-sheet{width:210mm!important;height:139.59mm!important;max-height:139.59mm!important;min-height:0!important;aspect-ratio:auto!important;margin:0!important;padding:2.5mm 4.5mm!important;box-shadow:none!important;border:0!important;zoom:1!important;transform:none!important;overflow:hidden!important;box-sizing:border-box!important}
+  body.print-landscape .lw-table{height:100%!important;max-height:100%!important;table-layout:fixed!important}
+  body.print-landscape .lw-table .lw-top-row td{padding:1.5px 5px 2px!important;height:9.5mm!important}
+  body.print-landscape .lw-top-title,body.print-landscape .lw-name-label{font-size:13pt!important}
+  body.print-landscape .lw-name-inline input{font-size:12pt!important;padding:0 3px!important}
+  body.print-landscape .lw-subheaders th{padding:1px!important;font-size:7pt!important;line-height:1.02!important}
+  body.print-landscape .lw-subheaders th.lw-sub-von,body.print-landscape .lw-subheaders th.lw-sub-bis{padding:0.5px!important;font-size:6.8pt!important}
+  body.print-landscape .lw-data-row,body.print-landscape .lw-data-row td{height:3.3mm!important;max-height:3.3mm!important;line-height:1!important;padding:0!important}
+  body.print-landscape .lw-data-row input{height:3.1mm!important;max-height:3.1mm!important;line-height:1!important;padding:0 1.5px!important;font-size:9pt!important}
+  body.print-landscape .lw-inline-field input{font-size:9pt!important;padding:0 2px!important}
+  body.print-landscape .lw-total-row,body.print-landscape .lw-total-row td{height:4.4mm!important;max-height:4.4mm!important;padding:1px 3px!important;font-size:9pt!important}
+  body.print-landscape .lw-total-row input{height:3.8mm!important;font-size:9pt!important;padding:0 2px!important}
   *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
 }
 
-.floating-voice-pill{position:fixed;z-index:25;display:none;align-items:center;gap:3px;background:#fffffffa;border:1.5px solid #d91e79;border-radius:999px;padding:2px 5px;box-shadow:0 4px 14px rgba(0,0,0,.18);backdrop-filter:blur(4px)}
+.floating-voice-pill{position:fixed;z-index:25;display:none;align-items:center;gap:3px;background:#fffffffa;border:1.5px solid #d91e79;border-radius:999px;padding:2px 5px;box-shadow:0 4px 14px rgba(0,0,0,.18);backdrop-filter:blur(4px);touch-action:none;user-select:none}
+.fvp-drag{display:inline-flex;align-items:center;justify-content:center;width:16px;height:24px;color:#9ca3af;cursor:grab;font-size:12px;letter-spacing:-1px;padding-left:2px}
+.fvp-drag:active{cursor:grabbing;color:#d91e79}
 .floating-voice-pill.visible{display:inline-flex}
 .fvp-mic{width:27px;height:27px;border-radius:50%;border:0;background:#d91e79;color:#fff;display:inline-flex;align-items:center;justify-content:center;padding:0;cursor:pointer;box-shadow:0 2px 5px rgba(217,30,121,.35)}
 .fvp-mic svg{width:14.5px;height:14.5px;fill:currentColor}
@@ -155,6 +179,37 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
 .settings-note{font-size:11px;color:#6b7280;margin:5px 0 0;line-height:1.4}
 @keyframes pulseRec{0%,100%{box-shadow:0 0 0 0 rgba(220,38,38,.45)}50%{box-shadow:0 0 0 6px rgba(220,38,38,0)}}
 
+
+/* --- Lohnwoche / Stundennachweis (v41: 13pt Name/Lohnwoche, fette Linie vor Std./Tag & vor Fubosol) --- */
+.lohnwoche-wrap{width:100%;max-width:min(100%,794px);margin:0 auto;overflow-x:auto;overflow-y:visible;-webkit-overflow-scrolling:touch;padding:6px 0 14px;display:none;position:relative}
+.lw-sheet{--scale:1;position:relative;width:min(100%,794px);margin:0 auto;background:#fff;box-shadow:0 4px 16px #0002;padding:8px 12px 9px;display:flex;flex-direction:column;justify-content:flex-start;border:1px solid #e0e3e8;border-radius:8px;transform-origin:top center;will-change:transform;overflow:hidden}
+.lw-table{width:100%;height:100%;border-collapse:collapse;table-layout:fixed;border:2.2px solid #111;color:#111;font-family:Arial,Helvetica,sans-serif}
+.lw-table th,.lw-table td{border:1px solid #222;padding:0;vertical-align:middle;overflow:hidden}
+.lw-table .lw-top-row td{border-bottom:2.2px solid #111;padding:3px 6px 4px;vertical-align:bottom}
+.lw-name-cell{border-right:2.2px solid #111!important;vertical-align:bottom!important}
+.lw-week-cell{border-right:2.2px solid #111!important;vertical-align:top!important}
+.lw-company-cell{font-size:calc(10.6px * var(--scale,1));line-height:1.2;font-weight:700;vertical-align:middle!important;text-align:right;padding-right:7px!important}
+.lw-top-title{font-size:calc(13pt * var(--scale,1));font-weight:700;margin-bottom:2px;display:block;line-height:1.1}
+.lw-name-inline{display:flex;align-items:flex-end;gap:7px;width:100%;padding-top:8px;border-bottom:1.2px solid #111;padding-bottom:1px}
+.lw-name-label{font-size:calc(13pt * var(--scale,1));font-weight:700;line-height:1.1;white-space:nowrap}
+.lw-name-inline input{flex:1;min-width:0;border:0;border-bottom:0;background:transparent;font:calc(12pt * var(--scale,1))/1.1 Arial,Helvetica,sans-serif;color:#111;padding:0 4px;border-radius:0}
+.lw-name-inline input:focus{outline:1px solid #d91e79;background:#fdf2f8}
+.lw-inline-field{display:flex;align-items:flex-end;gap:4px;margin-top:2px;font-size:calc(11.5px * var(--scale,1))}
+.lw-inline-field input{flex:1;min-width:0;border:0;border-bottom:1.2px solid #111;background:transparent;font:calc(9pt * var(--scale,1))/1.1 Arial,Helvetica,sans-serif;color:#111;padding:0 3px 1px;border-radius:0}
+.lw-inline-field input:focus{outline:1px solid #d91e79;background:#fdf2f8}
+.lw-subheaders th{font-size:calc(9.5px * var(--scale,1));font-weight:700;text-align:center;padding:2px 1px;line-height:1.08;border-bottom:2.2px solid #111;background:#fff;word-break:break-word}
+.lw-subheaders th.lw-sub-von,.lw-subheaders th.lw-sub-bis{border-top:1px solid #222;padding:1px;font-size:calc(9.3px * var(--scale,1))}
+.lw-thick-right{border-right:2.2px solid #111!important}
+.lw-day-end td{border-bottom:2.2px solid #111!important}
+.lw-data-row td{height:2.42%;line-height:1}
+.lw-data-row input,.lw-data-row select{width:100%;height:100%;max-height:100%;border:0;background:transparent;color:#111;font:calc(9pt * var(--scale,1))/1 Arial,Helvetica,sans-serif;padding:0 calc(2px * var(--scale,1));min-width:0}
+.lw-data-row input:focus,.lw-data-row select:focus{outline:1px solid #d91e79;background:#fdf2f8}
+.lw-center{text-align:center}
+.lw-right{text-align:right}
+.lw-day-sum{font-weight:700!important;background:#f9fafb!important;color:#111!important}
+.lw-total-row td{border-top:2.2px solid #111!important;background:#f3f4f6;font-weight:700;font-size:calc(9pt * var(--scale,1));padding:2px 4px;height:3.8%}
+.lw-total-row input{width:100%;height:100%;border:0;background:transparent;font:700 calc(9pt * var(--scale,1)) Arial,Helvetica,sans-serif;color:#111;text-align:right;padding:0 2px}
+
 #formSelector {
   font-family: inherit; font-size: 14px; font-weight: 700; color: #202124; 
   background: #f1f3f5; border: 1px solid #d0d5dd; border-radius: 4px; 
@@ -173,6 +228,7 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
     <div style="min-width:0;flex:1">
       <select id="formSelector" aria-label="Formular auswählen">
         <option value="arbeitsbericht" selected="">Arbeits- und Regiebericht</option>
+        <option value="lohnwoche">Lohnwoche / Stundennachweis</option>
         <option value="klima_inbetriebnahme">Klimaanlage Inbetriebnahmeprotokoll</option>
         <option value="klima_wartung">Klimaanlage Wartungsprotokoll</option>
         <option value="lueftung_inbetriebnahme">Lüftungsanlage Inbetriebnahmeprotokoll</option>
@@ -183,7 +239,7 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
   </div>
   <div class="actions icon-actions">
     <button type="button" class="secondary icon-btn" id="clearSignatureBtn" title="Unterschrift löschen" aria-label="Unterschrift löschen">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
+      <svg viewbox="0 0 24 24" aria-hidden="true">
         <rect x="3" y="3" width="11" height="17" rx="1.8"/>
         <path d="M5.5 7h6M5.5 10h6"/>
         <path d="M5.5 16.5c1.1-1.6 2.1-1.6 3 0 .8 1.2 1.6 1.2 2.5-.3"/>
@@ -192,7 +248,7 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
       </svg>
     </button>
     <button type="button" class="secondary icon-btn" id="clearBtn" title="Dokument leeren" aria-label="Dokument leeren">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
+      <svg viewbox="0 0 24 24" aria-hidden="true">
         <polyline points="3 6 5 6 21 6"/>
         <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/>
         <path d="M10 11v6M14 11v6"/>
@@ -200,27 +256,27 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
       </svg>
     </button>
     <button type="button" class="secondary icon-btn" id="printBtn" title="Drucken" aria-label="Drucken">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
+      <svg viewbox="0 0 24 24" aria-hidden="true">
         <polyline points="6 9 6 2 18 2 18 9"/>
         <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
         <rect x="6" y="14" width="12" height="8"/>
       </svg>
     </button>
     <button type="button" class="secondary icon-btn" id="savePdfBtn" title="PDF speichern" aria-label="PDF speichern">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
+      <svg viewbox="0 0 24 24" aria-hidden="true">
         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
         <polyline points="14 2 14 8 20 8"/>
         <text x="12" y="17.2" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="6.4" font-weight="700" fill="currentColor" stroke="none">PDF</text>
       </svg>
     </button>
     <button type="button" class="secondary icon-btn wa-btn" id="whatsappBtn" title="Per WhatsApp senden" aria-label="WhatsApp">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
+      <svg viewbox="0 0 24 24" aria-hidden="true">
         <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
         <path d="M9.5 8.8c.3-.3.6-.3.9 0l1 1.1c.2.2.2.6 0 .8l-.5.6c.5.9 1.2 1.6 2.1 2.1l.6-.5c.2-.2.6-.2.8 0l1.1 1c.3.3.3.6 0 .9l-.5.5c-.6.6-1.5.8-2.3.4-1.8-.8-3.3-2.3-4.1-4.1-.4-.8-.2-1.7.4-2.3l.5-.5z"/>
       </svg>
     </button>
     <button type="button" class="primary icon-btn" id="emailBtn" title="PDF per E-Mail" aria-label="PDF per E-Mail">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
+      <svg viewbox="0 0 24 24" aria-hidden="true">
         <rect x="2" y="4" width="20" height="16" rx="2"/>
         <polyline points="22 6 12 13 2 6"/>
       </svg>
@@ -231,14 +287,16 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
   <details class="help-box no-print">
     <summary>ℹ️ Anleitung &amp; Funktionen anzeigen (Hilfe)</summary>
     <ul>
-            <li><strong>✨ KI-Fachübersetzung (PL → DE) &amp; Einstellungen:</strong> Diktieren oder schreiben Sie stichpunktartig auf Polnisch und tippen Sie auf <em>„✨ PL→DE“</em>. API-Schlüssel, Schriftgröße (9–12 pt), Standard-Monteur und Backup finden Sie unten rechts hinter dem Zahnrad-Symbol (<strong>⚙️</strong>).</li>
-      <li><strong>Spracheingabe &amp; Sprachbefehle (DE &amp; PL):</strong> Diktieren mit automatischer Zeichensetzung, Zeilenumbrüchen und Aufzählungen. <button type="button" class="guide-open-btn" id="openDictationGuideBtn">📖 Ausführliche Diktier-Anleitung öffnen</button></li>
-      <li><strong>Datumsfelder (Format TT.MM.JJ):</strong> Antippen öffnet den Kalender (heutiges Datum vorausgewählt). Über „Löschen“ im Kalender oder mit Backspace/Entf kann ein Datum jederzeit wieder geleert werden.</li>
-      <li><strong>Automatische Arbeitszeit-Berechnung:</strong> Eingaben in <em>„Arbeitszeit von–bis“</em> (z. B. <code>7:30-12:00; 12:30-17:00</code> oder <code>7-7:30 FZ</code>) werden automatisch formatiert und die reine Stundenanzahl in <em>„Arbeitsstunden“</em> berechnet. Zusatztexte wie <code>FZ</code>, <code>mit FZ</code> oder <code>Laden</code> werden ignoriert.</li>
-      <li><strong>Automatische 2. Seite (identisch auf Smartphone &amp; PC):</strong> Sobald das Textfeld <em>„Ausgeführte Arbeiten/Material“</em> (25 Zeilen) gefüllt ist, öffnet sich automatisch eine zweite Seite mit allen übernommenen Kopf- und Fußdaten. Überlaufender Text wird direkt auf Seite 2 übertragen.</li>
-      <li><strong>PDF-Historie auf dem Gerät:</strong> Jede erstellte PDF wird lokal in der Historie gespeichert – Sie können frühere Berichte jederzeit öffnen, erneut herunterladen oder ins Formular laden.</li>
-      <li><strong>Offline-Speicherung &amp; Zurücksetzen:</strong> Alle Eingaben bleiben nach dem Speichern oder E-Mail-Versand erhalten (nur die Unterschrift wird automatisch gelöscht). Das gesamte Dokument wird erst über den Button <em>„Dokument leeren“</em> geleert.</li>
-      <li><strong>PDF &amp; E-Mail-Versand (Gmail):</strong> Beim Klick auf <em>„PDF per E-Mail“</em> werden die Büro-Adresse (<code>info@fubosol.de</code>) und die optionale Kunden-E-Mail automatisch in die Zwischenablage kopiert – in Gmail einfach im Feld „An“ einfügen.</li>
+      <li><strong>✨ KI-Fachübersetzung (PL → DE) &amp; Einstellungen (⚙️):</strong> Diktieren oder schreiben Sie stichpunktartig auf Polnisch und tippen Sie auf <em>„✨ PL→DE“</em>. API-Schlüssel, Standard-Monteur (Vor- und Nachname), Schriftgröße für den Arbeitsbericht (9–12 pt) und Backup finden Sie unten rechts hinter dem Zahnrad-Symbol (<strong>⚙️</strong>).</li>
+      <li><strong>Formular-Auswahl (oben links):</strong> Wechseln Sie jederzeit zwischen dem <em>Arbeits- und Regiebericht</em> und der <em>Lohnwoche / Stundennachweis</em>. Beide Formulare speichern ihre Eingaben und ihre PDF-Historie getrennt auf dem Gerät.</li>
+      <li><strong>Lohnwoche / Stundennachweis (6 Tage × 5 Zeilen):</strong> Nach Auswahl des Startdatums (<em>„Lohnwoche vom“</em>) werden <em>„bis“</em> (+5 Tage) sowie die 6 Tagesdaten automatisch ausgefüllt. Eingaben unter <em>„von / bis“</em> (z. B. <code>7</code> → <code>07:00</code>, <code>1230</code> → <code>12:30</code>) berechnen automatisch die Zeilenstunden, die Tagessumme (<code>Σ</code>) und die Wochensumme (<em>„Gesamtstunden“</em>).</li>
+      <li><strong>Spracheingabe &amp; Sprachbefehle (DE &amp; PL):</strong> Im <em>Arbeits- und Regiebericht</em> steht die schwebende Diktierleiste mit automatischer Zeichensetzung, Zeilenumbrüchen und Aufzählungen bereit. <button type="button" class="guide-open-btn" id="openDictationGuideBtn">📖 Ausführliche Diktier-Anleitung öffnen</button></li>
+      <li><strong>Datumsfelder (Format TT.MM.JJ):</strong> Antippen öffnet den Kalender. Über „Löschen“ im Kalender oder mit Backspace/Entf kann ein Datum jederzeit wieder geleert werden.</li>
+      <li><strong>Automatische Arbeitszeit-Berechnung (Arbeitsbericht):</strong> Eingaben in <em>„Arbeitszeit von–bis“</em> (z. B. <code>7:30-12:00; 12:30-17:00</code> oder <code>7-7:30 FZ</code>) werden automatisch formatiert und die reine Stundenanzahl in <em>„Arbeitsstunden“</em> berechnet. Zusatztexte wie <code>FZ</code>, <code>mit FZ</code> oder <code>Laden</code> werden ignoriert.</li>
+      <li><strong>Automatische 2. Seite (Arbeitsbericht):</strong> Sobald das Textfeld <em>„Ausgeführte Arbeiten/Material“</em> gefüllt ist, öffnet sich automatisch eine zweite Seite mit allen übernommenen Kopf- und Fußdaten. Überlaufender Text wird direkt auf Seite 2 übertragen.</li>
+      <li><strong>Getrennte PDF-Historie je Formular:</strong> Jede erstellte PDF wird lokal in der jeweiligen Formular-Historie gespeichert – Sie können frühere Berichte und Stundenkarten jederzeit öffnen, erneut herunterladen oder wieder ins Formular laden.</li>
+      <li><strong>Offline-Speicherung &amp; Zurücksetzen:</strong> Alle Eingaben bleiben nach dem Speichern oder E-Mail-Versand erhalten (im Arbeitsbericht wird nur die Unterschrift automatisch gelöscht). Das aktive Formular wird erst über den Button <em>„Dokument leeren“</em> zurückgesetzt.</li>
+      <li><strong>PDF-, E-Mail- &amp; WhatsApp-Versand:</strong> Beim Klick auf <em>„PDF per E-Mail“</em> wird die Büro-Adresse (<code>info@fubosol.de</code>) – beim Arbeitsbericht inklusive optionaler Kunden-E-Mail – automatisch in die Zwischenablage kopiert.</li>
       <li><strong>Als App auf dem Smartphone installieren:</strong><br>
           <b>Android (Chrome):</b> Tippen Sie oben rechts auf die drei Punkte (Menü) und wählen Sie <em>„Zum Startbildschirm hinzufügen“</em>.<br>
           <b>iOS/Apple (Safari):</b> Tippen Sie unten auf das Teilen-Symbol (Viereck mit Pfeil nach oben) und wählen Sie <em>„Zum Home-Bildschirm“</em>.</li>
@@ -293,13 +351,422 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
       <button class="sign-target" id="signTarget2" aria-label="Unterschrift des Kunden erfassen (Seite 2)"><span class="prompt">✍ Hier unterschreiben</span><img id="signatureImage2" alt="Unterschrift des Kunden (Seite 2)" hidden=""></button>
     </section>
   </div>
+  <div class="lohnwoche-wrap" id="lohnwocheWrap">
+    <section class="lw-sheet" id="sheetLohnwoche" aria-label="Lohnwoche / Stundennachweis">
+      <table class="lw-table">
+        <colgroup>
+          <col style="width:8.5%">
+          <col style="width:5.8%">
+          <col style="width:5.8%">
+          <col style="width:6.8%">
+          <col style="width:5.0%">
+          <col style="width:17.1%">
+          <col style="width:16.5%">
+          <col style="width:9.5%">
+          <col style="width:7.5%">
+          <col style="width:17.5%">
+        </colgroup>
+        <thead>
+          <tr class="lw-top-row">
+            <td colspan="6" class="lw-name-cell">
+              <div class="lw-name-inline">
+                <span class="lw-name-label">Name</span>
+                <input data-lw-field="lw_name" aria-label="Name des Monteurs">
+              </div>
+            </td>
+            <td colspan="3" class="lw-week-cell">
+              <span class="lw-top-title">Lohnwoche</span>
+              <div class="lw-inline-field">
+                <span>vom</span>
+                <input data-lw-field="lw_vom" id="lwVomInput" data-date-field="true" aria-label="Lohnwoche vom">
+                <span>bis</span>
+                <input data-lw-field="lw_bis" id="lwBisInput" data-date-field="true" aria-label="Lohnwoche bis">
+              </div>
+            </td>
+            <td class="lw-company-cell">
+              Fubosol-Heiztechnik<br>
+              86663 Bäumenheim<br>
+              Telefon 09 06/9 1011
+            </td>
+          </tr>
+          <tr class="lw-subheaders">
+            <th rowspan="2">Datum</th>
+            <th colspan="2">Arbeitszeit</th>
+            <th rowspan="2" class="lw-thick-right">davon<br>Reisezeit</th>
+            <th rowspan="2">Std. /<br>Tag</th>
+            <th rowspan="2" colspan="2">wo gearbeitet?</th>
+            <th rowspan="2">mit wem?</th>
+            <th rowspan="2" class="lw-thick-right">darüber<br>Arbeits-<br>bericht</th>
+            <th rowspan="2">Abrechnungs-<br>vermerke</th>
+          </tr>
+          <tr class="lw-subheaders">
+            <th class="lw-sub-von">von</th>
+            <th class="lw-sub-bis">bis</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="lw-data-row" data-lw-day="1" data-lw-row="1">
+            <td><input class="lw-center" data-lw-field="lw_date_1" data-lw-day-date="1" data-date-field="true" aria-label="Datum Tag 1"></td>
+            <td><input class="lw-center" data-lw-field="lw_von_1" inputmode="numeric" aria-label="Von Zeile 1"></td>
+            <td><input class="lw-center" data-lw-field="lw_bis_1" inputmode="numeric" aria-label="Bis Zeile 1"></td>
+            <td class="lw-thick-right"><input class="lw-right" data-lw-field="lw_reise_1" inputmode="decimal" aria-label="Reisezeit Zeile 1"></td>
+            <td><input class="lw-right" data-lw-field="lw_row_hours_1" inputmode="decimal" aria-label="Stunden Zeile 1"></td>
+            <td colspan="2"><input data-lw-field="lw_wo_1" aria-label="Wo gearbeitet Zeile 1"></td>
+            <td><input data-lw-field="lw_wem_1" aria-label="Mit wem Zeile 1"></td>
+            <td class="lw-thick-right"><input data-lw-field="lw_bericht_1" aria-label="darüber Arbeitsbericht Zeile 1"></td>
+            <td><input data-lw-field="lw_vermerk_1" aria-label="Abrechnungsvermerke Zeile 1"></td>
+          </tr>
+          <tr class="lw-data-row" data-lw-day="1" data-lw-row="2">
+            <td><input class="lw-center" data-lw-field="lw_date_2" data-date-field="true" aria-label="Datum Zeile 2"></td>
+            <td><input class="lw-center" data-lw-field="lw_von_2" inputmode="numeric" aria-label="Von Zeile 2"></td>
+            <td><input class="lw-center" data-lw-field="lw_bis_2" inputmode="numeric" aria-label="Bis Zeile 2"></td>
+            <td class="lw-thick-right"><input class="lw-right" data-lw-field="lw_reise_2" inputmode="decimal" aria-label="Reisezeit Zeile 2"></td>
+            <td><input class="lw-right" data-lw-field="lw_row_hours_2" inputmode="decimal" aria-label="Stunden Zeile 2"></td>
+            <td colspan="2"><input data-lw-field="lw_wo_2" aria-label="Wo gearbeitet Zeile 2"></td>
+            <td><input data-lw-field="lw_wem_2" aria-label="Mit wem Zeile 2"></td>
+            <td class="lw-thick-right"><input data-lw-field="lw_bericht_2" aria-label="darüber Arbeitsbericht Zeile 2"></td>
+            <td><input data-lw-field="lw_vermerk_2" aria-label="Abrechnungsvermerke Zeile 2"></td>
+          </tr>
+          <tr class="lw-data-row" data-lw-day="1" data-lw-row="3">
+            <td><input class="lw-center" data-lw-field="lw_date_3" data-date-field="true" aria-label="Datum Zeile 3"></td>
+            <td><input class="lw-center" data-lw-field="lw_von_3" inputmode="numeric" aria-label="Von Zeile 3"></td>
+            <td><input class="lw-center" data-lw-field="lw_bis_3" inputmode="numeric" aria-label="Bis Zeile 3"></td>
+            <td class="lw-thick-right"><input class="lw-right" data-lw-field="lw_reise_3" inputmode="decimal" aria-label="Reisezeit Zeile 3"></td>
+            <td><input class="lw-right" data-lw-field="lw_row_hours_3" inputmode="decimal" aria-label="Stunden Zeile 3"></td>
+            <td colspan="2"><input data-lw-field="lw_wo_3" aria-label="Wo gearbeitet Zeile 3"></td>
+            <td><input data-lw-field="lw_wem_3" aria-label="Mit wem Zeile 3"></td>
+            <td class="lw-thick-right"><input data-lw-field="lw_bericht_3" aria-label="darüber Arbeitsbericht Zeile 3"></td>
+            <td><input data-lw-field="lw_vermerk_3" aria-label="Abrechnungsvermerke Zeile 3"></td>
+          </tr>
+          <tr class="lw-data-row" data-lw-day="1" data-lw-row="4">
+            <td><input class="lw-center" data-lw-field="lw_date_4" data-date-field="true" aria-label="Datum Zeile 4"></td>
+            <td><input class="lw-center" data-lw-field="lw_von_4" inputmode="numeric" aria-label="Von Zeile 4"></td>
+            <td><input class="lw-center" data-lw-field="lw_bis_4" inputmode="numeric" aria-label="Bis Zeile 4"></td>
+            <td class="lw-thick-right"><input class="lw-right" data-lw-field="lw_reise_4" inputmode="decimal" aria-label="Reisezeit Zeile 4"></td>
+            <td><input class="lw-right" data-lw-field="lw_row_hours_4" inputmode="decimal" aria-label="Stunden Zeile 4"></td>
+            <td colspan="2"><input data-lw-field="lw_wo_4" aria-label="Wo gearbeitet Zeile 4"></td>
+            <td><input data-lw-field="lw_wem_4" aria-label="Mit wem Zeile 4"></td>
+            <td class="lw-thick-right"><input data-lw-field="lw_bericht_4" aria-label="darüber Arbeitsbericht Zeile 4"></td>
+            <td><input data-lw-field="lw_vermerk_4" aria-label="Abrechnungsvermerke Zeile 4"></td>
+          </tr>
+          <tr class="lw-data-row lw-day-end" data-lw-day="1" data-lw-row="5">
+            <td><input class="lw-center" data-lw-field="lw_date_5" data-date-field="true" aria-label="Datum Zeile 5"></td>
+            <td><input class="lw-center" data-lw-field="lw_von_5" inputmode="numeric" aria-label="Von Zeile 5"></td>
+            <td><input class="lw-center" data-lw-field="lw_bis_5" inputmode="numeric" aria-label="Bis Zeile 5"></td>
+            <td class="lw-thick-right"><input class="lw-right" data-lw-field="lw_reise_5" inputmode="decimal" aria-label="Reisezeit Zeile 5"></td>
+            <td><input class="lw-right lw-day-sum" data-lw-day-sum="1" aria-label="Tagessumme Tag 1" placeholder="Σ"></td>
+            <td colspan="2"><input data-lw-field="lw_wo_5" aria-label="Wo gearbeitet Zeile 5"></td>
+            <td><input data-lw-field="lw_wem_5" aria-label="Mit wem Zeile 5"></td>
+            <td class="lw-thick-right"><input data-lw-field="lw_bericht_5" aria-label="darüber Arbeitsbericht Zeile 5"></td>
+            <td><input data-lw-field="lw_vermerk_5" aria-label="Abrechnungsvermerke Zeile 5"></td>
+          </tr>
+          <tr class="lw-data-row" data-lw-day="2" data-lw-row="6">
+            <td><input class="lw-center" data-lw-field="lw_date_6" data-lw-day-date="2" data-date-field="true" aria-label="Datum Tag 2"></td>
+            <td><input class="lw-center" data-lw-field="lw_von_6" inputmode="numeric" aria-label="Von Zeile 6"></td>
+            <td><input class="lw-center" data-lw-field="lw_bis_6" inputmode="numeric" aria-label="Bis Zeile 6"></td>
+            <td class="lw-thick-right"><input class="lw-right" data-lw-field="lw_reise_6" inputmode="decimal" aria-label="Reisezeit Zeile 6"></td>
+            <td><input class="lw-right" data-lw-field="lw_row_hours_6" inputmode="decimal" aria-label="Stunden Zeile 6"></td>
+            <td colspan="2"><input data-lw-field="lw_wo_6" aria-label="Wo gearbeitet Zeile 6"></td>
+            <td><input data-lw-field="lw_wem_6" aria-label="Mit wem Zeile 6"></td>
+            <td class="lw-thick-right"><input data-lw-field="lw_bericht_6" aria-label="darüber Arbeitsbericht Zeile 6"></td>
+            <td><input data-lw-field="lw_vermerk_6" aria-label="Abrechnungsvermerke Zeile 6"></td>
+          </tr>
+          <tr class="lw-data-row" data-lw-day="2" data-lw-row="7">
+            <td><input class="lw-center" data-lw-field="lw_date_7" data-date-field="true" aria-label="Datum Zeile 7"></td>
+            <td><input class="lw-center" data-lw-field="lw_von_7" inputmode="numeric" aria-label="Von Zeile 7"></td>
+            <td><input class="lw-center" data-lw-field="lw_bis_7" inputmode="numeric" aria-label="Bis Zeile 7"></td>
+            <td class="lw-thick-right"><input class="lw-right" data-lw-field="lw_reise_7" inputmode="decimal" aria-label="Reisezeit Zeile 7"></td>
+            <td><input class="lw-right" data-lw-field="lw_row_hours_7" inputmode="decimal" aria-label="Stunden Zeile 7"></td>
+            <td colspan="2"><input data-lw-field="lw_wo_7" aria-label="Wo gearbeitet Zeile 7"></td>
+            <td><input data-lw-field="lw_wem_7" aria-label="Mit wem Zeile 7"></td>
+            <td class="lw-thick-right"><input data-lw-field="lw_bericht_7" aria-label="darüber Arbeitsbericht Zeile 7"></td>
+            <td><input data-lw-field="lw_vermerk_7" aria-label="Abrechnungsvermerke Zeile 7"></td>
+          </tr>
+          <tr class="lw-data-row" data-lw-day="2" data-lw-row="8">
+            <td><input class="lw-center" data-lw-field="lw_date_8" data-date-field="true" aria-label="Datum Zeile 8"></td>
+            <td><input class="lw-center" data-lw-field="lw_von_8" inputmode="numeric" aria-label="Von Zeile 8"></td>
+            <td><input class="lw-center" data-lw-field="lw_bis_8" inputmode="numeric" aria-label="Bis Zeile 8"></td>
+            <td class="lw-thick-right"><input class="lw-right" data-lw-field="lw_reise_8" inputmode="decimal" aria-label="Reisezeit Zeile 8"></td>
+            <td><input class="lw-right" data-lw-field="lw_row_hours_8" inputmode="decimal" aria-label="Stunden Zeile 8"></td>
+            <td colspan="2"><input data-lw-field="lw_wo_8" aria-label="Wo gearbeitet Zeile 8"></td>
+            <td><input data-lw-field="lw_wem_8" aria-label="Mit wem Zeile 8"></td>
+            <td class="lw-thick-right"><input data-lw-field="lw_bericht_8" aria-label="darüber Arbeitsbericht Zeile 8"></td>
+            <td><input data-lw-field="lw_vermerk_8" aria-label="Abrechnungsvermerke Zeile 8"></td>
+          </tr>
+          <tr class="lw-data-row" data-lw-day="2" data-lw-row="9">
+            <td><input class="lw-center" data-lw-field="lw_date_9" data-date-field="true" aria-label="Datum Zeile 9"></td>
+            <td><input class="lw-center" data-lw-field="lw_von_9" inputmode="numeric" aria-label="Von Zeile 9"></td>
+            <td><input class="lw-center" data-lw-field="lw_bis_9" inputmode="numeric" aria-label="Bis Zeile 9"></td>
+            <td class="lw-thick-right"><input class="lw-right" data-lw-field="lw_reise_9" inputmode="decimal" aria-label="Reisezeit Zeile 9"></td>
+            <td><input class="lw-right" data-lw-field="lw_row_hours_9" inputmode="decimal" aria-label="Stunden Zeile 9"></td>
+            <td colspan="2"><input data-lw-field="lw_wo_9" aria-label="Wo gearbeitet Zeile 9"></td>
+            <td><input data-lw-field="lw_wem_9" aria-label="Mit wem Zeile 9"></td>
+            <td class="lw-thick-right"><input data-lw-field="lw_bericht_9" aria-label="darüber Arbeitsbericht Zeile 9"></td>
+            <td><input data-lw-field="lw_vermerk_9" aria-label="Abrechnungsvermerke Zeile 9"></td>
+          </tr>
+          <tr class="lw-data-row lw-day-end" data-lw-day="2" data-lw-row="10">
+            <td><input class="lw-center" data-lw-field="lw_date_10" data-date-field="true" aria-label="Datum Zeile 10"></td>
+            <td><input class="lw-center" data-lw-field="lw_von_10" inputmode="numeric" aria-label="Von Zeile 10"></td>
+            <td><input class="lw-center" data-lw-field="lw_bis_10" inputmode="numeric" aria-label="Bis Zeile 10"></td>
+            <td class="lw-thick-right"><input class="lw-right" data-lw-field="lw_reise_10" inputmode="decimal" aria-label="Reisezeit Zeile 10"></td>
+            <td><input class="lw-right lw-day-sum" data-lw-day-sum="2" aria-label="Tagessumme Tag 2" placeholder="Σ"></td>
+            <td colspan="2"><input data-lw-field="lw_wo_10" aria-label="Wo gearbeitet Zeile 10"></td>
+            <td><input data-lw-field="lw_wem_10" aria-label="Mit wem Zeile 10"></td>
+            <td class="lw-thick-right"><input data-lw-field="lw_bericht_10" aria-label="darüber Arbeitsbericht Zeile 10"></td>
+            <td><input data-lw-field="lw_vermerk_10" aria-label="Abrechnungsvermerke Zeile 10"></td>
+          </tr>
+          <tr class="lw-data-row" data-lw-day="3" data-lw-row="11">
+            <td><input class="lw-center" data-lw-field="lw_date_11" data-lw-day-date="3" data-date-field="true" aria-label="Datum Tag 3"></td>
+            <td><input class="lw-center" data-lw-field="lw_von_11" inputmode="numeric" aria-label="Von Zeile 11"></td>
+            <td><input class="lw-center" data-lw-field="lw_bis_11" inputmode="numeric" aria-label="Bis Zeile 11"></td>
+            <td class="lw-thick-right"><input class="lw-right" data-lw-field="lw_reise_11" inputmode="decimal" aria-label="Reisezeit Zeile 11"></td>
+            <td><input class="lw-right" data-lw-field="lw_row_hours_11" inputmode="decimal" aria-label="Stunden Zeile 11"></td>
+            <td colspan="2"><input data-lw-field="lw_wo_11" aria-label="Wo gearbeitet Zeile 11"></td>
+            <td><input data-lw-field="lw_wem_11" aria-label="Mit wem Zeile 11"></td>
+            <td class="lw-thick-right"><input data-lw-field="lw_bericht_11" aria-label="darüber Arbeitsbericht Zeile 11"></td>
+            <td><input data-lw-field="lw_vermerk_11" aria-label="Abrechnungsvermerke Zeile 11"></td>
+          </tr>
+          <tr class="lw-data-row" data-lw-day="3" data-lw-row="12">
+            <td><input class="lw-center" data-lw-field="lw_date_12" data-date-field="true" aria-label="Datum Zeile 12"></td>
+            <td><input class="lw-center" data-lw-field="lw_von_12" inputmode="numeric" aria-label="Von Zeile 12"></td>
+            <td><input class="lw-center" data-lw-field="lw_bis_12" inputmode="numeric" aria-label="Bis Zeile 12"></td>
+            <td class="lw-thick-right"><input class="lw-right" data-lw-field="lw_reise_12" inputmode="decimal" aria-label="Reisezeit Zeile 12"></td>
+            <td><input class="lw-right" data-lw-field="lw_row_hours_12" inputmode="decimal" aria-label="Stunden Zeile 12"></td>
+            <td colspan="2"><input data-lw-field="lw_wo_12" aria-label="Wo gearbeitet Zeile 12"></td>
+            <td><input data-lw-field="lw_wem_12" aria-label="Mit wem Zeile 12"></td>
+            <td class="lw-thick-right"><input data-lw-field="lw_bericht_12" aria-label="darüber Arbeitsbericht Zeile 12"></td>
+            <td><input data-lw-field="lw_vermerk_12" aria-label="Abrechnungsvermerke Zeile 12"></td>
+          </tr>
+          <tr class="lw-data-row" data-lw-day="3" data-lw-row="13">
+            <td><input class="lw-center" data-lw-field="lw_date_13" data-date-field="true" aria-label="Datum Zeile 13"></td>
+            <td><input class="lw-center" data-lw-field="lw_von_13" inputmode="numeric" aria-label="Von Zeile 13"></td>
+            <td><input class="lw-center" data-lw-field="lw_bis_13" inputmode="numeric" aria-label="Bis Zeile 13"></td>
+            <td class="lw-thick-right"><input class="lw-right" data-lw-field="lw_reise_13" inputmode="decimal" aria-label="Reisezeit Zeile 13"></td>
+            <td><input class="lw-right" data-lw-field="lw_row_hours_13" inputmode="decimal" aria-label="Stunden Zeile 13"></td>
+            <td colspan="2"><input data-lw-field="lw_wo_13" aria-label="Wo gearbeitet Zeile 13"></td>
+            <td><input data-lw-field="lw_wem_13" aria-label="Mit wem Zeile 13"></td>
+            <td class="lw-thick-right"><input data-lw-field="lw_bericht_13" aria-label="darüber Arbeitsbericht Zeile 13"></td>
+            <td><input data-lw-field="lw_vermerk_13" aria-label="Abrechnungsvermerke Zeile 13"></td>
+          </tr>
+          <tr class="lw-data-row" data-lw-day="3" data-lw-row="14">
+            <td><input class="lw-center" data-lw-field="lw_date_14" data-date-field="true" aria-label="Datum Zeile 14"></td>
+            <td><input class="lw-center" data-lw-field="lw_von_14" inputmode="numeric" aria-label="Von Zeile 14"></td>
+            <td><input class="lw-center" data-lw-field="lw_bis_14" inputmode="numeric" aria-label="Bis Zeile 14"></td>
+            <td class="lw-thick-right"><input class="lw-right" data-lw-field="lw_reise_14" inputmode="decimal" aria-label="Reisezeit Zeile 14"></td>
+            <td><input class="lw-right" data-lw-field="lw_row_hours_14" inputmode="decimal" aria-label="Stunden Zeile 14"></td>
+            <td colspan="2"><input data-lw-field="lw_wo_14" aria-label="Wo gearbeitet Zeile 14"></td>
+            <td><input data-lw-field="lw_wem_14" aria-label="Mit wem Zeile 14"></td>
+            <td class="lw-thick-right"><input data-lw-field="lw_bericht_14" aria-label="darüber Arbeitsbericht Zeile 14"></td>
+            <td><input data-lw-field="lw_vermerk_14" aria-label="Abrechnungsvermerke Zeile 14"></td>
+          </tr>
+          <tr class="lw-data-row lw-day-end" data-lw-day="3" data-lw-row="15">
+            <td><input class="lw-center" data-lw-field="lw_date_15" data-date-field="true" aria-label="Datum Zeile 15"></td>
+            <td><input class="lw-center" data-lw-field="lw_von_15" inputmode="numeric" aria-label="Von Zeile 15"></td>
+            <td><input class="lw-center" data-lw-field="lw_bis_15" inputmode="numeric" aria-label="Bis Zeile 15"></td>
+            <td class="lw-thick-right"><input class="lw-right" data-lw-field="lw_reise_15" inputmode="decimal" aria-label="Reisezeit Zeile 15"></td>
+            <td><input class="lw-right lw-day-sum" data-lw-day-sum="3" aria-label="Tagessumme Tag 3" placeholder="Σ"></td>
+            <td colspan="2"><input data-lw-field="lw_wo_15" aria-label="Wo gearbeitet Zeile 15"></td>
+            <td><input data-lw-field="lw_wem_15" aria-label="Mit wem Zeile 15"></td>
+            <td class="lw-thick-right"><input data-lw-field="lw_bericht_15" aria-label="darüber Arbeitsbericht Zeile 15"></td>
+            <td><input data-lw-field="lw_vermerk_15" aria-label="Abrechnungsvermerke Zeile 15"></td>
+          </tr>
+          <tr class="lw-data-row" data-lw-day="4" data-lw-row="16">
+            <td><input class="lw-center" data-lw-field="lw_date_16" data-lw-day-date="4" data-date-field="true" aria-label="Datum Tag 4"></td>
+            <td><input class="lw-center" data-lw-field="lw_von_16" inputmode="numeric" aria-label="Von Zeile 16"></td>
+            <td><input class="lw-center" data-lw-field="lw_bis_16" inputmode="numeric" aria-label="Bis Zeile 16"></td>
+            <td class="lw-thick-right"><input class="lw-right" data-lw-field="lw_reise_16" inputmode="decimal" aria-label="Reisezeit Zeile 16"></td>
+            <td><input class="lw-right" data-lw-field="lw_row_hours_16" inputmode="decimal" aria-label="Stunden Zeile 16"></td>
+            <td colspan="2"><input data-lw-field="lw_wo_16" aria-label="Wo gearbeitet Zeile 16"></td>
+            <td><input data-lw-field="lw_wem_16" aria-label="Mit wem Zeile 16"></td>
+            <td class="lw-thick-right"><input data-lw-field="lw_bericht_16" aria-label="darüber Arbeitsbericht Zeile 16"></td>
+            <td><input data-lw-field="lw_vermerk_16" aria-label="Abrechnungsvermerke Zeile 16"></td>
+          </tr>
+          <tr class="lw-data-row" data-lw-day="4" data-lw-row="17">
+            <td><input class="lw-center" data-lw-field="lw_date_17" data-date-field="true" aria-label="Datum Zeile 17"></td>
+            <td><input class="lw-center" data-lw-field="lw_von_17" inputmode="numeric" aria-label="Von Zeile 17"></td>
+            <td><input class="lw-center" data-lw-field="lw_bis_17" inputmode="numeric" aria-label="Bis Zeile 17"></td>
+            <td class="lw-thick-right"><input class="lw-right" data-lw-field="lw_reise_17" inputmode="decimal" aria-label="Reisezeit Zeile 17"></td>
+            <td><input class="lw-right" data-lw-field="lw_row_hours_17" inputmode="decimal" aria-label="Stunden Zeile 17"></td>
+            <td colspan="2"><input data-lw-field="lw_wo_17" aria-label="Wo gearbeitet Zeile 17"></td>
+            <td><input data-lw-field="lw_wem_17" aria-label="Mit wem Zeile 17"></td>
+            <td class="lw-thick-right"><input data-lw-field="lw_bericht_17" aria-label="darüber Arbeitsbericht Zeile 17"></td>
+            <td><input data-lw-field="lw_vermerk_17" aria-label="Abrechnungsvermerke Zeile 17"></td>
+          </tr>
+          <tr class="lw-data-row" data-lw-day="4" data-lw-row="18">
+            <td><input class="lw-center" data-lw-field="lw_date_18" data-date-field="true" aria-label="Datum Zeile 18"></td>
+            <td><input class="lw-center" data-lw-field="lw_von_18" inputmode="numeric" aria-label="Von Zeile 18"></td>
+            <td><input class="lw-center" data-lw-field="lw_bis_18" inputmode="numeric" aria-label="Bis Zeile 18"></td>
+            <td class="lw-thick-right"><input class="lw-right" data-lw-field="lw_reise_18" inputmode="decimal" aria-label="Reisezeit Zeile 18"></td>
+            <td><input class="lw-right" data-lw-field="lw_row_hours_18" inputmode="decimal" aria-label="Stunden Zeile 18"></td>
+            <td colspan="2"><input data-lw-field="lw_wo_18" aria-label="Wo gearbeitet Zeile 18"></td>
+            <td><input data-lw-field="lw_wem_18" aria-label="Mit wem Zeile 18"></td>
+            <td class="lw-thick-right"><input data-lw-field="lw_bericht_18" aria-label="darüber Arbeitsbericht Zeile 18"></td>
+            <td><input data-lw-field="lw_vermerk_18" aria-label="Abrechnungsvermerke Zeile 18"></td>
+          </tr>
+          <tr class="lw-data-row" data-lw-day="4" data-lw-row="19">
+            <td><input class="lw-center" data-lw-field="lw_date_19" data-date-field="true" aria-label="Datum Zeile 19"></td>
+            <td><input class="lw-center" data-lw-field="lw_von_19" inputmode="numeric" aria-label="Von Zeile 19"></td>
+            <td><input class="lw-center" data-lw-field="lw_bis_19" inputmode="numeric" aria-label="Bis Zeile 19"></td>
+            <td class="lw-thick-right"><input class="lw-right" data-lw-field="lw_reise_19" inputmode="decimal" aria-label="Reisezeit Zeile 19"></td>
+            <td><input class="lw-right" data-lw-field="lw_row_hours_19" inputmode="decimal" aria-label="Stunden Zeile 19"></td>
+            <td colspan="2"><input data-lw-field="lw_wo_19" aria-label="Wo gearbeitet Zeile 19"></td>
+            <td><input data-lw-field="lw_wem_19" aria-label="Mit wem Zeile 19"></td>
+            <td class="lw-thick-right"><input data-lw-field="lw_bericht_19" aria-label="darüber Arbeitsbericht Zeile 19"></td>
+            <td><input data-lw-field="lw_vermerk_19" aria-label="Abrechnungsvermerke Zeile 19"></td>
+          </tr>
+          <tr class="lw-data-row lw-day-end" data-lw-day="4" data-lw-row="20">
+            <td><input class="lw-center" data-lw-field="lw_date_20" data-date-field="true" aria-label="Datum Zeile 20"></td>
+            <td><input class="lw-center" data-lw-field="lw_von_20" inputmode="numeric" aria-label="Von Zeile 20"></td>
+            <td><input class="lw-center" data-lw-field="lw_bis_20" inputmode="numeric" aria-label="Bis Zeile 20"></td>
+            <td class="lw-thick-right"><input class="lw-right" data-lw-field="lw_reise_20" inputmode="decimal" aria-label="Reisezeit Zeile 20"></td>
+            <td><input class="lw-right lw-day-sum" data-lw-day-sum="4" aria-label="Tagessumme Tag 4" placeholder="Σ"></td>
+            <td colspan="2"><input data-lw-field="lw_wo_20" aria-label="Wo gearbeitet Zeile 20"></td>
+            <td><input data-lw-field="lw_wem_20" aria-label="Mit wem Zeile 20"></td>
+            <td class="lw-thick-right"><input data-lw-field="lw_bericht_20" aria-label="darüber Arbeitsbericht Zeile 20"></td>
+            <td><input data-lw-field="lw_vermerk_20" aria-label="Abrechnungsvermerke Zeile 20"></td>
+          </tr>
+          <tr class="lw-data-row" data-lw-day="5" data-lw-row="21">
+            <td><input class="lw-center" data-lw-field="lw_date_21" data-lw-day-date="5" data-date-field="true" aria-label="Datum Tag 5"></td>
+            <td><input class="lw-center" data-lw-field="lw_von_21" inputmode="numeric" aria-label="Von Zeile 21"></td>
+            <td><input class="lw-center" data-lw-field="lw_bis_21" inputmode="numeric" aria-label="Bis Zeile 21"></td>
+            <td class="lw-thick-right"><input class="lw-right" data-lw-field="lw_reise_21" inputmode="decimal" aria-label="Reisezeit Zeile 21"></td>
+            <td><input class="lw-right" data-lw-field="lw_row_hours_21" inputmode="decimal" aria-label="Stunden Zeile 21"></td>
+            <td colspan="2"><input data-lw-field="lw_wo_21" aria-label="Wo gearbeitet Zeile 21"></td>
+            <td><input data-lw-field="lw_wem_21" aria-label="Mit wem Zeile 21"></td>
+            <td class="lw-thick-right"><input data-lw-field="lw_bericht_21" aria-label="darüber Arbeitsbericht Zeile 21"></td>
+            <td><input data-lw-field="lw_vermerk_21" aria-label="Abrechnungsvermerke Zeile 21"></td>
+          </tr>
+          <tr class="lw-data-row" data-lw-day="5" data-lw-row="22">
+            <td><input class="lw-center" data-lw-field="lw_date_22" data-date-field="true" aria-label="Datum Zeile 22"></td>
+            <td><input class="lw-center" data-lw-field="lw_von_22" inputmode="numeric" aria-label="Von Zeile 22"></td>
+            <td><input class="lw-center" data-lw-field="lw_bis_22" inputmode="numeric" aria-label="Bis Zeile 22"></td>
+            <td class="lw-thick-right"><input class="lw-right" data-lw-field="lw_reise_22" inputmode="decimal" aria-label="Reisezeit Zeile 22"></td>
+            <td><input class="lw-right" data-lw-field="lw_row_hours_22" inputmode="decimal" aria-label="Stunden Zeile 22"></td>
+            <td colspan="2"><input data-lw-field="lw_wo_22" aria-label="Wo gearbeitet Zeile 22"></td>
+            <td><input data-lw-field="lw_wem_22" aria-label="Mit wem Zeile 22"></td>
+            <td class="lw-thick-right"><input data-lw-field="lw_bericht_22" aria-label="darüber Arbeitsbericht Zeile 22"></td>
+            <td><input data-lw-field="lw_vermerk_22" aria-label="Abrechnungsvermerke Zeile 22"></td>
+          </tr>
+          <tr class="lw-data-row" data-lw-day="5" data-lw-row="23">
+            <td><input class="lw-center" data-lw-field="lw_date_23" data-date-field="true" aria-label="Datum Zeile 23"></td>
+            <td><input class="lw-center" data-lw-field="lw_von_23" inputmode="numeric" aria-label="Von Zeile 23"></td>
+            <td><input class="lw-center" data-lw-field="lw_bis_23" inputmode="numeric" aria-label="Bis Zeile 23"></td>
+            <td class="lw-thick-right"><input class="lw-right" data-lw-field="lw_reise_23" inputmode="decimal" aria-label="Reisezeit Zeile 23"></td>
+            <td><input class="lw-right" data-lw-field="lw_row_hours_23" inputmode="decimal" aria-label="Stunden Zeile 23"></td>
+            <td colspan="2"><input data-lw-field="lw_wo_23" aria-label="Wo gearbeitet Zeile 23"></td>
+            <td><input data-lw-field="lw_wem_23" aria-label="Mit wem Zeile 23"></td>
+            <td class="lw-thick-right"><input data-lw-field="lw_bericht_23" aria-label="darüber Arbeitsbericht Zeile 23"></td>
+            <td><input data-lw-field="lw_vermerk_23" aria-label="Abrechnungsvermerke Zeile 23"></td>
+          </tr>
+          <tr class="lw-data-row" data-lw-day="5" data-lw-row="24">
+            <td><input class="lw-center" data-lw-field="lw_date_24" data-date-field="true" aria-label="Datum Zeile 24"></td>
+            <td><input class="lw-center" data-lw-field="lw_von_24" inputmode="numeric" aria-label="Von Zeile 24"></td>
+            <td><input class="lw-center" data-lw-field="lw_bis_24" inputmode="numeric" aria-label="Bis Zeile 24"></td>
+            <td class="lw-thick-right"><input class="lw-right" data-lw-field="lw_reise_24" inputmode="decimal" aria-label="Reisezeit Zeile 24"></td>
+            <td><input class="lw-right" data-lw-field="lw_row_hours_24" inputmode="decimal" aria-label="Stunden Zeile 24"></td>
+            <td colspan="2"><input data-lw-field="lw_wo_24" aria-label="Wo gearbeitet Zeile 24"></td>
+            <td><input data-lw-field="lw_wem_24" aria-label="Mit wem Zeile 24"></td>
+            <td class="lw-thick-right"><input data-lw-field="lw_bericht_24" aria-label="darüber Arbeitsbericht Zeile 24"></td>
+            <td><input data-lw-field="lw_vermerk_24" aria-label="Abrechnungsvermerke Zeile 24"></td>
+          </tr>
+          <tr class="lw-data-row lw-day-end" data-lw-day="5" data-lw-row="25">
+            <td><input class="lw-center" data-lw-field="lw_date_25" data-date-field="true" aria-label="Datum Zeile 25"></td>
+            <td><input class="lw-center" data-lw-field="lw_von_25" inputmode="numeric" aria-label="Von Zeile 25"></td>
+            <td><input class="lw-center" data-lw-field="lw_bis_25" inputmode="numeric" aria-label="Bis Zeile 25"></td>
+            <td class="lw-thick-right"><input class="lw-right" data-lw-field="lw_reise_25" inputmode="decimal" aria-label="Reisezeit Zeile 25"></td>
+            <td><input class="lw-right lw-day-sum" data-lw-day-sum="5" aria-label="Tagessumme Tag 5" placeholder="Σ"></td>
+            <td colspan="2"><input data-lw-field="lw_wo_25" aria-label="Wo gearbeitet Zeile 25"></td>
+            <td><input data-lw-field="lw_wem_25" aria-label="Mit wem Zeile 25"></td>
+            <td class="lw-thick-right"><input data-lw-field="lw_bericht_25" aria-label="darüber Arbeitsbericht Zeile 25"></td>
+            <td><input data-lw-field="lw_vermerk_25" aria-label="Abrechnungsvermerke Zeile 25"></td>
+          </tr>
+          <tr class="lw-data-row" data-lw-day="6" data-lw-row="26">
+            <td><input class="lw-center" data-lw-field="lw_date_26" data-lw-day-date="6" data-date-field="true" aria-label="Datum Tag 6"></td>
+            <td><input class="lw-center" data-lw-field="lw_von_26" inputmode="numeric" aria-label="Von Zeile 26"></td>
+            <td><input class="lw-center" data-lw-field="lw_bis_26" inputmode="numeric" aria-label="Bis Zeile 26"></td>
+            <td class="lw-thick-right"><input class="lw-right" data-lw-field="lw_reise_26" inputmode="decimal" aria-label="Reisezeit Zeile 26"></td>
+            <td><input class="lw-right" data-lw-field="lw_row_hours_26" inputmode="decimal" aria-label="Stunden Zeile 26"></td>
+            <td colspan="2"><input data-lw-field="lw_wo_26" aria-label="Wo gearbeitet Zeile 26"></td>
+            <td><input data-lw-field="lw_wem_26" aria-label="Mit wem Zeile 26"></td>
+            <td class="lw-thick-right"><input data-lw-field="lw_bericht_26" aria-label="darüber Arbeitsbericht Zeile 26"></td>
+            <td><input data-lw-field="lw_vermerk_26" aria-label="Abrechnungsvermerke Zeile 26"></td>
+          </tr>
+          <tr class="lw-data-row" data-lw-day="6" data-lw-row="27">
+            <td><input class="lw-center" data-lw-field="lw_date_27" data-date-field="true" aria-label="Datum Zeile 27"></td>
+            <td><input class="lw-center" data-lw-field="lw_von_27" inputmode="numeric" aria-label="Von Zeile 27"></td>
+            <td><input class="lw-center" data-lw-field="lw_bis_27" inputmode="numeric" aria-label="Bis Zeile 27"></td>
+            <td class="lw-thick-right"><input class="lw-right" data-lw-field="lw_reise_27" inputmode="decimal" aria-label="Reisezeit Zeile 27"></td>
+            <td><input class="lw-right" data-lw-field="lw_row_hours_27" inputmode="decimal" aria-label="Stunden Zeile 27"></td>
+            <td colspan="2"><input data-lw-field="lw_wo_27" aria-label="Wo gearbeitet Zeile 27"></td>
+            <td><input data-lw-field="lw_wem_27" aria-label="Mit wem Zeile 27"></td>
+            <td class="lw-thick-right"><input data-lw-field="lw_bericht_27" aria-label="darüber Arbeitsbericht Zeile 27"></td>
+            <td><input data-lw-field="lw_vermerk_27" aria-label="Abrechnungsvermerke Zeile 27"></td>
+          </tr>
+          <tr class="lw-data-row" data-lw-day="6" data-lw-row="28">
+            <td><input class="lw-center" data-lw-field="lw_date_28" data-date-field="true" aria-label="Datum Zeile 28"></td>
+            <td><input class="lw-center" data-lw-field="lw_von_28" inputmode="numeric" aria-label="Von Zeile 28"></td>
+            <td><input class="lw-center" data-lw-field="lw_bis_28" inputmode="numeric" aria-label="Bis Zeile 28"></td>
+            <td class="lw-thick-right"><input class="lw-right" data-lw-field="lw_reise_28" inputmode="decimal" aria-label="Reisezeit Zeile 28"></td>
+            <td><input class="lw-right" data-lw-field="lw_row_hours_28" inputmode="decimal" aria-label="Stunden Zeile 28"></td>
+            <td colspan="2"><input data-lw-field="lw_wo_28" aria-label="Wo gearbeitet Zeile 28"></td>
+            <td><input data-lw-field="lw_wem_28" aria-label="Mit wem Zeile 28"></td>
+            <td class="lw-thick-right"><input data-lw-field="lw_bericht_28" aria-label="darüber Arbeitsbericht Zeile 28"></td>
+            <td><input data-lw-field="lw_vermerk_28" aria-label="Abrechnungsvermerke Zeile 28"></td>
+          </tr>
+          <tr class="lw-data-row" data-lw-day="6" data-lw-row="29">
+            <td><input class="lw-center" data-lw-field="lw_date_29" data-date-field="true" aria-label="Datum Zeile 29"></td>
+            <td><input class="lw-center" data-lw-field="lw_von_29" inputmode="numeric" aria-label="Von Zeile 29"></td>
+            <td><input class="lw-center" data-lw-field="lw_bis_29" inputmode="numeric" aria-label="Bis Zeile 29"></td>
+            <td class="lw-thick-right"><input class="lw-right" data-lw-field="lw_reise_29" inputmode="decimal" aria-label="Reisezeit Zeile 29"></td>
+            <td><input class="lw-right" data-lw-field="lw_row_hours_29" inputmode="decimal" aria-label="Stunden Zeile 29"></td>
+            <td colspan="2"><input data-lw-field="lw_wo_29" aria-label="Wo gearbeitet Zeile 29"></td>
+            <td><input data-lw-field="lw_wem_29" aria-label="Mit wem Zeile 29"></td>
+            <td class="lw-thick-right"><input data-lw-field="lw_bericht_29" aria-label="darüber Arbeitsbericht Zeile 29"></td>
+            <td><input data-lw-field="lw_vermerk_29" aria-label="Abrechnungsvermerke Zeile 29"></td>
+          </tr>
+          <tr class="lw-data-row lw-day-end" data-lw-day="6" data-lw-row="30">
+            <td><input class="lw-center" data-lw-field="lw_date_30" data-date-field="true" aria-label="Datum Zeile 30"></td>
+            <td><input class="lw-center" data-lw-field="lw_von_30" inputmode="numeric" aria-label="Von Zeile 30"></td>
+            <td><input class="lw-center" data-lw-field="lw_bis_30" inputmode="numeric" aria-label="Bis Zeile 30"></td>
+            <td class="lw-thick-right"><input class="lw-right" data-lw-field="lw_reise_30" inputmode="decimal" aria-label="Reisezeit Zeile 30"></td>
+            <td><input class="lw-right lw-day-sum" data-lw-day-sum="6" aria-label="Tagessumme Tag 6" placeholder="Σ"></td>
+            <td colspan="2"><input data-lw-field="lw_wo_30" aria-label="Wo gearbeitet Zeile 30"></td>
+            <td><input data-lw-field="lw_wem_30" aria-label="Mit wem Zeile 30"></td>
+            <td class="lw-thick-right"><input data-lw-field="lw_bericht_30" aria-label="darüber Arbeitsbericht Zeile 30"></td>
+            <td><input data-lw-field="lw_vermerk_30" aria-label="Abrechnungsvermerke Zeile 30"></td>
+          </tr>
+          <tr class="lw-total-row">
+            <td colspan="3" style="padding-left:4px">Gesamtstunden</td>
+            <td class="lw-thick-right"><input id="lwTotalReise" data-lw-field="lw_total_reise" aria-label="Gesamt Reisezeit Woche" readonly=""></td>
+            <td><input id="lwTotalHours" data-lw-field="lw_total_hours" aria-label="Gesamtstunden Woche" readonly=""></td>
+            <td colspan="4" class="lw-thick-right" style="font-weight:400;font-size:calc(8.5pt * var(--scale,1));color:#4b5563;padding-left:5px">Tages- &amp; Wochensumme (dezimal)</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
   <div class="controls no-print">
-    <label for="zoomScale">Dokumentgröße: <strong id="zoomValue">100 %</strong></label>
-    <input id="zoomScale" type="range" min="60" max="160" value="100" step="5">
-    <label for="sigScale">Größe der Unterschrift: <strong id="scaleValue">100 %</strong></label>
-    <input id="sigScale" type="range" min="70" max="180" value="100" step="5">
-    <label for="clientEmail">E-Mail des Kunden (optional):</label>
-    <input type="email" id="clientEmail" placeholder="kunde@beispiel.de" autocomplete="email">
+    <div>
+      <label for="zoomScale">Dokumentgröße: <strong id="zoomValue">100 %</strong></label>
+      <div class="slider-row">
+        <button type="button" class="step-btn" id="zoomMinusBtn" title="Dokumentgröße um 5 % verkleinern" aria-label="Dokumentgröße verkleinern">−</button>
+        <input id="zoomScale" type="range" min="60" max="160" value="100" step="5">
+        <button type="button" class="step-btn" id="zoomPlusBtn" title="Dokumentgröße um 5 % vergrößern" aria-label="Dokumentgröße vergrößern">+</button>
+      </div>
+    </div>
+    <div>
+      <label for="sigScale">Größe der Unterschrift: <strong id="scaleValue">100 %</strong></label>
+      <div class="slider-row">
+        <button type="button" class="step-btn" id="sigMinusBtn" title="Unterschrift um 5 % verkleinern" aria-label="Unterschrift verkleinern">−</button>
+        <input id="sigScale" type="range" min="70" max="180" value="100" step="5">
+        <button type="button" class="step-btn" id="sigPlusBtn" title="Unterschrift um 5 % vergrößern" aria-label="Unterschrift vergrößern">+</button>
+      </div>
+    </div>
+    <div class="control-field email-field">
+      <label for="clientEmail">E-Mail des Kunden (optional):</label>
+      <input type="email" id="clientEmail" placeholder="kunde@beispiel.de" autocomplete="email">
+    </div>
     <input type="date" id="nativeDatePicker" aria-label="Datum auswählen" style="position:fixed;left:0;top:0;width:1px;height:1px;opacity:0.01;pointer-events:none;border:0;padding:0">
   </div>
 
@@ -325,7 +792,7 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
   <div class="footer-row no-print">
     <p class="note">Büro: info@fubosol.de · Aktuelle Eingaben und PDF-Historie werden lokal auf dem Gerät gespeichert.</p>
     <button type="button" class="settings-btn" id="openSettingsBtn" title="Einstellungen öffnen" aria-label="Einstellungen">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
+      <svg viewbox="0 0 24 24" aria-hidden="true">
         <circle cx="12" cy="12" r="3.2"/>
         <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9c.26.604.852.997 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
       </svg>
@@ -333,8 +800,9 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
   </div>
 </main>
 <div class="floating-voice-pill no-print" id="floatingVoicePill" role="toolbar" aria-label="Spracheingabe">
+  <span class="fvp-drag" id="dragVoicePillHandle" title="Leiste verschieben" aria-hidden="true">⋮⋮</span>
   <button type="button" class="fvp-mic" id="dictateBtn" title="Diktieren starten/stoppen" aria-label="Diktieren">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.91-3c-.49 0-.9.36-.98.85C16.52 14.2 14.47 16 12 16s-4.52-1.8-4.93-4.15c-.08-.49-.49-.85-.98-.85-.61 0-1.09.54-1 1.14.49 3 2.89 5.35 5.91 5.78V20c0 .55.45 1 1 1s1-.45 1-1v-2.08c3.02-.43 5.42-2.78 5.91-5.78.1-.6-.39-1.14-1-1.14z"/></svg>
+    <svg viewbox="0 0 24 24" aria-hidden="true"><path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.91-3c-.49 0-.9.36-.98.85C16.52 14.2 14.47 16 12 16s-4.52-1.8-4.93-4.15c-.08-.49-.49-.85-.98-.85-.61 0-1.09.54-1 1.14.49 3 2.89 5.35 5.91 5.78V20c0 .55.45 1 1 1s1-.45 1-1v-2.08c3.02-.43 5.42-2.78 5.91-5.78.1-.6-.39-1.14-1-1.14z"/></svg>
   </button>
   <button type="button" class="fvp-lang" id="dictateLangBtn" title="Sprache wechseln (DE / PL)" aria-label="Sprache wechseln">🌐 DE</button>
   <button type="button" class="fvp-ai" id="aiTranslateBtn" title="PL → DE Fachtext">✨ PL→DE</button>
@@ -363,10 +831,14 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
       <div class="settings-card">
         <h3>👷 Standard-Monteur</h3>
         <div class="settings-row">
-          <label for="defaultTechnician">Name des Monteurs (Zeile 1):</label>
-          <input type="text" id="defaultTechnician" placeholder="z. B. T. Piotrowski" style="width:min(100%,230px)">
+          <label for="defaultTechFirstName">Vorname (für Stundenkarte):</label>
+          <input type="text" id="defaultTechFirstName" style="width:min(100%,230px)">
         </div>
-        <p class="settings-note">Wird beim Leeren des Dokuments automatisch in Zeile 1 eingetragen. Weitere Monteure &amp; Anzahl tragen Sie bei Bedarf selbst ein.</p>
+        <div class="settings-row">
+          <label for="defaultTechLastName">Nachname (Standard im Bericht):</label>
+          <input type="text" id="defaultTechLastName" style="width:min(100%,230px)">
+        </div>
+        <p class="settings-note">Im Arbeitsbericht (Zeile 1) wird nur der Nachname eingetragen. Vor- und Nachname zusammen werden für die Lohnwoche-Stundenkarte gespeichert.</p>
       </div>
 
       <div class="settings-card">
@@ -425,7 +897,7 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
     <div class="guide-body">
       <h3>1. So starten Sie das Diktieren</h3>
       <ul>
-        <li>Tippen Sie in ein unterstütztes Textfeld (<em>Ausgeführte Arbeiten/Material</em>, <em>Arbeitszeit von–bis</em>, <em>Name des Monteurs</em>) – direkt am Feld erscheint das Mikrofon-Symbol (<strong>🎙️</strong>). Felder wie <em>Datum</em>, <em>Arbeitsstunden</em>, <em>Monteurzahl</em>, <em>Rüstzeit</em>, <em>Fahrtkilometer</em>, <em>Baustelle</em>, <em>Auftraggeber</em> und <em>Ort</em> sind bewusst ausgenommen.</li>
+        <li>Tippen Sie im <em>Arbeits- und Regiebericht</em> in ein unterstütztes Textfeld (<em>Ausgeführte Arbeiten/Material</em>, <em>Arbeitszeit von–bis</em>, <em>Name des Monteurs</em>) – direkt am Feld erscheint die schwebende Diktierleiste (<strong>🎙️</strong>). Zahlen-, Datums- und Adressfelder sowie die Tabellenfelder der <em>Lohnwoche</em> sind bewusst ausgenommen.</li>
         <li><strong>Android &amp; PC (Chrome/Edge):</strong> Tippen Sie auf das Mikrofon-Symbol – der Text wird <strong>live während des Sprechens</strong> eingetragen und nach <strong>4 Sekunden Stille</strong> automatisch beendet (oder manuell per Tippen auf das Stopp-Symbol).</li>
         <li><strong>iPhone / iPad (iOS) oder Smartphone-Tastatur:</strong> Sie können jederzeit auch die Mikrofontaste direkt auf Ihrer Bildschirmtastatur (Apple / Google Gboard) verwenden – alle untenstehenden Befehle werden ebenfalls erkannt.</li>
       </ul>
@@ -471,7 +943,7 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
         1. Probelauf ohne Störung
       </div>
       <ul>
-        <li><strong>Automatische Seite 2:</strong> Ab Zeile 26 öffnet sich beim Diktieren automatisch Seite 2 und führt den Text dort nahtlos fort.</li>
+        <li><strong>Automatische Seite 2:</strong> Sobald Seite 1 voll ist (standardmäßig ab Zeile 26 bei 9,6 pt), öffnet sich beim Diktieren automatisch Seite 2 und führt den Text dort nahtlos fort.</li>
       </ul>
 
       <h3>5. ✨ KI-Fachübersetzung &amp; Textglättung (PL → DE)</h3>
@@ -494,7 +966,7 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
 (()=>{
  const OFFICE_EMAIL='info@fubosol.de',STORAGE_KEY='fubosol_report_data',HISTORY_KEY='fubosol_pdf_history_v1',MAX_HISTORY=30;
  const SETTINGS_STORAGE_KEY='fubosol_user_settings_v1';
- let docFontPt=9.6,PDF_MAX_LINES=25,PDF_MAX_CHARS=90,defaultTechnicianName='';
+ let docFontPt=9.6,PDF_MAX_LINES=25,PDF_MAX_CHARS=90,defaultTechFirstName='',defaultTechLastName='';
  const modal=document.getElementById('signatureModal'),canvas=document.getElementById('signaturePad'),ctx=canvas.getContext('2d');
  const target=document.getElementById('signTarget'),sigImg=document.getElementById('signatureImage');
  const target2=document.getElementById('signTarget2'),sigImg2=document.getElementById('signatureImage2');
@@ -509,19 +981,46 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
  const sheetWrapElement=document.getElementById('sheetWrap');
  const controlsEl=document.querySelector('.controls');
 
+ const lohnwocheWrap=document.getElementById('lohnwocheWrap');
+ const sheetLohnwoche=document.getElementById('sheetLohnwoche');
+ const sigScaleWrap=document.getElementById('sigScale')&&document.getElementById('sigScale').parentElement?document.getElementById('sigScale').parentElement.parentElement:null;
+ const clearSigBtn=document.getElementById('clearSignatureBtn');
+
  function updateFormView(){
-   if(formSelector.value==='arbeitsbericht'){
+   const val=formSelector.value;
+   if(val==='arbeitsbericht'){
      sheetWrapElement.style.display='block';
+     if(lohnwocheWrap)lohnwocheWrap.style.display='none';
      controlsEl.style.display='flex';
+     if(sigScaleWrap)sigScaleWrap.style.display='';
+     if(clearSigBtn)clearSigBtn.style.display='';
+     const emailFieldWrap=document.querySelector('.control-field.email-field');
+     if(emailFieldWrap)emailFieldWrap.style.display='';
      placeholderWrap.style.display='none';
+     document.body.classList.remove('print-landscape');
+   }else if(val==='lohnwoche'){
+     sheetWrapElement.style.display='none';
+     if(lohnwocheWrap)lohnwocheWrap.style.display='block';
+     controlsEl.style.display='flex';
+     if(sigScaleWrap)sigScaleWrap.style.display='none';
+     if(clearSigBtn)clearSigBtn.style.display='none';
+     const emailFieldWrap=document.querySelector('.control-field.email-field');
+     if(emailFieldWrap)emailFieldWrap.style.display='none';
+     placeholderWrap.style.display='none';
+     document.body.classList.add('print-landscape');
+     applyDefaultLohnwocheNameIfEmpty();
+     recalcLohnwocheTotals();
+     applyZoom();
    }else{
      sheetWrapElement.style.display='none';
+     if(lohnwocheWrap)lohnwocheWrap.style.display='none';
      controlsEl.style.display='none';
      placeholderWrap.style.display='block';
+     document.body.classList.remove('print-landscape');
    }
    saveDraft();
  }
- formSelector.addEventListener('change',updateFormView);
+ formSelector.addEventListener('change',()=>{updateFormView();renderPdfHistory()});
 
  const topHeader=document.getElementById('topHeader'),toggleMenuBtn=document.getElementById('toggleMenuBtn');
  if(topHeader&&toggleMenuBtn){
@@ -697,6 +1196,14 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
  document.getElementById('clearSignatureBtn').addEventListener('click',clearSignatureOnly);
 
  function clearEntireDocument(){
+   if(formSelector.value==='lohnwoche'){
+     document.querySelectorAll('[data-lw-field]').forEach(el=>{el.value=''});
+     document.querySelectorAll('[data-lw-day-sum]').forEach(el=>{el.value=''});
+     applyDefaultLohnwocheNameIfEmpty();
+     recalcLohnwocheTotals();
+     saveDraft();
+     return;
+   }
    document.querySelectorAll('[data-field]').forEach(el=>{el.value=''});
    document.querySelectorAll('[data-sync-field]').forEach(el=>{el.value=''});
    document.getElementById('clientEmail').value='';
@@ -704,12 +1211,12 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
    sigImg2.removeAttribute('src');sigImg2.hidden=true;target2.classList.remove('signed');
    sheetPage2.classList.add('hidden-page');
    if(page1Badge)page1Badge.hidden=true;
-   localStorage.removeItem(STORAGE_KEY);
+   saveDraft();
    applyDefaultTechnicianIfEmpty();
  }
 
  document.getElementById('clearBtn').addEventListener('click',()=>{
-   if(!confirm('Soll der gesamte Bericht einschließlich aller Eingaben, Auswahlfelder und der Unterschrift geleert werden?'))return;
+   if(!confirm('Sollen alle Eingaben des aktuellen Formulars geleert werden?'))return;
    clearEntireDocument();
    showToast('Dokument geleert.');
  });
@@ -723,6 +1230,21 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
    saveDraft();
  }
  scale.addEventListener('input',updateScale);
+ const sigMinusBtn=document.getElementById('sigMinusBtn'),sigPlusBtn=document.getElementById('sigPlusBtn');
+ if(sigMinusBtn){
+   sigMinusBtn.addEventListener('click',()=>{
+     const minV=Number(scale.min||70),stepV=Number(scale.step||5);
+     scale.value=String(Math.max(minV,Number(scale.value)-stepV));
+     updateScale();
+   });
+ }
+ if(sigPlusBtn){
+   sigPlusBtn.addEventListener('click',()=>{
+     const maxV=Number(scale.max||180),stepV=Number(scale.step||5);
+     scale.value=String(Math.min(maxV,Number(scale.value)+stepV));
+     updateScale();
+   });
+ }
 
  const datePicker=document.getElementById('nativeDatePicker');let activeDateField=null;
  function getTodayISO(){const now=new Date();return String(now.getFullYear())+'-'+String(now.getMonth()+1).padStart(2,'0')+'-'+String(now.getDate()).padStart(2,'0')}
@@ -855,9 +1377,13 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
  }
 
  /* --- Historia zapisanych PDF-ów --- */
+ function activeHistoryKey(){
+   return (formSelector&&formSelector.value==='lohnwoche')?'fubosol_pdf_history_lohnwoche_v1':HISTORY_KEY;
+ }
+
  function getPdfHistory(){
    try{
-     const raw=localStorage.getItem(HISTORY_KEY);
+     const raw=localStorage.getItem(activeHistoryKey());
      const parsed=raw?JSON.parse(raw):[];
      return Array.isArray(parsed)?parsed:[];
    }catch(e){return []}
@@ -865,7 +1391,7 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
 
  function savePdfHistory(items){
    try{
-     localStorage.setItem(HISTORY_KEY,JSON.stringify(items.slice(0,MAX_HISTORY)));
+     localStorage.setItem(activeHistoryKey(),JSON.stringify(items.slice(0,MAX_HISTORY)));
    }catch(e){}
  }
 
@@ -891,10 +1417,12 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
  }
 
  function collectSnapshot(){
-   const fields={};
+   const fields={},lwFields={};
    document.querySelectorAll('[data-field]').forEach(el=>{fields[el.dataset.field]=el.value});
+   document.querySelectorAll('[data-lw-field]').forEach(el=>{lwFields[el.dataset.lwField]=el.value});
    return {
      fields,
+     lwFields,
      email:document.getElementById('clientEmail').value,
      sigScale:scale.value,
      sigImg:sigImg.src||'',
@@ -904,6 +1432,32 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
 
  async function recordPdfInHistory(blob,fileName,pagesCount){
    try{
+     if(formSelector.value==='lohnwoche'){
+       recalcLohnwocheTotals();
+       const lwName=(document.querySelector('[data-lw-field="lw_name"]')?.value||'').trim()||'Ohne Name';
+       const vomV=(document.getElementById('lwVomInput')?.value||'').trim();
+       const bisV=(document.getElementById('lwBisInput')?.value||'').trim();
+       const dateVal=[vomV,bisV].filter(Boolean).join(' – ');
+       const totH=(document.getElementById('lwTotalHours')?.value||'0').trim()||'0';
+       const pdfBase64=await blobToBase64(blob);
+       const entry={
+         id:Date.now()+'_'+Math.random().toString(36).slice(2,7),
+         createdAt:new Date().toLocaleString('de-DE'),
+         fileName,
+         pagesCount:pagesCount||1,
+         baustelle:'Lohnwoche',
+         auftraggeber:lwName,
+         dateVal,
+         hoursSum:totH,
+         pdfBase64,
+         snapshot:collectSnapshot()
+       };
+       const items=getPdfHistory();
+       items.unshift(entry);
+       savePdfHistory(items);
+       renderPdfHistory();
+       return;
+     }
      const baustelle=[1,2,3].map(n=>(getFieldOnPage1('Baustelle-'+n)?.value||'').trim()).filter(Boolean).join(' ');
      const auftraggeber=[1,2,3].map(n=>(getFieldOnPage1('Auftraggeber-'+n)?.value||'').trim()).filter(Boolean).join(' ');
      const dateVal=(getFieldOnPage1('Datum-1')?.value||getFieldOnPage1('Datum Unterschrift')?.value||'').trim();
@@ -953,6 +1507,9 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
    const s=item.snapshot;
    document.querySelectorAll('[data-field]').forEach(el=>{
      el.value=s.fields&&s.fields[el.dataset.field]!==undefined?s.fields[el.dataset.field]:'';
+   });
+   document.querySelectorAll('[data-lw-field]').forEach(el=>{
+     el.value=s.lwFields&&s.lwFields[el.dataset.lwField]!==undefined?s.lwFields[el.dataset.lwField]:'';
    });
    document.getElementById('clientEmail').value=s.email||'';
    if(s.sigScale){scale.value=s.sigScale;updateScale()}
@@ -1025,7 +1582,7 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
    e.stopPropagation();
    if(!getPdfHistory().length)return;
    if(!confirm('Soll die gesamte PDF-Historie auf diesem Gerät gelöscht werden?'))return;
-   localStorage.removeItem(HISTORY_KEY);
+   localStorage.removeItem(activeHistoryKey());
    renderPdfHistory();
    showToast('PDF-Historie gelöscht.');
  });
@@ -1045,16 +1602,13 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
        sigImg.src=data.sigImg;sigImg.hidden=false;target.classList.add('signed');
        sigImg2.src=data.sigImg;sigImg2.hidden=false;target2.classList.add('signed');
      }
-     if(data.selectedForm)formSelector.value=data.selectedForm;
-     if(formSelector.value==='arbeitsbericht'){
-       sheetWrapElement.style.display='block';
-       controlsEl.style.display='flex';
-       placeholderWrap.style.display='none';
-     }else{
-       sheetWrapElement.style.display='none';
-       controlsEl.style.display='none';
-       placeholderWrap.style.display='block';
+     if(data.lwFields){
+       document.querySelectorAll('[data-lw-field]').forEach(el=>{
+         if(data.lwFields[el.dataset.lwField]!==undefined)el.value=data.lwFields[el.dataset.lwField];
+       });
      }
+     if(data.selectedForm)formSelector.value=data.selectedForm;
+     updateFormView();
      syncPage2Fields();
      enforcePage1Overflow(false);
    }catch(e){}
@@ -1065,17 +1619,246 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
  });
 
  document.getElementById('printBtn').addEventListener('click',()=>{
+   let pageOrientStyle=document.getElementById('dynamicPrintOrientStyle');
+   if(!pageOrientStyle){
+     pageOrientStyle=document.createElement('style');
+     pageOrientStyle.id='dynamicPrintOrientStyle';
+     document.head.appendChild(pageOrientStyle);
+   }
+   if(formSelector.value==='lohnwoche'){
+     document.body.classList.add('print-landscape');
+     pageOrientStyle.textContent='@page{size:A4 portrait;margin:0}';
+   }else{
+     document.body.classList.remove('print-landscape');
+     pageOrientStyle.textContent='@page{size:A4 portrait;margin:0}';
+   }
    syncPage2Fields();
    window.print();
  });
 
  function filename(){
+   if(formSelector.value==='lohnwoche'){
+     const nameEl=document.querySelector('[data-lw-field="lw_name"]');
+     const vomEl=document.getElementById('lwVomInput');
+     const bisEl=document.getElementById('lwBisInput');
+     const who=(nameEl&&nameEl.value.trim())||[defaultTechFirstName,defaultTechLastName].filter(Boolean).join(' ')||'Monteur';
+     const range=[vomEl&&vomEl.value.trim(),bisEl&&bisEl.value.trim()].filter(Boolean).join('-');
+     const label=['Lohnwoche',who,range].filter(Boolean).join(' - ');
+     return label.replace(/[\\/:*?"<>|]/g,'-').replace(/\s+/g,' ').trim()+'.pdf';
+   }
    const customer=[...sheetPage1.querySelectorAll('[data-field^="Auftraggeber-"]')].map(e=>e.value.trim()).filter(Boolean).join(' ');
-   const safe=(customer||'Ohne Auftraggeber').replace(/[\\/:*?"<>|]/g,'-').replace(/\s+/g,' ').trim();
+   const site=[...sheetPage1.querySelectorAll('[data-field^="Baustelle-"]')].map(e=>e.value.trim()).filter(Boolean).join(' ');
+   const chosen=customer||site||'Ohne Auftraggeber';
+   const safe=chosen.replace(/[\\/:*?"<>|]/g,'-').replace(/\s+/g,' ').trim();
    return 'Arbeits - Regiebericht - '+safe+'.pdf';
  }
 
+ async function makeLohnwochePdfBlob(){
+   recalcLohnwocheTotals();
+   const map={
+     '€':0x80,'‚':0x82,'ƒ':0x83,'„':0x84,'…':0x85,'†':0x86,'‡':0x87,'ˆ':0x88,'‰':0x89,'Š':0x8A,'‹':0x8B,'Œ':0x8C,'Ž':0x8E,
+     '‘':0x91,'’':0x92,'“':0x93,'”':0x94,'•':0x95,'–':0x96,'—':0x97,'˜':0x98,'™':0x99,'š':0x9A,'›':0x9B,'œ':0x9C,'ž':0x9E,'Ÿ':0x9F,
+     'Ą':0x82,'ą':0x83,'Ć':0x84,'ć':0x85,'Ę':0x86,'ę':0x87,'Ł':0x88,'ł':0x89,'Ń':0x8A,'ń':0x8B,'Ś':0x8C,'ś':0x8D,'Ź':0x8E,'ź':0x8F,'Ż':0x90,'ż':0x91,'Σ':0x53
+   };
+   function winAnsiHex(str){
+     let out='';
+     for(let i=0;i<str.length;i++){
+       const ch=str[i];let n=map[ch];
+       if(n===undefined){const cp=ch.codePointAt(0);n=cp<=255?cp:63}
+       out+=n.toString(16).padStart(2,'0');
+     }
+     return out.toUpperCase();
+   }
+
+   // A4 Portrait: 595.28 x 841.89 pt; Table width = A4 width (minus margins), Table height = exact 47% of A4
+   const pageW=595.28,pageH=841.89;
+   const marginL=14,marginR=14,marginT=16;
+   const tableW=pageW-marginL-marginR;
+   const tableH=pageH*0.47;
+   const topY=pageH-marginT;
+   const bottomY=topY-tableH;
+
+   const topHeaderH=40;
+   const subHeader1H=14;
+   const subHeader2H=13;
+   const totalRowH=15;
+   const bodyYTop=topY-topHeaderH-subHeader1H-subHeader2H;
+   const bodyH=bodyYTop-bottomY-totalRowH;
+   const rowH=bodyH/30;
+
+   // Columns: Datum(8.5%), von(5.8%), bis(5.8%), Reisezeit(6.8%), Std./Tag(5.0%), wo gearbeitet?(33.6%), mit wem?(9.5%), darüber Arbeitsbericht(7.5%), Abrechnungsvermerke(17.5%)
+   const colRatios=[0.085,0.058,0.058,0.068,0.050,0.336,0.095,0.075,0.175];
+   const colX=[marginL];
+   for(let i=0;i<colRatios.length;i++)colX.push(colX[i]+tableW*colRatios[i]);
+
+   // Divider between Name and Lohnwoche sits at ~half of "wo gearbeitet?"
+   const nameSplitX=colX[5]+(colX[6]-colX[5])*0.509;
+   // Thick vertical line placed AFTER "darüber Arbeitsbericht" / BEFORE Fubosol-Heiztechnik (colX[8]) down to bottomY
+   const thickColX=colX[8];
+
+   let c='0 0 0 RG 0 0 0 rg 1 J 1 j\n';
+   const drawLine=(x1,y1,x2,y2,lw)=>{c+=lw.toFixed(2)+' w '+x1.toFixed(2)+' '+y1.toFixed(2)+' m '+x2.toFixed(2)+' '+y2.toFixed(2)+' l S\n'};
+   const drawRect=(x,y,w,h,lw)=>{c+=lw.toFixed(2)+' w '+x.toFixed(2)+' '+y.toFixed(2)+' '+w.toFixed(2)+' '+h.toFixed(2)+' re S\n'};
+   const fillRect=(x,y,w,h,gray)=>{c+=gray.toFixed(2)+' g '+x.toFixed(2)+' '+y.toFixed(2)+' '+w.toFixed(2)+' '+h.toFixed(2)+' re f 0 g\n'};
+   const pdfText=(txt,x,y,size,bold)=>{
+     if(!txt)return;
+     const font=bold?'/F2':'/F1';
+     c+='BT '+font+' '+size.toFixed(2)+' Tf 1 0 0 1 '+x.toFixed(2)+' '+y.toFixed(2)+' Tm <'+winAnsiHex(String(txt))+'> Tj ET\n';
+   };
+   const approxW=(txt,size)=>String(txt||'').length*size*0.52;
+   const pdfCenter=(txt,x1,x2,y,size,bold)=>{
+     if(!txt)return;
+     const w=approxW(txt,size);
+     pdfText(txt,x1+Math.max(1.2,(x2-x1-w)/2),y,size,bold);
+   };
+   const pdfRight=(txt,x2,y,size,bold)=>{
+     if(!txt)return;
+     const w=approxW(txt,size);
+     pdfText(txt,Math.max(marginL+1.5,x2-w-2.2),y,size,bold);
+   };
+
+   // Shaded summary row background at bottom of table
+   fillRect(marginL,bottomY,tableW,totalRowH,0.95);
+
+   // Outer border
+   drawRect(marginL,bottomY,tableW,tableH,1.6);
+
+   // Top header dividers
+   const yAfterTop=topY-topHeaderH;
+   drawLine(marginL,yAfterTop,marginL+tableW,yAfterTop,1.6);
+   drawLine(nameSplitX,topY,nameSplitX,yAfterTop,1.6);
+   drawLine(thickColX,topY,thickColX,yAfterTop,1.6);
+
+   // Top header: Name (13pt label, 12pt input)
+   const nameBaseY=yAfterTop+6.5;
+   pdfText('Name',marginL+6,nameBaseY,13.0,true);
+   const nameLineX1=marginL+48;
+   const nameLineX2=nameSplitX-8;
+   drawLine(marginL+6,nameBaseY-2,nameLineX2,nameBaseY-2,0.85);
+   const nameVal=(document.querySelector('[data-lw-field="lw_name"]')?.value||'').trim();
+   pdfText(nameVal,nameLineX1+3,nameBaseY,12.0,false);
+
+   // Top header: Lohnwoche (13pt title) + extended vom ___ bis ___ underlines (9pt)
+   pdfText('Lohnwoche',nameSplitX+6,topY-14,13.0,true);
+   const lwBaseY=yAfterTop+6.5;
+   pdfText('vom',nameSplitX+6,lwBaseY,9.0,false);
+   const vomLineX1=nameSplitX+27;
+   const bisLabelX=nameSplitX+(thickColX-nameSplitX)*0.52;
+   const vomLineX2=bisLabelX-6;
+   drawLine(vomLineX1,lwBaseY-2,vomLineX2,lwBaseY-2,0.85);
+   const vomVal=(document.getElementById('lwVomInput')?.value||'').trim();
+   pdfText(vomVal,vomLineX1+2,lwBaseY,9.0,false);
+
+   pdfText('bis',bisLabelX,lwBaseY,9.0,false);
+   const bisLineX1=bisLabelX+16;
+   const bisLineX2=thickColX-6;
+   drawLine(bisLineX1,lwBaseY-2,bisLineX2,lwBaseY-2,0.85);
+   const bisVal=(document.getElementById('lwBisInput')?.value||'').trim();
+   pdfText(bisVal,bisLineX1+2,lwBaseY,9.0,false);
+
+   // Company info pushed to right edge
+   const rightEdgeX=marginL+tableW-6;
+   pdfRight('Fubosol-Heiztechnik',rightEdgeX,topY-12,7.6,true);
+   pdfRight('86663 Bäumenheim',rightEdgeX,topY-23,7.6,true);
+   pdfRight('Telefon 09 06/9 1011',rightEdgeX,topY-34,7.4,false);
+
+   // Column headers
+   const ySub1Bottom=yAfterTop-subHeader1H;
+   const ySub2Bottom=ySub1Bottom-subHeader2H;
+   drawLine(marginL,ySub2Bottom,marginL+tableW,ySub2Bottom,1.6);
+   drawLine(colX[1],ySub1Bottom,colX[3],ySub1Bottom,0.7);
+
+   // Vertical column lines from yAfterTop down to bottomY (thick line at colX[4] after davon Reisezeit AND at colX[8] after darüber Arbeitsbericht)
+   for(let i=1;i<colX.length-1;i++){
+     const topStart=(i===2)?ySub1Bottom:yAfterTop;
+     const lw=(i===4||i===8)?1.6:0.65;
+     drawLine(colX[i],topStart,colX[i],bottomY,lw);
+   }
+
+   pdfCenter('Datum',colX[0],colX[1],ySub2Bottom+9,7.5,true);
+   pdfCenter('Arbeitszeit',colX[1],colX[3],ySub1Bottom+3.5,7.5,true);
+   pdfCenter('von',colX[1],colX[2],ySub2Bottom+3.5,7.2,true);
+   pdfCenter('bis',colX[2],colX[3],ySub2Bottom+3.5,7.2,true);
+   pdfCenter('davon',colX[3],colX[4],ySub1Bottom+2.5,6.6,true);
+   pdfCenter('Reisezeit',colX[3],colX[4],ySub2Bottom+2.5,6.6,true);
+   pdfCenter('Std. /',colX[4],colX[5],ySub1Bottom+2.5,6.5,true);
+   pdfCenter('Tag',colX[4],colX[5],ySub2Bottom+2.5,6.5,true);
+   pdfCenter('wo gearbeitet?',colX[5],colX[6],ySub2Bottom+9,7.8,true);
+   pdfCenter('mit wem?',colX[6],colX[7],ySub2Bottom+9,7.5,true);
+   pdfCenter('darüber',colX[7],colX[8],ySub1Bottom+4.5,5.8,true);
+   pdfCenter('Arbeits-',colX[7],colX[8],ySub2Bottom+6.5,5.8,true);
+   pdfCenter('bericht',colX[7],colX[8],ySub2Bottom+0.8,5.8,true);
+   pdfCenter('Abrechnungs-',colX[8],colX[9],ySub1Bottom+2.5,6.5,true);
+   pdfCenter('vermerke',colX[8],colX[9],ySub2Bottom+2.5,6.5,true);
+
+   // 30 data rows (6 days x 5 rows)
+   for(let r=1;r<=30;r++){
+     const yRowBottom=bodyYTop-r*rowH;
+     const isDayEnd=(r%5===0);
+     drawLine(marginL,yRowBottom,marginL+tableW,yRowBottom,isDayEnd?1.5:0.45);
+
+     const baseY=yRowBottom+(rowH-7.0)/2+0.8;
+     const fs=7.5;
+     const getLw=(k)=>(document.querySelector('[data-lw-field="'+k+'"]')?.value||'').trim();
+
+     const dVal=getLw('lw_date_'+r);
+     const vonVal=getLw('lw_von_'+r);
+     const bisRVal=getLw('lw_bis_'+r);
+     const reiseVal=getLw('lw_reise_'+r);
+     const woVal=getLw('lw_wo_'+r);
+     const wemVal=getLw('lw_wem_'+r);
+     const berVal=getLw('lw_bericht_'+r);
+     const verVal=getLw('lw_vermerk_'+r);
+
+     if(dVal)pdfCenter(dVal,colX[0],colX[1],baseY,fs,false);
+     if(vonVal)pdfCenter(vonVal,colX[1],colX[2],baseY,fs,false);
+     if(bisRVal)pdfCenter(bisRVal,colX[2],colX[3],baseY,fs,false);
+     if(reiseVal)pdfRight(reiseVal,colX[4],baseY,fs,false);
+
+     if(isDayEnd){
+       const dayIdx=r/5;
+       const daySumVal=(document.querySelector('[data-lw-day-sum="'+dayIdx+'"]')?.value||'').trim();
+       if(daySumVal)pdfRight(daySumVal,colX[5],baseY,fs,true);
+     }else{
+       const rowHVal=getLw('lw_row_hours_'+r);
+       if(rowHVal)pdfRight(rowHVal,colX[5],baseY,fs,false);
+     }
+
+     if(woVal)pdfText(woVal.slice(0,43),colX[5]+3,baseY,fs,false);
+     if(wemVal)pdfText(wemVal.slice(0,12),colX[6]+2.5,baseY,fs,false);
+     if(berVal)pdfText(berVal.slice(0,10),colX[7]+2.5,baseY,fs,false);
+     if(verVal)pdfText(verVal.slice(0,24),colX[8]+3,baseY,fs,false);
+   }
+
+   // Total row at bottom of table
+   const totBaseY=bottomY+(totalRowH-7.5)/2+1.0;
+   pdfText('Gesamtstunden',marginL+4,totBaseY,7.6,true);
+   const totReise=(document.getElementById('lwTotalReise')?.value||'').trim();
+   const totHours=(document.getElementById('lwTotalHours')?.value||'').trim();
+   if(totReise)pdfRight(totReise,colX[4],totBaseY,7.6,true);
+   if(totHours)pdfRight(totHours,colX[5],totBaseY,7.8,true);
+
+   const objects=[];
+   objects[1]='<< /Type /Catalog /Pages 2 0 R >>';
+   objects[2]='<< /Type /Pages /Kids [3 0 R] /Count 1 >>';
+   objects[3]='<< /Type /Page /Parent 2 0 R /MediaBox [0 0 '+pageW+' '+pageH+'] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R >>';
+   objects[4]='<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding << /Type /Encoding /BaseEncoding /WinAnsiEncoding /Differences [ 130 /Aogonek /aogonek /Cacute /cacute /Eogonek /eogonek /Lslash /lslash /Nacute /nacute /Sacute /sacute /Zacute /zacute /Zdotaccent /zdotaccent ] >> >>';
+   objects[5]='<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding << /Type /Encoding /BaseEncoding /WinAnsiEncoding /Differences [ 130 /Aogonek /aogonek /Cacute /cacute /Eogonek /eogonek /Lslash /lslash /Nacute /nacute /Sacute /sacute /Zacute /zacute /Zdotaccent /zdotaccent ] >> >>';
+   objects[6]='<< /Length '+c.length+' >>\nstream\n'+c+'endstream';
+
+   let pdf='%PDF-1.4\n%\xE2\xE3\xCF\xD3\n',offsets=[0];
+   for(let i=1;i<=6;i++){offsets[i]=pdf.length;pdf+=i+' 0 obj\n'+objects[i]+'\nendobj\n'}
+   const xref=pdf.length;
+   pdf+='xref\n0 7\n0000000000 65535 f \n';
+   for(let i=1;i<=6;i++)pdf+=String(offsets[i]).padStart(10,'0')+' 00000 n \n';
+   pdf+='trailer\n<< /Size 7 /Root 1 0 R >>\nstartxref\n'+xref+'\n%%EOF';
+   const bytes=new Uint8Array(pdf.length);
+   for(let i=0;i<pdf.length;i++)bytes[i]=pdf.charCodeAt(i)&255;
+   return {blob:new Blob([bytes],{type:'application/pdf'}),pagesCount:1};
+ }
+
  async function makePdfBlob(){
+   if(formSelector.value==='lohnwoche')return await makeLohnwochePdfBlob();
    syncPage2Fields();
    const activeSheets=[sheetPage1];
    if(!sheetPage2.classList.contains('hidden-page'))activeSheets.push(sheetPage2);
@@ -1107,7 +1890,7 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
      const sheetImg=sheet.querySelector('.form-image');
      if(!sheetImg.complete||!sheetImg.naturalWidth)await new Promise((resolve,reject)=>{sheetImg.onload=resolve;sheetImg.onerror=reject});
 
-     const prevZoom=sheet.style.zoom;sheet.style.zoom='1';
+     const prevZoom=sheet.style.zoom;const prevTransform=sheet.style.transform;sheet.style.zoom='1';sheet.style.transform='none';
      const sr=sheet.getBoundingClientRect();
      const cv=document.createElement('canvas');cv.width=W;cv.height=H;
      const c=cv.getContext('2d');c.fillStyle='#fff';c.fillRect(0,0,W,H);c.drawImage(sheetImg,0,0,W,H);
@@ -1155,7 +1938,7 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
          pdfText(lines[i],x+pad,baseline-i*lineH,fs);
        }
      }
-     sheet.style.zoom=prevZoom;
+     sheet.style.zoom=prevZoom;sheet.style.transform=prevTransform;
      pageDataList.push({jpg,content,imName});
    }
 
@@ -1220,8 +2003,11 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
    const recipients=[OFFICE_EMAIL,client].filter(Boolean);
    const clipboardRecipients=recipients.join(', ');
    const name=filename();
+   const isLw=(formSelector&&formSelector.value==='lohnwoche');
    const mailSubject=buildMailSubject(name);
-   const mailBody='Guten Tag,\n\nanbei erhalten Sie den ausgefüllten Arbeits- und Regiebericht.';
+   const mailBody=isLw
+     ?'Guten Tag,\n\nanbei erhalten Sie den ausgefüllten Stundennachweis (Lohnwoche).'
+     :'Guten Tag,\n\nanbei erhalten Sie den ausgefüllten Arbeits- und Regiebericht.';
 
    await copyToClipboard(clipboardRecipients);
    showToast('📋 Kopiert: '+clipboardRecipients+' (Im Feld „An“ einfügen)');
@@ -1255,9 +2041,10 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
  }
 
  async function sendReportViaWhatsApp(){
+   const isLw=(formSelector&&formSelector.value==='lohnwoche');
    const name=filename();
    const title=buildMailSubject(name);
-   const msgText='Arbeits- und Regiebericht: '+title+' ('+OFFICE_EMAIL+')';
+   const msgText=(isLw?'Lohnwoche / Stundennachweis: ':'Arbeits- und Regiebericht: ')+title+' ('+OFFICE_EMAIL+')';
 
    try{
      const {blob,pagesCount}=await makePdfBlob();
@@ -1291,18 +2078,130 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
  document.getElementById('whatsappBtn').addEventListener('click',sendReportViaWhatsApp);
 
  const zoom=document.getElementById('zoomScale'),zoomValue=document.getElementById('zoomValue'),sheetWrap=document.getElementById('sheetWrap');
- function applyZoom(){
+ function ensureZoomStage(el){
+   if(!el||!el.parentElement)return null;
+   if(el.parentElement.classList.contains('zoom-stage'))return el.parentElement;
+   const stage=document.createElement('div');
+   stage.className='zoom-stage';
+   el.parentElement.insertBefore(stage,el);
+   stage.appendChild(el);
+   return stage;
+ }
+
+ function applyZoom(anchorSlider){
+   const anchorTop=anchorSlider&&zoom?zoom.getBoundingClientRect().top:null;
    const z=Number(zoom.value)/100;
    zoomValue.textContent=zoom.value+' %';
-   const wrapW=sheetWrap.clientWidth||Math.min(window.innerWidth-12,1000);
-   const base=Math.min(wrapW,794);
-   document.querySelectorAll('.sheet').forEach(s=>{
-     s.style.width=base+'px';
-     s.style.setProperty('--scale',String(base/794));
-     s.style.zoom=String(z);
+
+   if(sheetWrap&&sheetWrap.style.display!=='none'){
+     const wrapW=sheetWrap.clientWidth||Math.min(window.innerWidth-12,1000);
+     const base=Math.min(wrapW,794);
+     const scaledW=Math.round(base*z);
+     const singleH=Math.round(base*(3508/2481));
+     const scaledH=Math.round(singleH*z);
+     const prevScrollRatioX=sheetWrap.scrollWidth>sheetWrap.clientWidth
+       ?(sheetWrap.scrollLeft+sheetWrap.clientWidth/2)/sheetWrap.scrollWidth
+       :0.5;
+
+     document.querySelectorAll('.sheet').forEach((s,idx)=>{
+       const stage=ensureZoomStage(s);
+       s.style.zoom='1';
+       s.style.width=base+'px';
+       s.style.setProperty('--scale',String(base/794));
+       s.style.transform='scale('+z+')';
+       if(stage){
+         if(s.classList.contains('hidden-page')){
+           stage.style.display='none';
+         }else{
+           stage.style.display='block';
+           stage.style.width=scaledW+'px';
+           stage.style.height=scaledH+'px';
+           stage.style.marginTop=idx>0?'16px':'0';
+         }
+       }
+     });
+
+     if(scaledW>wrapW){
+       sheetWrap.scrollLeft=Math.max(0,Math.round(prevScrollRatioX*sheetWrap.scrollWidth-wrapW/2));
+     }else{
+       sheetWrap.scrollLeft=0;
+     }
+   }
+
+   if(sheetLohnwoche&&lohnwocheWrap&&lohnwocheWrap.style.display!=='none'){
+     const lwWrapW=lohnwocheWrap.clientWidth||Math.min(window.innerWidth-12,794);
+     const lwBase=Math.min(lwWrapW,794);
+     const lwBaseH=Math.round(lwBase*(640/794));
+     const lwInnerH=lwBaseH-19;
+     const lwTableEl=sheetLohnwoche.querySelector('.lw-table');
+
+     sheetLohnwoche.style.zoom='1';
+     sheetLohnwoche.style.transform='none';
+     sheetLohnwoche.style.width=lwBase+'px';
+     sheetLohnwoche.style.height=lwBaseH+'px';
+     sheetLohnwoche.style.setProperty('--scale',String(lwBase/794));
+
+     if(lwTableEl){
+       lwTableEl.style.height=lwInnerH+'px';
+       const theadEl=lwTableEl.querySelector('thead');
+       const totalRowEl=lwTableEl.querySelector('.lw-total-row');
+       const dataRows=lwTableEl.querySelectorAll('.lw-data-row');
+       const headH=theadEl?Math.round(theadEl.getBoundingClientRect().height):92;
+       const totH=totalRowEl?Math.round(totalRowEl.getBoundingClientRect().height):20;
+       const availForRows=Math.max(300,lwInnerH-headH-totH-2);
+       const perRowPx=(availForRows/Math.max(1,dataRows.length)).toFixed(2)+'px';
+       dataRows.forEach(tr=>{
+         tr.style.height=perRowPx;
+         tr.querySelectorAll('td').forEach(td=>{td.style.height=perRowPx});
+       });
+     }
+
+     const lwScaledW=Math.round(lwBase*z);
+     const lwScaledH=Math.round(lwBaseH*z)+6;
+     const prevLwRatioX=lohnwocheWrap.scrollWidth>lohnwocheWrap.clientWidth
+       ?(lohnwocheWrap.scrollLeft+lohnwocheWrap.clientWidth/2)/lohnwocheWrap.scrollWidth
+       :0.5;
+
+     const lwStage=ensureZoomStage(sheetLohnwoche);
+     sheetLohnwoche.style.transformOrigin=(lwScaledW>lwWrapW)?'top left':'top center';
+     sheetLohnwoche.style.transform='scale('+z+')';
+     if(lwStage){
+       lwStage.style.width=Math.min(lwScaledW,lwWrapW)+'px';
+       lwStage.style.height=lwScaledH+'px';
+       lwStage.style.overflow='hidden';
+     }
+
+     if(lwScaledW>lwWrapW){
+       lohnwocheWrap.style.overflowX='auto';lohnwocheWrap.style.overflowY='visible';
+       lohnwocheWrap.scrollLeft=Math.max(0,Math.round(prevLwRatioX*lohnwocheWrap.scrollWidth-lwWrapW/2));
+     }else{
+       lohnwocheWrap.style.overflowX='visible';lohnwocheWrap.style.overflowY='visible';
+       lohnwocheWrap.scrollLeft=0;
+     }
+   }
+
+   if(anchorTop!==null&&zoom){
+     const newTop=zoom.getBoundingClientRect().top;
+     const dy=newTop-anchorTop;
+     if(Math.abs(dy)>0.5)window.scrollBy(0,dy);
+   }
+ }
+ zoom.addEventListener('input',()=>applyZoom(true));
+ const zoomMinusBtn=document.getElementById('zoomMinusBtn'),zoomPlusBtn=document.getElementById('zoomPlusBtn');
+ if(zoomMinusBtn){
+   zoomMinusBtn.addEventListener('click',()=>{
+     const minV=Number(zoom.min||60),stepV=Number(zoom.step||5);
+     zoom.value=String(Math.max(minV,Number(zoom.value)-stepV));
+     applyZoom(true);
    });
  }
- zoom.addEventListener('input',applyZoom);
+ if(zoomPlusBtn){
+   zoomPlusBtn.addEventListener('click',()=>{
+     const maxV=Number(zoom.max||160),stepV=Number(zoom.step||5);
+     zoom.value=String(Math.min(maxV,Number(zoom.value)+stepV));
+     applyZoom(true);
+   });
+ }
  window.addEventListener('resize',()=>{requestAnimationFrame(applyZoom)});
  if(window.screen&&window.screen.orientation){
    window.screen.orientation.addEventListener('change',()=>{setTimeout(applyZoom,120)});
@@ -1326,24 +2225,41 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
  let listCounter=1;
  let isApplyingVoiceTransform=false;
  let hidePillTimer=null;
+ let pillManualPos=null;
+ let isDraggingPill=false,dragOffsetX=0,dragOffsetY=0;
+
+ function clampPillCoords(left,top){
+   const pillW=floatingVoicePill.offsetWidth||120;
+   const pillH=floatingVoicePill.offsetHeight||34;
+   return{
+     left:Math.round(Math.max(6,Math.min(window.innerWidth-pillW-6,left))),
+     top:Math.round(Math.max(6,Math.min(window.innerHeight-pillH-6,top)))
+   };
+ }
 
  function positionFloatingVoicePill(el){
    if(!floatingVoicePill||!el)return;
    const rect=el.getBoundingClientRect();
    if(!rect.width&&!rect.height)return;
    floatingVoicePill.classList.add('visible');
-   const pillW=floatingVoicePill.offsetWidth||110;
-   const pillH=floatingVoicePill.offsetHeight||36;
+   if(pillManualPos){
+     const c=clampPillCoords(pillManualPos.left,pillManualPos.top);
+     floatingVoicePill.style.left=c.left+'px';
+     floatingVoicePill.style.top=c.top+'px';
+     return;
+   }
+   const pillW=floatingVoicePill.offsetWidth||120;
+   const pillH=floatingVoicePill.offsetHeight||34;
    let left=rect.right-pillW-4;
    let top=rect.top-pillH-4;
    if(top<6)top=Math.min(window.innerHeight-pillH-6,rect.bottom+4);
-   left=Math.max(6,Math.min(window.innerWidth-pillW-6,left));
-   floatingVoicePill.style.left=Math.round(left)+'px';
-   floatingVoicePill.style.top=Math.round(top)+'px';
+   const c=clampPillCoords(left,top);
+   floatingVoicePill.style.left=c.left+'px';
+   floatingVoicePill.style.top=c.top+'px';
  }
 
  function hideFloatingVoicePill(force){
-   if(isRecording&&!force)return;
+   if((isRecording||isDraggingPill)&&!force)return;
    if(floatingVoicePill)floatingVoicePill.classList.remove('visible');
  }
  const closeVoicePillBtn=document.getElementById('closeVoicePillBtn');
@@ -1353,13 +2269,48 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
        manualStop=true;
        try{recognition.stop()}catch(e){}
      }
+     pillManualPos=null;
      hideFloatingVoicePill(true);
    });
  }
 
  if(floatingVoicePill){
    floatingVoicePill.addEventListener('pointerdown',(e)=>{
-     e.preventDefault();
+     if(!e.target.closest('input,textarea'))e.preventDefault();
+     const isButton=!!e.target.closest('button');
+     const rect=floatingVoicePill.getBoundingClientRect();
+     dragOffsetX=e.clientX-rect.left;
+     dragOffsetY=e.clientY-rect.top;
+     let startX=e.clientX,startY=e.clientY,moved=false;
+
+     const onMove=(ev)=>{
+       const dx=ev.clientX-startX,dy=ev.clientY-startY;
+       if(!moved&&Math.hypot(dx,dy)<6)return;
+       moved=true;
+       isDraggingPill=true;
+       const c=clampPillCoords(ev.clientX-dragOffsetX,ev.clientY-dragOffsetY);
+       pillManualPos={left:c.left,top:c.top};
+       floatingVoicePill.style.left=c.left+'px';
+       floatingVoicePill.style.top=c.top+'px';
+     };
+
+     const onUp=(ev)=>{
+       window.removeEventListener('pointermove',onMove);
+       window.removeEventListener('pointerup',onUp);
+       window.removeEventListener('pointercancel',onUp);
+       if(moved&&isButton){
+         const suppressClick=(clickEv)=>{
+           clickEv.stopImmediatePropagation();
+           clickEv.preventDefault();
+         };
+         floatingVoicePill.addEventListener('click',suppressClick,{capture:true,once:true});
+       }
+       setTimeout(()=>{isDraggingPill=false},30);
+     };
+
+     window.addEventListener('pointermove',onMove);
+     window.addEventListener('pointerup',onUp);
+     window.addEventListener('pointercancel',onUp);
    });
  }
 
@@ -1659,7 +2610,8 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
  const saveSettingsBtn=document.getElementById('saveSettingsBtn');
  const docFontSizePtInput=document.getElementById('docFontSizePt');
  const fontLinesPreview=document.getElementById('fontLinesPreview');
- const defaultTechnicianInput=document.getElementById('defaultTechnician');
+ const defaultTechFirstNameInput=document.getElementById('defaultTechFirstName');
+ const defaultTechLastNameInput=document.getElementById('defaultTechLastName');
  const geminiApiKeyInput=document.getElementById('geminiApiKey');
  const geminiModelSelect=document.getElementById('geminiModel');
  const openrouterModelRow=document.getElementById('openrouterModelRow');
@@ -1716,11 +2668,19 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
    enforcePage1Overflow(false);
  }
 
- function applyDefaultTechnicianIfEmpty(){
-   if(!defaultTechnicianName)return;
+ function applyDefaultTechnicianIfEmpty(prevLastName,force){
    const tech1=getFieldOnPage1('Name des Monteurs-1');
-   if(tech1&&!tech1.value.trim()){
-     tech1.value=defaultTechnicianName;
+   if(!tech1)return;
+   const cur=tech1.value.trim();
+   if(force){
+     if(defaultTechLastName||cur===prevLastName){
+       tech1.value=defaultTechLastName||'';
+       syncPage2Fields();
+     }
+     return;
+   }
+   if(!cur||(prevLastName!==undefined&&cur===prevLastName)){
+     tech1.value=defaultTechLastName||'';
      syncPage2Fields();
    }
  }
@@ -1732,13 +2692,15 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
      if(raw)cfg=JSON.parse(raw)||{};
    }catch(e){}
    const savedPt=cfg.fontPt!==undefined?cfg.fontPt:9.6;
-   defaultTechnicianName=(cfg.defaultTechnician||'').trim();
+   defaultTechFirstName=(cfg.defaultTechFirstName||'').trim();
+   defaultTechLastName=(cfg.defaultTechLastName!==undefined?cfg.defaultTechLastName:(cfg.defaultTechnician||'')).trim();
    const savedKey=(cfg.apiKey!==undefined?cfg.apiKey:(localStorage.getItem(AI_KEY_STORAGE)||'')).trim();
    const savedModel=cfg.model||localStorage.getItem(AI_MODEL_STORAGE)||'gemini-3.8-flash';
    const savedOrModel=(cfg.openrouterModel||'google/gemini-3.8-flash').trim();
 
    if(docFontSizePtInput)docFontSizePtInput.value=clampFontPt(savedPt).toFixed(1);
-   if(defaultTechnicianInput)defaultTechnicianInput.value=defaultTechnicianName;
+   if(defaultTechFirstNameInput)defaultTechFirstNameInput.value=defaultTechFirstName;
+   if(defaultTechLastNameInput)defaultTechLastNameInput.value=defaultTechLastName;
    if(geminiApiKeyInput)geminiApiKeyInput.value=savedKey;
    if(geminiModelSelect)geminiModelSelect.value=savedModel;
    if(openrouterModelIdInput)openrouterModelIdInput.value=savedOrModel;
@@ -1747,24 +2709,34 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
  }
 
  function persistUserSettings(cfg){
+   const prevLast=defaultTechLastName;
+   const prevFull=[defaultTechFirstName,defaultTechLastName].filter(Boolean).join(' ').trim();
    const cleanPt=clampFontPt(cfg.fontPt);
-   const cleanTech=(cfg.defaultTechnician||'').trim();
+   const cleanFirst=(cfg.defaultTechFirstName||'').trim();
+   const cleanLast=(cfg.defaultTechLastName||'').trim();
    const cleanKey=(cfg.apiKey||'').trim();
    const cleanModel=cfg.model||'gemini-3.8-flash';
    const cleanOrModel=(cfg.openrouterModel||'google/gemini-3.8-flash').trim()||'google/gemini-3.8-flash';
-   const payload={fontPt:cleanPt,defaultTechnician:cleanTech,apiKey:cleanKey,model:cleanModel,openrouterModel:cleanOrModel};
+   const payload={fontPt:cleanPt,defaultTechFirstName:cleanFirst,defaultTechLastName:cleanLast,apiKey:cleanKey,model:cleanModel,openrouterModel:cleanOrModel};
    localStorage.setItem(SETTINGS_STORAGE_KEY,JSON.stringify(payload));
    if(cleanKey)localStorage.setItem(AI_KEY_STORAGE,cleanKey);
    else localStorage.removeItem(AI_KEY_STORAGE);
    localStorage.setItem(AI_MODEL_STORAGE,cleanModel);
-   defaultTechnicianName=cleanTech;
+   defaultTechFirstName=cleanFirst;
+   defaultTechLastName=cleanLast;
    applyDocumentFontSize(cleanPt);
-   applyDefaultTechnicianIfEmpty();
+   applyDefaultTechnicianIfEmpty(prevLast,true);
+   applyDefaultLohnwocheNameIfEmpty(prevFull,true);
    saveDraft();
  }
 
  function openSettingsModal(){
    loadUserSettings();
+   const isLw=(formSelector&&formSelector.value==='lohnwoche');
+   const fontCard=docFontSizePtInput?docFontSizePtInput.closest('.settings-card'):null;
+   if(fontCard)fontCard.style.display=isLw?'none':'';
+   const settingsSub=settingsModal?settingsModal.querySelector('.dialog-head p'):null;
+   if(settingsSub)settingsSub.textContent=isLw?'Standard-Monteur, KI-Schlüssel & Konfigurations-Backup':'Schriftgröße, Standard-Monteur, KI-Schlüssel & Konfigurations-Backup';
    if(importSettingsWrap)importSettingsWrap.style.display='none';
    if(settingsModal){
      settingsModal.classList.add('open');
@@ -1798,7 +2770,8 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
      }
      persistUserSettings({
        fontPt:rawPt,
-       defaultTechnician:defaultTechnicianInput?defaultTechnicianInput.value:'',
+       defaultTechFirstName:defaultTechFirstNameInput?defaultTechFirstNameInput.value:'',
+       defaultTechLastName:defaultTechLastNameInput?defaultTechLastNameInput.value:'',
        apiKey:geminiApiKeyInput?geminiApiKeyInput.value:'',
        model:geminiModelSelect?geminiModelSelect.value:'gemini-3.8-flash',
        openrouterModel:openrouterModelIdInput?openrouterModelIdInput.value:'google/gemini-3.8-flash'
@@ -1814,7 +2787,8 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
        app:'FUBOSOL-AI',
        v:1,
        fontPt:clampFontPt(docFontSizePtInput?docFontSizePtInput.value:docFontPt),
-       defaultTechnician:(defaultTechnicianInput?defaultTechnicianInput.value:defaultTechnicianName).trim(),
+       defaultTechFirstName:(defaultTechFirstNameInput?defaultTechFirstNameInput.value:defaultTechFirstName).trim(),
+       defaultTechLastName:(defaultTechLastNameInput?defaultTechLastNameInput.value:defaultTechLastName).trim(),
        apiKey:(geminiApiKeyInput?geminiApiKeyInput.value:'').trim(),
        model:geminiModelSelect?geminiModelSelect.value:'gemini-3.8-flash',
        openrouterModel:(openrouterModelIdInput?openrouterModelIdInput.value:'google/gemini-3.8-flash').trim()
@@ -1843,7 +2817,9 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
        const parsed=JSON.parse(raw);
        if(!parsed||typeof parsed!=='object')throw new Error('Ungültiges Format');
        if(docFontSizePtInput&&parsed.fontPt!==undefined)docFontSizePtInput.value=clampFontPt(parsed.fontPt).toFixed(1);
-       if(defaultTechnicianInput&&parsed.defaultTechnician!==undefined)defaultTechnicianInput.value=parsed.defaultTechnician;
+       if(defaultTechFirstNameInput&&parsed.defaultTechFirstName!==undefined)defaultTechFirstNameInput.value=parsed.defaultTechFirstName;
+       if(defaultTechLastNameInput&&parsed.defaultTechLastName!==undefined)defaultTechLastNameInput.value=parsed.defaultTechLastName;
+       else if(defaultTechLastNameInput&&parsed.defaultTechnician!==undefined)defaultTechLastNameInput.value=parsed.defaultTechnician;
        if(geminiApiKeyInput&&parsed.apiKey!==undefined)geminiApiKeyInput.value=parsed.apiKey;
        if(geminiModelSelect&&parsed.model)geminiModelSelect.value=parsed.model;
        if(openrouterModelIdInput&&parsed.openrouterModel)openrouterModelIdInput.value=parsed.openrouterModel;
@@ -2047,9 +3023,194 @@ main{max-width:1000px;margin:6px auto;padding:0 6px 24px}
  if(dictationGuideModal)dictationGuideModal.addEventListener('click',e=>{if(e.target===dictationGuideModal)closeDictationGuide()});
  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&dictationGuideModal&&dictationGuideModal.classList.contains('open'))closeDictationGuide()});
 
+ /* --- Lohnwoche / Stundennachweis Automatisierungen --- */
+ function applyDefaultLohnwocheNameIfEmpty(prevFullName,force){
+   const nameInp=document.querySelector('[data-lw-field="lw_name"]');
+   if(!nameInp)return;
+   const fullName=[defaultTechFirstName,defaultTechLastName].filter(Boolean).join(' ').trim();
+   const cur=nameInp.value.trim();
+   if(force){
+     if(fullName||cur===prevFullName){
+       nameInp.value=fullName;
+     }
+     return;
+   }
+   if(!cur||(prevFullName!==undefined&&cur===prevFullName)){
+     nameInp.value=fullName;
+   }
+ }
+
+ function formatSingleTimeToken(raw){
+   const s=(raw||'').trim().replace('.',':');
+   if(!s)return '';
+   if(s.includes(':')){
+     const [h,m]=s.split(':');
+     const hh=parseInt(h,10),mm=parseInt(m,10);
+     if(!isNaN(hh)&&!isNaN(mm)&&hh>=0&&hh<=24&&mm>=0&&mm<60){
+       return String(hh).padStart(2,'0')+':'+String(mm).padStart(2,'0');
+     }
+     return s;
+   }
+   if(/^\d{4}$/.test(s)){
+     return s.slice(0,2)+':'+s.slice(2,4);
+   }
+   if(/^\d{3}$/.test(s)){
+     return '0'+s.slice(0,1)+':'+s.slice(1,3);
+   }
+   if(/^\d{1,2}$/.test(s)){
+     const hh=parseInt(s,10);
+     if(hh>=0&&hh<=24)return String(hh).padStart(2,'0')+':00';
+   }
+   return s;
+ }
+
+ function parseDecimalHours(val){
+   const s=(val||'').trim().replace(',','.');
+   if(!s)return NaN;
+   if(s.includes(':')){
+     const [h,m]=s.split(':');
+     const hh=parseFloat(h),mm=parseFloat(m);
+     if(!isNaN(hh)&&!isNaN(mm))return hh+(mm/60);
+   }
+   const n=parseFloat(s);
+   return isNaN(n)?NaN:n;
+ }
+
+ function calcRowDurationHours(vonStr,bisStr){
+   const v=formatSingleTimeToken(vonStr);
+   const b=formatSingleTimeToken(bisStr);
+   const mv=v.match(/^(\d{2}):(\d{2})$/);
+   const mb=b.match(/^(\d{2}):(\d{2})$/);
+   if(!mv||!mb)return NaN;
+   let diff=(parseInt(mb[1],10)*60+parseInt(mb[2],10))-(parseInt(mv[1],10)*60+parseInt(mv[2],10));
+   if(diff<0)diff+=1440;
+   return diff/60;
+ }
+
+ function formatDec(num){
+   if(isNaN(num)||num<=0)return '';
+   return num.toFixed(2).replace('.',',');
+ }
+
+ function recalcLohnwocheTotals(){
+   let weekHours=0;
+   let weekReise=0;
+
+   for(let day=1;day<=6;day++){
+     let daySum=0;
+     for(let sub=1;sub<=5;sub++){
+       const r=(day-1)*5+sub;
+       const vonEl=document.querySelector('[data-lw-field="lw_von_'+r+'"]');
+       const bisEl=document.querySelector('[data-lw-field="lw_bis_'+r+'"]');
+       const reiseEl=document.querySelector('[data-lw-field="lw_reise_'+r+'"]');
+       const dur=calcRowDurationHours(vonEl?vonEl.value:'',bisEl?bisEl.value:'');
+
+       if(sub<5){
+         const rowHoursEl=document.querySelector('[data-lw-field="lw_row_hours_'+r+'"]');
+         if(!isNaN(dur)&&dur>0){
+           if(rowHoursEl)rowHoursEl.value=formatDec(dur);
+           daySum+=dur;
+         }else if(rowHoursEl&&rowHoursEl.value.trim()){
+           const manualH=parseDecimalHours(rowHoursEl.value);
+           if(!isNaN(manualH)&&manualH>0)daySum+=manualH;
+         }
+       }else{
+         // 5th row of each day displays the day total (or adds its own von-bis if filled)
+         if(!isNaN(dur)&&dur>0)daySum+=dur;
+         const daySumEl=document.querySelector('[data-lw-day-sum="'+day+'"]');
+         if(daySumEl){
+           if(daySum>0){
+             daySumEl.value=formatDec(daySum);
+           }else if(!daySumEl.dataset.manualEdited){
+             daySumEl.value='';
+           }else{
+             const manualDay=parseDecimalHours(daySumEl.value);
+             if(!isNaN(manualDay)&&manualDay>0)daySum=manualDay;
+           }
+         }
+       }
+
+       if(reiseEl&&reiseEl.value.trim()){
+         const rNum=parseDecimalHours(reiseEl.value);
+         if(!isNaN(rNum)&&rNum>0)weekReise+=rNum;
+       }
+     }
+     weekHours+=daySum;
+   }
+
+   const totHoursEl=document.getElementById('lwTotalHours');
+   const totReiseEl=document.getElementById('lwTotalReise');
+   if(totHoursEl)totHoursEl.value=weekHours>0?formatDec(weekHours):'';
+   if(totReiseEl)totReiseEl.value=weekReise>0?formatDec(weekReise):'';
+ }
+
+ function autoPopulateWeekDatesFromVom(){
+   const vomEl=document.getElementById('lwVomInput');
+   if(!vomEl||!vomEl.value.trim())return;
+   const iso=toISODate(vomEl.value);
+   if(!iso)return;
+   const [yy,mm,dd]=iso.split('-').map(Number);
+   const start=new Date(yy,mm-1,dd);
+   if(isNaN(start.getTime()))return;
+
+   const addDays=(base,days)=>{
+     const d=new Date(base.getFullYear(),base.getMonth(),base.getDate()+days);
+     return String(d.getDate()).padStart(2,'0')+'.'+String(d.getMonth()+1).padStart(2,'0')+'.'+String(d.getFullYear()).slice(-2);
+   };
+
+   const bisEl=document.getElementById('lwBisInput');
+   if(bisEl&&!bisEl.value.trim()){
+     bisEl.value=addDays(start,5);
+   }
+   for(let day=1;day<=6;day++){
+     const dayDateEl=document.querySelector('[data-lw-day-date="'+day+'"]');
+     if(dayDateEl&&!dayDateEl.value.trim()){
+       dayDateEl.value=addDays(start,day-1);
+     }
+   }
+ }
+
+ const lwVomEl=document.getElementById('lwVomInput');
+ if(lwVomEl){
+   lwVomEl.addEventListener('change',()=>{
+     autoPopulateWeekDatesFromVom();
+     saveDraft();
+   });
+   lwVomEl.addEventListener('blur',()=>{
+     autoPopulateWeekDatesFromVom();
+     saveDraft();
+   });
+ }
+
+ document.querySelectorAll('[data-lw-field],[data-lw-day-sum]').forEach(el=>{
+   el.addEventListener('blur',()=>{
+     const k=el.dataset.lwField||'';
+     if(k.startsWith('lw_von_')||k.startsWith('lw_bis_')){
+       el.value=formatSingleTimeToken(el.value);
+     }else if(k.startsWith('lw_reise_')){
+       const rVal=parseDecimalHours(el.value);
+       if(!isNaN(rVal)&&rVal>0)el.value=formatDec(rVal);
+     }
+     recalcLohnwocheTotals();
+     saveDraft();
+   });
+   el.addEventListener('input',()=>{
+     if(el.hasAttribute('data-lw-day-sum'))el.dataset.manualEdited='1';
+     recalcLohnwocheTotals();
+     saveDraft();
+   });
+   el.addEventListener('change',()=>{
+     recalcLohnwocheTotals();
+     saveDraft();
+   });
+ });
+
+
  loadUserSettings();
  loadDraft();
  applyDefaultTechnicianIfEmpty();
+ applyDefaultLohnwocheNameIfEmpty();
+ recalcLohnwocheTotals();
  renderPdfHistory();
  updateScale();
  applyZoom();
